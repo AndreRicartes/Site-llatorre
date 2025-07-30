@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doutrina Espírita - Centro Assistencial Espírita Raphael Latorre</title>
+    <meta name="description" content="Conheça os princípios básicos da Doutrina Espírita, obras fundamentais e recursos para estudo do Espiritismo codificado por Allan Kardec.">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Favicon -->
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+    <style>
+        /* Estilos específicos para a página de Doutrina */
+        .doutrina-section {
+            padding: 4rem 0;
+        }
+        
+        .doutrina-intro {
+            background-color: white;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            margin-bottom: 3rem;
+        }
+        
+        .doutrina-intro h3 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+        
+        .doutrina-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .principio-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .principio-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .obras-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .obra-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            overflow: hidden;
+            transition: var(--transition);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .obra-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .obra-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .obra-info {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .obra-info h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .obra-info p {
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+        
+        .recursos-lista {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .recurso-item {
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+        }
+        
+        .recurso-item h4 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .recurso-item h4 i {
+            margin-right: 0.5rem;
+        }
+        
+        .recurso-item ul {
+            list-style-type: disc;
+            margin-left: 1.5rem;
+        }
+        
+        .recurso-item ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .recurso-item ul li strong {
+            color: var(--primary-color);
+        }
+        
+        .citacao {
+            background-color: var(--light-bg);
+            padding: 2rem;
+            border-left: 4px solid var(--primary-color);
+            margin: 2rem 0;
+        }
+        
+        /* Estilos específicos para o banner da Kardecpedia */
+        .kardecpedia-banner {
+            background-color: #f0f5ff;
+            padding: 2rem 0;
+            margin: 3rem 0;
+            border-top: 1px solid #cfe0fc;
+            border-bottom: 1px solid #cfe0fc;
+        }
+        
+        .kardecpedia-content {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+        
+        .kardecpedia-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            background-color: white;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .kardecpedia-text h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        
+        @media (max-width: 768px) {
+            .kardecpedia-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+        
+        .citacao blockquote {
+            font-style: italic;
+            margin-bottom: 0.5rem;
+        }
+        
+        .citacao cite {
+            display: block;
+            text-align: right;
+            font-weight: bold;
+        }
+        
+        @media (max-width: 768px) {
+            .doutrina-grid, .obras-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="../index.html">
+                    <h1>Centro Assistencial Espírita Raphael Latorre</h1>
+                </a>
+            </div>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Início</a></li>
+                    <li><a href="sobre.html">Sobre Nós</a></li>
+                    <li><a href="atividades.html">Atividades</a></li>
+                    <li><a href="doutrina.html">Doutrina Espírita</a></li>
+                    <li><a href="assistencia-social.html">Assistência Social</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Breadcrumbs -->
+    <div class="container">
+        <div class="breadcrumbs">
+            <a href="../index.html">Início</a> > <span>Doutrina Espírita</span>
+        </div>
+    </div>
+
+    <!-- Seção de Doutrina -->
+    <section class="doutrina-section">
+        <div class="container">
+            <h2 class="section-title">A Doutrina Espírita</h2>
+            
+            <div class="doutrina-intro">
+                <h3>O que é o Espiritismo?</h3>
+                <p>O Espiritismo é uma doutrina de caráter científico, filosófico e religioso, codificada por Allan Kardec no século XIX. Baseia-se no estudo dos fenômenos mediúnicos e na comunicação com os Espíritos como forma de compreender a natureza, a origem e o destino do Espírito, bem como sua relação com o mundo corporal.</p>
+                
+                <p>Diferentemente de uma religião tradicional, o Espiritismo não possui rituais, hierarquia sacerdotal, templos ou imagens de culto. Sua essência está no estudo, na prática da caridade e no constante aprimoramento moral e intelectual do ser humano.</p>
+                
+                <div class="citacao">
+                    <blockquote>"O Espiritismo é, ao mesmo tempo, ciência experimental e doutrina filosófica. Como ciência prática, tem por base as relações que se podem estabelecer com os Espíritos; como filosofia, compreende todas as consequências morais decorrentes dessas relações."</blockquote>
+                    <cite>- Allan Kardec</cite>
+                </div>
+                
+                <h3>Allan Kardec e a Codificação</h3>
+                <p>Hippolyte Léon Denizard Rivail, que adotou o pseudônimo Allan Kardec, foi um educador francês que, em meados do século XIX, dedicou-se ao estudo dos fenômenos espíritas. Através de um método rigoroso e científico, ele analisou as comunicações de diversos Espíritos, comparou as mensagens recebidas por diferentes médiuns e compilou os ensinamentos que deram origem às obras básicas do Espiritismo.</p>
+                
+                <p>O termo "codificação" é utilizado para designar o processo de organização, análise e sistematização das informações obtidas através das comunicações mediúnicas, resultando nas cinco obras fundamentais conhecidas como "Pentateuco Espírita".</p>
+            </div>
+            
+            <h3 class="text-center">Princípios Básicos do Espiritismo</h3>
+            <div class="doutrina-grid">
+                <div class="principio-card">
+                    <div class="principio-icon">
+                        <i class="fas fa-sun"></i>
+                    </div>
+                    <h3>Existência de Deus</h3>
+                    <p>Deus é a inteligência suprema e causa primária de todas as coisas. É eterno, imutável, imaterial, único, onipotente e soberanamente justo e bom.</p>
+                </div>
+                <div class="principio-card">
+                    <div class="principio-icon">
+                        <i class="fas fa-ghost"></i>
+                    </div>
+                    <h3>Imortalidade da Alma</h3>
+                    <p>O Espírito é o princípio inteligente do Universo. Os Espíritos são seres inteligentes da criação, que povoam o Universo além do mundo material.</p>
+                </div>
+                <div class="principio-card">
+                    <div class="principio-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h3>Reencarnação</h3>
+                    <p>Os Espíritos podem reencarnar diversas vezes como meio de evolução e reparação de faltas passadas, permitindo o progresso moral e intelectual.</p>
+                </div>
+                <div class="principio-card">
+                    <div class="principio-icon">
+                        <i class="fas fa-globe-americas"></i>
+                    </div>
+                    <h3>Pluralidade dos Mundos Habitados</h3>
+                    <p>Existem inúmeros mundos habitados no universo, em diferentes níveis de evolução moral e intelectual, servindo como estágios para a evolução dos Espíritos.</p>
+                </div>
+                <div class="principio-card">
+                    <div class="principio-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>Comunicabilidade dos Espíritos</h3>
+                    <p>É possível a comunicação entre o mundo espiritual e o mundo físico através da mediunidade, permitindo aprendizado e conforto mútuo.</p>
+                </div>
+                <div class="principio-card">
+                    <div class="principio-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3>Lei de Causa e Efeito</h3>
+                    <p>Cada ação gera uma reação correspondente. Toda causa produz um efeito, e toda ação realizada retorna ao seu autor.</p>
+                </div>
+            </div>
+            
+            <h3 class="text-center">Obras Básicas da Codificação</h3>
+            <div class="obras-grid">
+                <div class="obra-card">
+                    <img src="../images/placeholder-livro-espiritos.webp" alt="O Livro dos Espíritos" class="obra-img">
+                    <div class="obra-info">
+                        <h3>O Livro dos Espíritos (1857)</h3>
+                        <p>Contém os princípios fundamentais da Doutrina Espírita sobre a imortalidade da alma, a natureza dos Espíritos e suas relações com os homens, as leis morais, a vida presente e futura.</p>
+                        <a href="https://kardecpedia.com/roteiro-de-estudos/2/o-livro-dos-espiritos" target="_blank" rel="noopener noreferrer" class="btn-outline">Saiba mais</a>
+                    </div>
+                </div>
+                <div class="obra-card">
+                    <img src="../images/placeholder-livro-mediuns.webp" alt="O Livro dos Médiuns" class="obra-img">
+                    <div class="obra-info">
+                        <h3>O Livro dos Médiuns (1861)</h3>
+                        <p>Trata do ensino especial dos Espíritos sobre a teoria de todos os gêneros de manifestações, dos meios de comunicação com o mundo invisível, e do desenvolvimento da mediunidade.</p>
+                        <a href="https://kardecpedia.com/roteiro-de-estudos/884/o-livro-dos-mediuns-ou-guia-dos-mediuns-e-dos-evocadores" target="_blank" rel="noopener noreferrer" class="btn-outline">Saiba mais</a>
+                    </div>
+                </div>
+                <div class="obra-card">
+                    <img src="../images/placeholder-evangelho.webp" alt="O Evangelho Segundo o Espiritismo" class="obra-img">
+                    <div class="obra-info">
+                        <h3>O Evangelho Segundo o Espiritismo (1864)</h3>
+                        <p>Contém a explicação das máximas morais do Cristo em concordância com o Espiritismo e suas aplicações às diversas circunstâncias da vida.</p>
+                        <a href="https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo" target="_blank" rel="noopener noreferrer" class="btn-outline">Saiba mais</a>
+                    </div>
+                </div>
+                <div class="obra-card">
+                    <img src="../images/placeholder-ceu-inferno.webp" alt="O Céu e o Inferno" class="obra-img">
+                    <div class="obra-info">
+                        <h3>O Céu e o Inferno (1865)</h3>
+                        <p>Examina a justiça divina segundo o Espiritismo, explicando a passagem da vida corporal à vida espiritual e a sorte dos Espíritos segundo seu mérito.</p>
+                        <a href="https://kardecpedia.com/roteiro-de-estudos/886/o-ceu-e-o-inferno-ou-a-justica-divina-segundo-o-espiritismo" target="_blank" rel="noopener noreferrer" class="btn-outline">Saiba mais</a>
+                    </div>
+                </div>
+                <div class="obra-card">
+                    <img src="../images/placeholder-genese.webp" alt="A Gênese" class="obra-img">
+                    <div class="obra-info">
+                        <h3>A Gênese (1868)</h3>
+                        <p>Aborda os milagres e as predições segundo o Espiritismo, oferecendo uma explicação científica e racional para os fenômenos considerados sobrenaturais.</p>
+                        <a href="https://kardecpedia.com/roteiro-de-estudos/888/a-genese-os-milagres-e-as-predicoes-segundo-o-espiritismo/3525/a-genese/capitulo-i-carater-da-revelacao-espirita/1" target="_blank" rel="noopener noreferrer" class="btn-outline">Saiba mais</a>
+                    </div>
+                </div>
+            </div>
+            
+            <h3 class="text-center">Recursos para Estudo</h3>
+            <div class="recursos-lista">
+                <div class="recurso-item">
+                    <h4><i class="fas fa-book"></i> Biblioteca Virtual</h4>
+                    <p>Disponibilizamos links para bibliotecas virtuais onde é possível encontrar obras espíritas para estudo:</p>
+                    <ul>
+                        <li><a href="https://kardecpedia.com/" target="_blank" rel="noopener noreferrer"><strong>Kardecpedia</strong> - Biblioteca digital completa com obras de Allan Kardec e diversos autores espíritas</a></li>
+                        <li><a href="https://www.febnet.org.br/portal/2021/07/22/biblioteca-virtual/" target="_blank" rel="noopener noreferrer">Biblioteca Virtual da FEB</a></li>
+                        <li><a href="http://www.bvespirita.com/" target="_blank" rel="noopener noreferrer">Biblioteca Virtual Espírita</a></li>
+                        <li><a href="http://www.autoresespiritasclassicos.com/" target="_blank" rel="noopener noreferrer">Autores Espíritas Clássicos</a></li>
+                    </ul>
+                </div>
+                <div class="recurso-item">
+                    <h4><i class="fas fa-video"></i> Vídeos e Palestras</h4>
+                    <p>Canais recomendados com palestras e estudos sobre a Doutrina Espírita:</p>
+                    <ul>
+                        <li><a href="https://www.youtube.com/c/febtv" target="_blank" rel="noopener noreferrer">FEB TV</a></li>
+                        <li><a href="https://www.youtube.com/c/TVCEPABrasil" target="_blank" rel="noopener noreferrer">TV CEPA Brasil</a></li>
+                        <li><a href="https://www.youtube.com/c/TVCEI" target="_blank" rel="noopener noreferrer">TV CEI</a></li>
+                    </ul>
+                </div>
+                <div class="recurso-item">
+                    <h4><i class="fas fa-podcast"></i> Podcasts</h4>
+                    <p>Podcasts que abordam temas espíritas para ouvir em qualquer lugar:</p>
+                    <ul>
+                        <li><a href="https://www.spreaker.com/show/podcast-feb" target="_blank" rel="noopener noreferrer">Podcast FEB</a></li>
+                        <li><a href="https://www.spreaker.com/show/espiritismo-na-atualidade" target="_blank" rel="noopener noreferrer">Espiritismo na Atualidade</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="citacao">
+                <blockquote>"Espíritas! Amai-vos, eis o primeiro ensinamento; instruí-vos, eis o segundo."</blockquote>
+                <cite>- Espírito de Verdade (O Evangelho Segundo o Espiritismo, cap. VI)</cite>
+            </div>
+            
+            <!-- Banner Kardecpedia -->
+            <div class="kardecpedia-banner">
+                <div class="container">
+                    <div class="kardecpedia-content">
+                        <div class="kardecpedia-icon">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                        <div class="kardecpedia-text">
+                            <h3>Kardecpedia - Biblioteca Digital Espírita</h3>
+                            <p>Acesse gratuitamente as obras completas de Allan Kardec e outros autores espíritas, com ferramentas de busca e estudo.</p>
+                            <a href="https://kardecpedia.com/" class="btn" target="_blank" rel="noopener noreferrer">Visitar Kardecpedia <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <p class="text-center mt-4">Para mais informações sobre a Doutrina Espírita ou para participar de nossos grupos de estudo, entre em <a href="contato.html">contato conosco</a> ou visite nossa <a href="atividades.html">página de atividades</a>.</p>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Centro Assistencial Espírita Raphael Latorre</h3>
+                    <p>Promovendo o estudo, a prática e a difusão da Doutrina Espírita desde 1979.</p>
+                    <p><i class="fas fa-hand-holding-heart"></i> Todas as nossas atividades são gratuitas.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Endereço</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Rua Duque de Caxias, 75</p>
+                    <p>Jardim São João - Bebedouro, SP</p>
+                    <p><i class="fas fa-phone"></i> (17) 3342-7580</p>
+                    <p><i class="fas fa-envelope"></i> metacap@mdbrasil.com.br</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Horários de Funcionamento</h3>
+                    <p><strong>Segunda a Sexta:</strong> 19h às 21h</p>
+                    <p><strong>Sábado:</strong> 14h às 17h</p>
+                    <p><strong>Domingo:</strong> 9h às 11h</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Redes Sociais</h3>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                    <div class="radio-link mt-3">
+                        <a href="https://www.radiofraternidade.com.br/" target="_blank" rel="noopener noreferrer" class="radio-btn">
+                            <i class="fas fa-broadcast-tower"></i> Ouça a Rádio Fraternidade
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Centro Assistencial Espírita Raphael Latorre. Todos os direitos reservados.</p>
+                <p class="footer-info">Desenvolvido com <i class="fas fa-heart"></i> e respeito à Doutrina Espírita.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../js/main.js"></script>
+</body>
+</html>

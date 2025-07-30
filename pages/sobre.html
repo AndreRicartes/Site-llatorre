@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nós - Centro Assistencial Espírita Raphael Latorre</title>
+    <meta name="description" content="Conheça a história e a missão do Centro Assistencial Espírita Raphael Latorre em Bebedouro-SP. Saiba mais sobre nossos valores e princípios.">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Favicon -->
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+    <style>
+        /* Estilos específicos para a página Sobre Nós */
+        .sobre-nos {
+            padding: 4rem 0;
+        }
+        
+        .sobre-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .sobre-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .sobre-imagem {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .sobre-texto h3 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+        
+        .valores {
+            padding: 4rem 0;
+            background-color: var(--light-bg);
+        }
+        
+        .valores-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .valor-card {
+            background-color: white;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            text-align: center;
+        }
+        
+        .valor-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .timeline {
+            padding: 4rem 0;
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-left: 3rem;
+            padding-bottom: 3rem;
+            border-left: 2px solid var(--primary-color);
+            margin-left: 1rem;
+        }
+        
+        .timeline-item:last-child {
+            border-left: none;
+            padding-bottom: 0;
+        }
+        
+        .timeline-date {
+            position: absolute;
+            left: -1rem;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius);
+            font-weight: bold;
+        }
+        
+        .timeline-content {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            margin-top: 1.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .sobre-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .sobre-imagem {
+                order: 1;
+            }
+            
+            .sobre-texto {
+                order: 2;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="../index.html">
+                    <h1>Centro Assistencial Espírita Raphael Latorre</h1>
+                </a>
+            </div>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Início</a></li>
+                    <li><a href="sobre.html">Sobre Nós</a></li>
+                    <li><a href="atividades.html">Atividades</a></li>
+                    <li><a href="doutrina.html">Doutrina Espírita</a></li>
+                    <li><a href="assistencia-social.html">Assistência Social</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Breadcrumbs -->
+    <div class="container">
+        <div class="breadcrumbs">
+            <a href="../index.html">Início</a> > <span>Sobre Nós</span>
+        </div>
+    </div>
+
+    <!-- Seção Sobre Nós -->
+    <section class="sobre-nos">
+        <div class="container">
+            <div class="sobre-header">
+                <h2 class="section-title">Sobre o Centro Assistencial Espírita Raphael Latorre</h2>
+            </div>
+            
+            <div class="sobre-content">
+                <div class="sobre-texto">
+                    <h3>Nossa História</h3>
+                    <p>Fundado em 1979, o Centro Assistencial Espírita Raphael Latorre nasceu do desejo de um grupo de pessoas dedicadas ao estudo e à prática da Doutrina Espírita em Bebedouro-SP. Ao longo de mais de quatro décadas, nosso Centro tem sido um espaço de acolhimento, estudo, prática da caridade e divulgação dos ensinamentos codificados por Allan Kardec.</p>
+                    <p>O nome é uma homenagem a Raphael Latorre, um exemplo de dedicação à causa espírita e ao trabalho fraterno. Sua trajetória de vida inspirou os fundadores a seguirem os princípios de amor ao próximo e caridade que norteiam nossa Casa.</p>
+                    <p>Desde nossa fundação, mantemos o compromisso com a simplicidade e a seriedade no estudo doutrinário, oferecendo atividades gratuitas de assistência espiritual e social para todos que nos procuram, independentemente de suas crenças.</p>
+                </div>
+                <div class="sobre-imagem">
+                    <img src="../images/placeholder-centro.webp" alt="Fachada do Centro Assistencial Espírita Raphael Latorre">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Missão, Visão e Valores -->
+    <section class="valores">
+        <div class="container">
+            <h2 class="section-title">Missão, Visão e Valores</h2>
+            
+            <div class="valores-grid">
+                <div class="valor-card">
+                    <div class="valor-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Missão</h3>
+                    <p>Promover o estudo, a difusão e a prática da Doutrina Espírita, oferecendo acolhimento fraterno e auxílio material e espiritual à comunidade, com base nos ensinamentos codificados por Allan Kardec.</p>
+                </div>
+                <div class="valor-card">
+                    <div class="valor-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Visão</h3>
+                    <p>Ser uma referência em Bebedouro e região como um centro espírita que promove a transformação moral do ser humano através do conhecimento e da prática da Doutrina Espírita em sua pureza original.</p>
+                </div>
+                <div class="valor-card">
+                    <div class="valor-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Valores</h3>
+                    <p>Caridade, fraternidade, estudo, humildade, simplicidade, transparência e respeito à diversidade, sempre orientados pelos princípios espíritas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Linha do Tempo -->
+    <section class="timeline">
+        <div class="container">
+            <h2 class="section-title">Nossa Trajetória</h2>
+            
+            <div class="timeline-container">
+                <div class="timeline-item">
+                    <div class="timeline-date">1979</div>
+                    <div class="timeline-content">
+                        <h3>Fundação</h3>
+                        <p>Fundação do Centro Assistencial Espírita Raphael Latorre por um grupo de idealistas comprometidos com a difusão da Doutrina Espírita em Bebedouro.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">1985</div>
+                    <div class="timeline-content">
+                        <h3>Aquisição da Sede Própria</h3>
+                        <p>Após anos de trabalho e dedicação, foi possível adquirir o imóvel que se tornaria a sede definitiva do Centro, na Rua Duque de Caxias, 75.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">1995</div>
+                    <div class="timeline-content">
+                        <h3>Ampliação das Atividades</h3>
+                        <p>Início dos grupos de estudo sistematizado da Doutrina Espírita e ampliação das atividades de assistência social.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2010</div>
+                    <div class="timeline-content">
+                        <h3>Reforma da Sede</h3>
+                        <p>Realização de ampla reforma na sede para melhor acomodar as atividades e garantir acessibilidade a todos os frequentadores.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Hoje</div>
+                    <div class="timeline-content">
+                        <h3>Continuidade do Trabalho</h3>
+                        <p>Seguimos firmes em nossa missão de divulgar a Doutrina Espírita e praticar a caridade, contando com o apoio de dedicados voluntários e da comunidade local.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Equipe/Diretoria -->
+    <section class="equipe">
+        <div class="container">
+            <h2 class="section-title">Nossa Diretoria</h2>
+            <p class="section-desc">O Centro Assistencial Espírita Raphael Latorre é conduzido por uma equipe de voluntários dedicados à causa espírita e ao bem-estar da comunidade.</p>
+            
+            <p class="text-center">A composição atual da diretoria para o biênio vigente é:</p>
+            <div class="equipe-lista text-center">
+                <p><strong>Presidente:</strong> [Nome do Presidente]</p>
+                <p><strong>Vice-Presidente:</strong> [Nome do Vice-Presidente]</p>
+                <p><strong>1º Secretário:</strong> [Nome do 1º Secretário]</p>
+                <p><strong>2º Secretário:</strong> [Nome do 2º Secretário]</p>
+                <p><strong>1º Tesoureiro:</strong> [Nome do 1º Tesoureiro]</p>
+                <p><strong>2º Tesoureiro:</strong> [Nome do 2º Tesoureiro]</p>
+                <p><strong>Diretor de Estudos Doutrinários:</strong> [Nome do Diretor]</p>
+                <p><strong>Diretor de Assistência Social:</strong> [Nome do Diretor]</p>
+            </div>
+            
+            <p class="text-center mt-4">Nossa equipe é formada por voluntários que dedicam seu tempo e conhecimento para manter as atividades do Centro. Se você deseja participar como voluntário em alguma das nossas atividades, entre em <a href="contato.html">contato conosco</a>.</p>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Centro Assistencial Espírita Raphael Latorre</h3>
+                    <p>Promovendo o estudo, a prática e a difusão da Doutrina Espírita desde 1979.</p>
+                    <p><i class="fas fa-hand-holding-heart"></i> Todas as nossas atividades são gratuitas.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Endereço</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Rua Duque de Caxias, 75</p>
+                    <p>Jardim São João - Bebedouro, SP</p>
+                    <p><i class="fas fa-phone"></i> (17) 3342-7580</p>
+                    <p><i class="fas fa-envelope"></i> metacap@mdbrasil.com.br</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Horários de Funcionamento</h3>
+                    <p><strong>Segunda a Sexta:</strong> 19h às 21h</p>
+                    <p><strong>Sábado:</strong> 14h às 17h</p>
+                    <p><strong>Domingo:</strong> 9h às 11h</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Redes Sociais</h3>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                    <div class="radio-link mt-3">
+                        <a href="https://www.radiofraternidade.com.br/" target="_blank" rel="noopener noreferrer" class="radio-btn">
+                            <i class="fas fa-broadcast-tower"></i> Ouça a Rádio Fraternidade
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Centro Assistencial Espírita Raphael Latorre. Todos os direitos reservados.</p>
+                <p class="footer-info">Desenvolvido com <i class="fas fa-heart"></i> e respeito à Doutrina Espírita.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../js/main.js"></script>
+</body>
+</html>

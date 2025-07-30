@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assistência Social - Centro Assistencial Espírita Raphael Latorre</title>
+    <meta name="description" content="Conheça os projetos de assistência social do Centro Assistencial Espírita Raphael Latorre: cestas básicas, bazar beneficente, enxoval para gestantes e muito mais.">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Favicon -->
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+    <style>
+        /* Estilos específicos para a página de Assistência Social */
+        .assistencia-section {
+            padding: 4rem 0;
+        }
+        
+        .assistencia-intro {
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            text-align: center;
+        }
+        
+        .assistencia-banner {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        
+        .assistencia-banner h3 {
+            margin-top: 0;
+            font-size: 1.8rem;
+        }
+        
+        .assistencia-banner p {
+            margin-bottom: 0;
+            font-size: 1.1rem;
+        }
+        
+        .projeto-item {
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            overflow: hidden;
+            margin-bottom: 2.5rem;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .projeto-header {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 1.2rem 1.5rem;
+            position: relative;
+        }
+        
+        .projeto-header h3 {
+            margin: 0;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .projeto-header i {
+            margin-right: 0.8rem;
+            font-size: 1.5rem;
+        }
+        
+        .projeto-content {
+            padding: 1.5rem;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 1.5rem;
+        }
+        
+        .projeto-image {
+            height: 100%;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+        }
+        
+        .projeto-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .projeto-info {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .projeto-info p {
+            margin-top: 0;
+            line-height: 1.6;
+        }
+        
+        .projeto-acoes {
+            margin-top: auto;
+            padding-top: 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .btn-acao {
+            display: inline-block;
+            background-color: var(--light-bg);
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-acao:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .btn-acao i {
+            margin-right: 0.5rem;
+        }
+        
+        .como-ajudar {
+            background-color: var(--light-bg);
+            padding: 3rem 0;
+            margin: 4rem 0 2rem;
+        }
+        
+        .como-ajudar-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .forma-ajuda {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            text-align: center;
+            height: 100%;
+        }
+        
+        .forma-ajuda-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .forma-ajuda h3 {
+            margin-top: 0;
+        }
+        
+        .forma-ajuda p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .prestacao-contas {
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .prestacao-contas h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+        }
+        
+        .prestacao-contas-info {
+            margin-top: 1.5rem;
+        }
+        
+        .mes-prestacao {
+            border-bottom: 1px solid #eee;
+            padding: 1rem 0;
+        }
+        
+        .mes-prestacao:last-child {
+            border-bottom: none;
+        }
+        
+        .mes-prestacao h4 {
+            margin: 0 0 0.5rem;
+            color: var(--primary-color);
+        }
+        
+        .mes-prestacao p {
+            margin: 0.3rem 0;
+        }
+        
+        .depoimento {
+            background-color: #f8f8f8;
+            border-left: 4px solid var(--primary-color);
+            padding: 1.5rem;
+            margin: 3rem 0;
+            font-style: italic;
+        }
+        
+        .depoimento-autor {
+            text-align: right;
+            font-style: normal;
+            margin-top: 1rem;
+            font-weight: bold;
+        }
+        
+        /* AME Brasil Banner */
+        .ame-saude-banner {
+            background-color: #f5f9f5;
+            border: 1px solid #d8e6d8;
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            margin: 3rem 0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+        
+        .ame-saude-content h3 {
+            color: #2e7d32;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .ame-saude-content h3 i {
+            font-size: 1.5rem;
+        }
+        
+        .ame-saude-link {
+            margin-top: 1.5rem;
+            text-align: center;
+        }
+        
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .projeto-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .projeto-image {
+                margin-bottom: 1rem;
+            }
+            
+            .como-ajudar-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="../index.html">
+                    <h1>Centro Assistencial Espírita Raphael Latorre</h1>
+                </a>
+            </div>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Início</a></li>
+                    <li><a href="sobre.html">Sobre Nós</a></li>
+                    <li><a href="atividades.html">Atividades</a></li>
+                    <li><a href="doutrina.html">Doutrina Espírita</a></li>
+                    <li><a href="assistencia-social.html">Assistência Social</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Breadcrumbs -->
+    <div class="container">
+        <div class="breadcrumbs">
+            <a href="../index.html">Início</a> > <span>Assistência Social</span>
+        </div>
+    </div>
+
+    <!-- Seção de Assistência Social -->
+    <section class="assistencia-section">
+        <div class="container">
+            <h2 class="section-title">Assistência Social</h2>
+            
+            <div class="assistencia-intro">
+                <p>A prática da caridade é um pilar fundamental da Doutrina Espírita. Seguindo o princípio "Fora da caridade não há salvação", o Centro Assistencial Espírita Raphael Latorre desenvolve diversos projetos de assistência social para ajudar pessoas em situação de vulnerabilidade.</p>
+                <p>Conheça nossos projetos e saiba como você pode contribuir.</p>
+            </div>
+            
+            <div class="assistencia-banner">
+                <h3><i class="fas fa-hand-holding-heart"></i> "Fora da caridade não há salvação"</h3>
+                <p>Allan Kardec, O Evangelho Segundo o Espiritismo</p>
+            </div>
+            
+            <!-- Projetos de Assistência Social -->
+            <div class="projetos-grid">
+                <!-- Distribuição de Cestas Básicas -->
+                <div class="projeto-item">
+                    <div class="projeto-header">
+                        <h3><i class="fas fa-shopping-basket"></i> Distribuição de Cestas Básicas</h3>
+                    </div>
+                    <div class="projeto-content">
+                        <div class="projeto-image">
+                            <img src="../images/placeholder-cestas.webp" alt="Distribuição de Cestas Básicas">
+                        </div>
+                        <div class="projeto-info">
+                            <p>O programa de distribuição de cestas básicas auxilia famílias carentes cadastradas, fornecendo mensalmente alimentos essenciais para garantir a segurança alimentar.</p>
+                            <p>Cada cesta contém itens como arroz, feijão, óleo, macarrão, açúcar, café, entre outros produtos não-perecíveis que garantem uma alimentação básica para uma família por aproximadamente um mês.</p>
+                            <p>Atualmente, beneficiamos cerca de 50 famílias mensalmente com este programa.</p>
+                            
+                            <div class="projeto-acoes">
+                                <a href="#como-ajudar" class="btn-acao"><i class="fas fa-donate"></i> Como Doar</a>
+                                <a href="#" class="btn-acao"><i class="fas fa-hands-helping"></i> Voluntariar-se</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Bazar Beneficente -->
+                <div class="projeto-item">
+                    <div class="projeto-header">
+                        <h3><i class="fas fa-tshirt"></i> Bazar Beneficente</h3>
+                    </div>
+                    <div class="projeto-content">
+                        <div class="projeto-image">
+                            <img src="../images/placeholder-roupas.webp" alt="Bazar Beneficente">
+                        </div>
+                        <div class="projeto-info">
+                            <p>O Bazar Beneficente arrecada, seleciona e distribui roupas, calçados, utensílios domésticos e outros itens para famílias necessitadas.</p>
+                            <p>Parte dos itens é vendida a preços simbólicos no bazar, cuja renda é revertida para outros projetos assistenciais. Outra parte é doada diretamente às famílias cadastradas conforme suas necessidades.</p>
+                            <p>O bazar funciona duas vezes por mês, geralmente no segundo e quarto sábados.</p>
+                            
+                            <div class="projeto-acoes">
+                                <a href="#como-ajudar" class="btn-acao"><i class="fas fa-box"></i> Doar Itens</a>
+                                <a href="#" class="btn-acao"><i class="fas fa-hands-helping"></i> Voluntariar-se</a>
+                                <a href="#" class="btn-acao"><i class="fas fa-calendar-alt"></i> Próximas Datas</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Enxoval para Gestantes -->
+                <div class="projeto-item">
+                    <div class="projeto-header">
+                        <h3><i class="fas fa-baby"></i> Enxoval para Gestantes</h3>
+                    </div>
+                    <div class="projeto-content">
+                        <div class="projeto-image">
+                            <img src="../images/placeholder-gestantes.webp" alt="Enxoval para Gestantes">
+                        </div>
+                        <div class="projeto-info">
+                            <p>O projeto "Mamãe e Bebê" confecciona e doa enxovais completos para gestantes em situação de vulnerabilidade social.</p>
+                            <p>Cada kit contém peças essenciais para os primeiros meses do bebê, incluindo roupas, fraldas, produtos de higiene, manta, toalhas e outros itens necessários.</p>
+                            <p>A entrega é feita após um acompanhamento da gestante, que inclui orientações sobre cuidados com o bebê, amamentação e saúde.</p>
+                            
+                            <div class="projeto-acoes">
+                                <a href="#como-ajudar" class="btn-acao"><i class="fas fa-baby-carriage"></i> Doar Itens para Bebês</a>
+                                <a href="#" class="btn-acao"><i class="fas fa-hands-helping"></i> Voluntariar-se</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Sopa Fraterna -->
+                <div class="projeto-item">
+                    <div class="projeto-header">
+                        <h3><i class="fas fa-utensils"></i> Sopa Fraterna</h3>
+                    </div>
+                    <div class="projeto-content">
+                        <div class="projeto-image">
+                            <img src="../images/placeholder-sopa.webp" alt="Sopa Fraterna">
+                        </div>
+                        <div class="projeto-info">
+                            <p>Semanalmente, preparamos e distribuímos sopa nutritiva para pessoas em situação de rua e famílias carentes da região.</p>
+                            <p>A ação acontece todas as quintas-feiras à noite, quando voluntários preparam, embalam e distribuem aproximadamente 100 marmitas contendo sopa, pão e fruta.</p>
+                            <p>Além do alimento, oferecemos palavras de conforto e apoio, seguindo o princípio da caridade material e moral.</p>
+                            
+                            <div class="projeto-acoes">
+                                <a href="#como-ajudar" class="btn-acao"><i class="fas fa-donate"></i> Contribuir</a>
+                                <a href="#" class="btn-acao"><i class="fas fa-hands-helping"></i> Voluntariar-se</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Campanha de Material Escolar -->
+                <div class="projeto-item">
+                    <div class="projeto-header">
+                        <h3><i class="fas fa-pencil-alt"></i> Campanha de Material Escolar</h3>
+                    </div>
+                    <div class="projeto-content">
+                        <div class="projeto-image">
+                            <img src="../images/placeholder-material.webp" alt="Material Escolar">
+                        </div>
+                        <div class="projeto-info">
+                            <p>Anualmente, realizamos uma campanha para arrecadação e distribuição de materiais escolares para crianças carentes no início do ano letivo.</p>
+                            <p>Os kits são montados de acordo com a série escolar da criança, contendo cadernos, lápis, borracha, apontador, régua, tesoura, cola e outros materiais necessários.</p>
+                            <p>Em 2025, pretendemos atender 150 crianças da comunidade local.</p>
+                            
+                            <div class="projeto-acoes">
+                                <a href="#como-ajudar" class="btn-acao"><i class="fas fa-book"></i> Doar Material</a>
+                                <a href="#" class="btn-acao"><i class="fas fa-hands-helping"></i> Voluntariar-se</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Visita a Asilos -->
+                <div class="projeto-item">
+                    <div class="projeto-header">
+                        <h3><i class="fas fa-heart"></i> Visita a Asilos e Hospitais</h3>
+                    </div>
+                    <div class="projeto-content">
+                        <div class="projeto-image">
+                            <img src="../images/placeholder-visita.webp" alt="Visita a Asilos">
+                        </div>
+                        <div class="projeto-info">
+                            <p>Mensalmente, realizamos visitas a asilos e hospitais da região, levando conforto, atenção e carinho aos idosos e enfermos.</p>
+                            <p>Durante as visitas, os voluntários conversam, cantam, fazem leituras, distribuem lembrancinhas e oferecem momentos de alegria e distração.</p>
+                            <p>Este trabalho visa minimizar o sentimento de solidão e abandono, proporcionando um momento de acolhimento fraterno.</p>
+                            
+                            <div class="projeto-acoes">
+                                <a href="#como-ajudar" class="btn-acao"><i class="fas fa-gift"></i> Doar Itens</a>
+                                <a href="#" class="btn-acao"><i class="fas fa-hands-helping"></i> Voluntariar-se</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Depoimento -->
+            <div class="depoimento">
+                <p>"A assistência social que recebi do Centro Assistencial Espírita Raphael Latorre foi fundamental para mim em um momento muito difícil da minha vida. Além da ajuda material com cestas básicas e roupas para meus filhos, recebi palavras de conforto e apoio que me ajudaram a seguir em frente. Hoje estou em melhores condições e também ajudo como posso."</p>
+                <div class="depoimento-autor">Maria A., beneficiária</div>
+            </div>
+            
+            <!-- AME Brasil Banner para Assistência na Área da Saúde -->
+            <div class="ame-saude-banner">
+                <div class="ame-saude-content">
+                    <h3><i class="fas fa-heartbeat"></i> Apoio à Saúde Integral</h3>
+                    <p>Nossa casa apoia a visão da Associação Médico-Espírita do Brasil (AME Brasil) que promove a integração entre medicina e espiritualidade no tratamento do ser humano em sua totalidade - corpo, mente e espírito.</p>
+                    <p>Conheça os estudos e pesquisas que integram conhecimentos médicos e espíritas para uma abordagem holística da saúde humana.</p>
+                    <div class="ame-saude-link">
+                        <a href="https://amebrasil.org.br/" target="_blank" rel="noopener noreferrer" class="btn-acao">
+                            <i class="fas fa-external-link-alt"></i> Visite o site da AME Brasil
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Como Ajudar -->
+            <section id="como-ajudar" class="como-ajudar">
+                <div class="container">
+                    <h2 class="section-title">Como Você Pode Ajudar</h2>
+                    <p class="section-desc">Há diversas formas de contribuir com os projetos de assistência social do Centro Assistencial Espírita Raphael Latorre:</p>
+                    
+                    <div class="como-ajudar-grid">
+                        <div class="forma-ajuda">
+                            <div class="forma-ajuda-icon">
+                                <i class="fas fa-donate"></i>
+                            </div>
+                            <h3>Doação Financeira</h3>
+                            <p>Contribua com qualquer valor para ajudar na manutenção dos projetos assistenciais.</p>
+                            <p><strong>Banco:</strong> Exemplo<br>
+                            <strong>Agência:</strong> 0123<br>
+                            <strong>Conta:</strong> 12345-6<br>
+                            <strong>PIX:</strong> centro@exemplo.com.br</p>
+                        </div>
+                        
+                        <div class="forma-ajuda">
+                            <div class="forma-ajuda-icon">
+                                <i class="fas fa-box-open"></i>
+                            </div>
+                            <h3>Doação de Itens</h3>
+                            <p>Doe alimentos não-perecíveis, roupas, calçados, utensílios domésticos, itens de higiene, material escolar, etc.</p>
+                            <p>Você pode entregar suas doações diretamente na sede do Centro nos horários de funcionamento.</p>
+                        </div>
+                        
+                        <div class="forma-ajuda">
+                            <div class="forma-ajuda-icon">
+                                <i class="fas fa-hands-helping"></i>
+                            </div>
+                            <h3>Trabalho Voluntário</h3>
+                            <p>Doe seu tempo e talentos para ajudar nos projetos assistenciais, desde a separação de doações até o atendimento às pessoas assistidas.</p>
+                            <p>Preencha o <a href="contato.html">formulário de contato</a> informando sua disponibilidade.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Prestação de Contas -->
+            <div class="prestacao-contas">
+                <h3><i class="fas fa-chart-pie"></i> Prestação de Contas</h3>
+                <p>O Centro Assistencial Espírita Raphael Latorre preza pela transparência na gestão dos recursos recebidos. Mensalmente, divulgamos um resumo das doações recebidas e das ações realizadas.</p>
+                
+                <div class="prestacao-contas-info">
+                    <div class="mes-prestacao">
+                        <h4>Junho/2025</h4>
+                        <p><strong>Doações recebidas:</strong> R$ 3.250,00</p>
+                        <p><strong>Alimentos arrecadados:</strong> 420kg</p>
+                        <p><strong>Roupas e calçados:</strong> 380 peças</p>
+                        <p><strong>Famílias atendidas:</strong> 48</p>
+                        <p><strong>Cestas básicas distribuídas:</strong> 52</p>
+                    </div>
+                    
+                    <div class="mes-prestacao">
+                        <h4>Maio/2025</h4>
+                        <p><strong>Doações recebidas:</strong> R$ 2.980,00</p>
+                        <p><strong>Alimentos arrecadados:</strong> 385kg</p>
+                        <p><strong>Roupas e calçados:</strong> 410 peças</p>
+                        <p><strong>Famílias atendidas:</strong> 45</p>
+                        <p><strong>Cestas básicas distribuídas:</strong> 50</p>
+                    </div>
+                </div>
+                
+                <p class="mt-3">Para mais informações sobre a prestação de contas, entre em <a href="contato.html">contato conosco</a>.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Centro Assistencial Espírita Raphael Latorre</h3>
+                    <p>Promovendo o estudo, a prática e a difusão da Doutrina Espírita desde 1979.</p>
+                    <p><i class="fas fa-hand-holding-heart"></i> Todas as nossas atividades são gratuitas.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Endereço</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Rua Duque de Caxias, 75</p>
+                    <p>Jardim São João - Bebedouro, SP</p>
+                    <p><i class="fas fa-phone"></i> (17) 3342-7580</p>
+                    <p><i class="fas fa-envelope"></i> metacap@mdbrasil.com.br</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Horários de Funcionamento</h3>
+                    <p><strong>Segunda a Sexta:</strong> 19h às 21h</p>
+                    <p><strong>Sábado:</strong> 14h às 17h</p>
+                    <p><strong>Domingo:</strong> 9h às 11h</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Redes Sociais</h3>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                    <div class="radio-link mt-3">
+                        <a href="https://www.radiofraternidade.com.br/" target="_blank" rel="noopener noreferrer" class="radio-btn">
+                            <i class="fas fa-broadcast-tower"></i> Ouça a Rádio Fraternidade
+                        </a>
+                    </div>
+                    <div class="ame-link mt-3">
+                        <a href="https://amebrasil.org.br/" target="_blank" rel="noopener noreferrer" class="ame-btn-small">
+                            <i class="fas fa-heartbeat"></i> AME Brasil
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Centro Assistencial Espírita Raphael Latorre. Todos os direitos reservados.</p>
+                <p class="footer-info">Desenvolvido com <i class="fas fa-heart"></i> e respeito à Doutrina Espírita.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../js/main.js"></script>
+</body>
+</html>
