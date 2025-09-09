@@ -41,52 +41,31 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Tamanho da fonte ajustável
-    const createFontSizeControls = () => {
-        const controls = document.createElement('div');
-        controls.className = 'font-size-controls';
-        
-        const increaseBtn = document.createElement('button');
-        increaseBtn.innerHTML = 'A+';
-        increaseBtn.setAttribute('aria-label', 'Aumentar tamanho da fonte');
-        
-        const decreaseBtn = document.createElement('button');
-        decreaseBtn.innerHTML = 'A-';
-        decreaseBtn.setAttribute('aria-label', 'Diminuir tamanho da fonte');
-        
-        controls.appendChild(increaseBtn);
-        controls.appendChild(decreaseBtn);
-        
-        document.body.appendChild(controls);
-        
-        // Obter tamanho atual da fonte
-        let currentSize = parseInt(window.getComputedStyle(document.body).fontSize);
-        
-        increaseBtn.addEventListener('click', () => {
-            if (currentSize < 24) {
-                currentSize += 2;
-                document.body.style.fontSize = currentSize + 'px';
-                localStorage.setItem('fontSize', currentSize);
-            }
-        });
-        
-        decreaseBtn.addEventListener('click', () => {
-            if (currentSize > 12) {
-                currentSize -= 2;
-                document.body.style.fontSize = currentSize + 'px';
-                localStorage.setItem('fontSize', currentSize);
-            }
-        });
-        
-        // Verificar se há um tamanho salvo no localStorage
-        const savedSize = localStorage.getItem('fontSize');
-        if (savedSize) {
-            currentSize = parseInt(savedSize);
-            document.body.style.fontSize = currentSize + 'px';
-        }
-    };
-    
-    createFontSizeControls();
+    // Preferências de acessibilidade: tema e tamanho da fonte
+    (function initAccessibility() {
+    // Botão de alto contraste removido da UI; tema será sempre aplicado
+    const btnContrast = null;
+        const btnFontInc = document.getElementById('btn-font-inc');
+        const btnFontDec = document.getElementById('btn-font-dec');
+
+        const applyTheme = (theme) => {
+            document.body.classList.remove('theme-contrast');
+            if (theme === 'contrast') document.body.classList.add('theme-contrast');
+            localStorage.setItem('themePref', 'contrast');
+        };
+
+    // Forçar alto contraste sempre
+    applyTheme('contrast');
+
+    // Sem botão para desligar alto contraste
+
+        // Tamanho da fonte (A+/A-)
+        let currentSize = parseInt(localStorage.getItem('fontSize') || window.getComputedStyle(document.body).fontSize);
+        const setSize = (sz) => { document.body.style.fontSize = sz + 'px'; localStorage.setItem('fontSize', sz); };
+        setSize(currentSize);
+        btnFontInc && btnFontInc.addEventListener('click', () => { if (currentSize < 22) { currentSize += 1; setSize(currentSize); } });
+        btnFontDec && btnFontDec.addEventListener('click', () => { if (currentSize > 14) { currentSize -= 1; setSize(currentSize); } });
+    })();
     
     // Animações de scroll
     const animateOnScroll = () => {

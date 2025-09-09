@@ -207,8 +207,9 @@
     <header>
         <div class="container">
             <div class="logo">
-                <a href="../index.html">
-                    <h1>Centro Assistencial Espírita Raphael Latorre</h1>
+                <a href="../index.html" aria-label="Início">
+                    <img src="../images/logo.png" alt="Centro Assistencial Espírita Raphael Latorre" class="site-logo">
+                    <span class="sr-only">Centro Assistencial Espírita Raphael Latorre</span>
                 </a>
             </div>
             <div class="menu-toggle">
@@ -224,6 +225,12 @@
                     <li><a href="como-ajudar.html" class="menu-ajudar"><i class="fas fa-hands-helping"></i> Como ajudar</a></li>
                     <li><a href="contato.html">Contato</a></li>
                 </ul>
+                <div class="nav-accessibility">
+                    <div class="accessibility-toolbar" aria-label="Acessibilidade">
+                        <button type="button" id="btn-font-inc" title="Aumentar fonte"><i class="fas fa-plus"></i></button>
+                        <button type="button" id="btn-font-dec" title="Diminuir fonte"><i class="fas fa-minus"></i></button>
+                    </div>
+                </div>
             </nav>
         </div>
     </header>
