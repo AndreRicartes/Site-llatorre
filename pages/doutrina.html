@@ -6,6 +6,9 @@
     <title>Doutrina Espírita - Centro Assistencial Espírita Raphael Latorre</title>
     <meta name="description" content="Conheça os princípios básicos da Doutrina Espírita, obras fundamentais e recursos para estudo do Espiritismo codificado por Allan Kardec.">
     <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <!-- Favicon -->
@@ -216,8 +219,9 @@
                     <li><a href="../index.html">Início</a></li>
                     <li><a href="sobre.html">Sobre Nós</a></li>
                     <li><a href="atividades.html">Atividades</a></li>
-                    <li><a href="doutrina.html">Doutrina Espírita</a></li>
+                    <li><a href="doutrina.html" class="active">Doutrina Espírita</a></li>
                     <li><a href="assistencia-social.html">Assistência Social</a></li>
+                    <li><a href="como-ajudar.html" class="menu-ajudar"><i class="fas fa-hands-helping"></i> Como ajudar</a></li>
                     <li><a href="contato.html">Contato</a></li>
                 </ul>
             </nav>
@@ -302,7 +306,7 @@
             <h3 class="text-center">Obras Básicas da Codificação</h3>
             <div class="obras-grid">
                 <div class="obra-card">
-                    <img src="../images/placeholder-livro-espiritos.webp" alt="O Livro dos Espíritos" class="obra-img">
+                    <img src="../images/placeholder-livro-espiritos.webp" alt="O Livro dos Espíritos" class="obra-img" loading="lazy" decoding="async">
                     <div class="obra-info">
                         <h3>O Livro dos Espíritos (1857)</h3>
                         <p>Contém os princípios fundamentais da Doutrina Espírita sobre a imortalidade da alma, a natureza dos Espíritos e suas relações com os homens, as leis morais, a vida presente e futura.</p>
@@ -310,7 +314,7 @@
                     </div>
                 </div>
                 <div class="obra-card">
-                    <img src="../images/placeholder-livro-mediuns.webp" alt="O Livro dos Médiuns" class="obra-img">
+                    <img src="../images/placeholder-livro-mediuns.webp" alt="O Livro dos Médiuns" class="obra-img" loading="lazy" decoding="async">
                     <div class="obra-info">
                         <h3>O Livro dos Médiuns (1861)</h3>
                         <p>Trata do ensino especial dos Espíritos sobre a teoria de todos os gêneros de manifestações, dos meios de comunicação com o mundo invisível, e do desenvolvimento da mediunidade.</p>
@@ -318,7 +322,7 @@
                     </div>
                 </div>
                 <div class="obra-card">
-                    <img src="../images/placeholder-evangelho.webp" alt="O Evangelho Segundo o Espiritismo" class="obra-img">
+                    <img src="../images/placeholder-evangelho.webp" alt="O Evangelho Segundo o Espiritismo" class="obra-img" loading="lazy" decoding="async">
                     <div class="obra-info">
                         <h3>O Evangelho Segundo o Espiritismo (1864)</h3>
                         <p>Contém a explicação das máximas morais do Cristo em concordância com o Espiritismo e suas aplicações às diversas circunstâncias da vida.</p>
@@ -326,7 +330,7 @@
                     </div>
                 </div>
                 <div class="obra-card">
-                    <img src="../images/placeholder-ceu-inferno.webp" alt="O Céu e o Inferno" class="obra-img">
+                    <img src="../images/placeholder-ceu-inferno.webp" alt="O Céu e o Inferno" class="obra-img" loading="lazy" decoding="async">
                     <div class="obra-info">
                         <h3>O Céu e o Inferno (1865)</h3>
                         <p>Examina a justiça divina segundo o Espiritismo, explicando a passagem da vida corporal à vida espiritual e a sorte dos Espíritos segundo seu mérito.</p>
@@ -334,7 +338,7 @@
                     </div>
                 </div>
                 <div class="obra-card">
-                    <img src="../images/placeholder-genese.webp" alt="A Gênese" class="obra-img">
+                    <img src="../images/placeholder-genese.webp" alt="A Gênese" class="obra-img" loading="lazy" decoding="async">
                     <div class="obra-info">
                         <h3>A Gênese (1868)</h3>
                         <p>Aborda os milagres e as predições segundo o Espiritismo, oferecendo uma explicação científica e racional para os fenômenos considerados sobrenaturais.</p>
@@ -443,6 +447,6 @@
     </footer>
 
     <!-- Scripts -->
-    <script src="../js/main.js"></script>
+    <script src="../js/main.js" defer></script>
 </body>
 </html>

@@ -6,6 +6,9 @@
     <title>Centro Assistencial Espírita Raphael Latorre</title>
     <meta name="description" content="Centro Assistencial Espírita Raphael Latorre - Promovendo a doutrina espírita em Bebedouro-SP através de palestras, passes e assistência social desde 1979.">
     <link rel="stylesheet" href="css/normalize.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <!-- Favicon -->
@@ -26,11 +29,12 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="index.html">Início</a></li>
+                    <li><a href="index.html" class="active">Início</a></li>
                     <li><a href="pages/sobre.html">Sobre Nós</a></li>
                     <li><a href="pages/atividades.html">Atividades</a></li>
                     <li><a href="pages/doutrina.html">Doutrina Espírita</a></li>
                     <li><a href="pages/assistencia-social.html">Assistência Social</a></li>
+                    <li><a href="pages/como-ajudar.html" class="menu-ajudar"><i class="fas fa-hands-helping"></i> Como ajudar</a></li>
                     <li><a href="pages/contato.html">Contato</a></li>
                 </ul>
             </nav>
@@ -40,7 +44,7 @@
     <!-- Banner Principal -->
     <section class="banner">
         <div class="banner-img-container">
-            <img src="images/banner-bg.webp" alt="Banner Centro Espírita" class="banner-bg-img">
+            <img src="images/banner-bg.webp" alt="Banner Centro Espírita" class="banner-bg-img" decoding="async" fetchpriority="high">
         </div>
         <div class="container">
             <div class="banner-content">
@@ -48,6 +52,7 @@
                 <p>"O Espiritismo é, ao mesmo tempo, ciência experimental e doutrina filosófica. Como ciência prática, tem por base as relações que se podem estabelecer com os Espíritos; como filosofia, compreende todas as consequências morais decorrentes dessas relações."</p>
                 <p class="quote-author">- Allan Kardec</p>
                 <a href="pages/sobre.html" class="btn">Conheça Nossa Casa</a>
+                <a href="pages/como-ajudar.html" class="btn-outline" style="margin-left:.5rem">Como ajudar</a>
             </div>
         </div>
     </section>
@@ -193,23 +198,23 @@
             <h2 class="section-title">Assistência Social</h2>
             <p class="section-desc">Seguindo o princípio "Fora da caridade não há salvação", nosso Centro desenvolve diversas atividades assistenciais para ajudar pessoas em situação de vulnerabilidade.</p>
             <div class="assistencia-grid">
-                <div class="assistencia-card">
+        <div class="assistencia-card card">
                     <div class="assistencia-img-container">
-                        <img src="images/placeholder-cestas.webp" alt="Distribuição de Cestas Básicas" class="assistencia-img">
+            <img src="images/placeholder-cestas.webp" alt="Distribuição de Cestas Básicas" class="assistencia-img" loading="lazy" decoding="async">
                     </div>
                     <h3>Distribuição de Cestas Básicas</h3>
                     <p>Auxílio a famílias carentes com a distribuição mensal de alimentos.</p>
                 </div>
-                <div class="assistencia-card">
+        <div class="assistencia-card card">
                     <div class="assistencia-img-container">
-                        <img src="images/placeholder-roupas.webp" alt="Bazar Beneficente" class="assistencia-img">
+            <img src="images/placeholder-roupas.webp" alt="Bazar Beneficente" class="assistencia-img" loading="lazy" decoding="async">
                     </div>
                     <h3>Bazar Beneficente</h3>
                     <p>Arrecadação e distribuição de roupas, calçados e utensílios domésticos.</p>
                 </div>
-                <div class="assistencia-card">
+        <div class="assistencia-card card">
                     <div class="assistencia-img-container">
-                        <img src="images/placeholder-gestantes.webp" alt="Enxoval para Gestantes" class="assistencia-img">
+            <img src="images/placeholder-gestantes.webp" alt="Enxoval para Gestantes" class="assistencia-img" loading="lazy" decoding="async">
                     </div>
                     <h3>Enxoval para Gestantes</h3>
                     <p>Confecção e doação de enxovais para gestantes em situação de vulnerabilidade.</p>
@@ -270,6 +275,6 @@
     </footer>
 
     <!-- Scripts -->
-    <script src="js/main.js"></script>
+    <script src="js/main.js" defer></script>
 </body>
 </html>

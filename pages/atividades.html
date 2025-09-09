@@ -6,6 +6,9 @@
     <title>Atividades - Centro Assistencial Espírita Raphael Latorre</title>
     <meta name="description" content="Conheça as atividades do Centro Assistencial Espírita Raphael Latorre: palestras, passes, estudos doutrinários e evangelização infantil.">
     <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <!-- Favicon -->
@@ -283,9 +286,10 @@
                 <ul>
                     <li><a href="../index.html">Início</a></li>
                     <li><a href="sobre.html">Sobre Nós</a></li>
-                    <li><a href="atividades.html">Atividades</a></li>
+                    <li><a href="atividades.html" class="active">Atividades</a></li>
                     <li><a href="doutrina.html">Doutrina Espírita</a></li>
                     <li><a href="assistencia-social.html">Assistência Social</a></li>
+                    <li><a href="como-ajudar.html" class="menu-ajudar"><i class="fas fa-hands-helping"></i> Como ajudar</a></li>
                     <li><a href="contato.html">Contato</a></li>
                 </ul>
             </nav>
@@ -400,7 +404,7 @@
                         <p>As palestras são gratuitas e não é necessário agendamento prévio. Basta comparecer nos horários indicados.</p>
                     </div>
                     <div class="atividade-image">
-                        <img src="../images/placeholder-palestra.webp" alt="Palestra espírita" />
+                        <img src="../images/placeholder-palestra.webp" alt="Palestra espírita" loading="lazy" decoding="async" />
                     </div>
                 </div>
                 
@@ -412,16 +416,16 @@
                             <p>19:30h - Estudo de O Livro dos Espíritos</p>
                         </div>
                         <div class="horario-item">
-                            <p class="dia">Quarta-feira</p>
+                            <p class="dia">Terça-feira</p>
                             <p>19:30h - Palestras Doutrinárias</p>
                         </div>
                         <div class="horario-item">
-                            <p class="dia">Sexta-feira</p>
-                            <p>20:00h - Estudo de O Evangelho Segundo o Espiritismo</p>
+                            <p class="dia">Quarta-feira quinzenal</p>
+                            <p>19:30h - Estudo de O Evangelho Segundo o Espiritismo</p>
                         </div>
                         <div class="horario-item">
-                            <p class="dia">Domingo</p>
-                            <p>10:00h - Palestras e Reflexões</p>
+                            <p class="dia">Quinta-feira</p>
+                            <p>19:30h - Palestras e Reflexões</p>
                         </div>
                     </div>
                 </div>
@@ -441,7 +445,7 @@
                         <p><strong>Importante:</strong> O passe espírita não substitui qualquer tratamento médico convencional, sendo considerado um complemento espiritual ao tratamento físico.</p>
                     </div>
                     <div class="atividade-image">
-                        <img src="../images/placeholder-passe.webp" alt="Sala de passes" />
+                        <img src="../images/placeholder-passe.webp" alt="Sala de passes" loading="lazy" decoding="async" />
                     </div>
                 </div>
                 
@@ -450,19 +454,23 @@
                     <div class="horarios-grid">
                         <div class="horario-item">
                             <p class="dia">Segunda-feira</p>
-                            <p>20:30h (após a palestra)</p>
+                            <p class="descricao">Passe magnético</p>
+                            <p>20:00h (após a palestra)</p>
                         </div>
                         <div class="horario-item">
-                            <p class="dia">Quarta-feira</p>
-                            <p>20:30h (após a palestra)</p>
+                            <p class="dia">Terça-feira</p>
+                            <p class="descricao">Orientação espiritual</p>
+                            <p>20:00h (após a palestra)</p>
                         </div>
                         <div class="horario-item">
-                            <p class="dia">Sexta-feira</p>
-                            <p>21:00h (após o estudo)</p>
+                            <p class="dia">Quarta-feira quinzenal</p>
+                            <p class="descricao">Medicina espiritual</p>
+                            <p>20:00h (após a palestra)</p>
                         </div>
                         <div class="horario-item">
-                            <p class="dia">Domingo</p>
-                            <p>11:00h (após a palestra)</p>
+                            <p class="dia">Quinta-feira</p>
+                            <p class="descricao">Medicina espiritual</p>
+                            <p>20:00h (após a palestra)</p>
                         </div>
                     </div>
                 </div>
@@ -488,7 +496,7 @@
                         <p>As turmas são divididas por faixa etária para que o conteúdo seja adequado ao desenvolvimento de cada criança.</p>
                     </div>
                     <div class="atividade-image">
-                        <img src="../images/placeholder-evangelizacao.webp" alt="Evangelização infantil" />
+                        <img src="../images/placeholder-evangelizacao.webp" alt="Evangelização infantil" loading="lazy" decoding="async" />
                     </div>
                 </div>
                 
@@ -536,7 +544,7 @@
                         <p>Para participar dos grupos de estudo, é necessário fazer uma inscrição prévia, pois as turmas têm número limitado de participantes.</p>
                     </div>
                     <div class="atividade-image">
-                        <img src="../images/placeholder-estudo.webp" alt="Grupo de estudo da Doutrina Espírita" />
+                        <img src="../images/placeholder-estudo.webp" alt="Grupo de estudo da Doutrina Espírita" loading="lazy" decoding="async" />
                     </div>
                 </div>
                 
@@ -544,20 +552,10 @@
                     <h4><i class="fas fa-clock"></i> Horários dos Grupos de Estudo</h4>
                     <div class="horarios-grid">
                         <div class="horario-item">
-                            <p class="dia">Terça-feira</p>
-                            <p>19:00h às 20:30h</p>
+                            <p class="dia">Sexta-feira</p>
+                            <p>19:30h às 20:30h</p>
                             <p>ESDE - Nível 1 (Introdução ao Espiritismo)</p>
-                        </div>
-                        <div class="horario-item">
-                            <p class="dia">Quinta-feira</p>
-                            <p>19:00h às 20:30h</p>
-                            <p>ESDE - Nível 2 (Aprofundamento)</p>
-                        </div>
-                        <div class="horario-item">
-                            <p class="dia">Sábado</p>
-                            <p>16:00h às 17:30h</p>
-                            <p>Estudo de Mediunidade</p>
-                        </div>
+                        </div>                        
                     </div>
                 </div>
             </section>
@@ -643,6 +641,6 @@
     </footer>
 
     <!-- Scripts -->
-    <script src="../js/main.js"></script>
+    <script src="../js/main.js" defer></script>
 </body>
 </html>

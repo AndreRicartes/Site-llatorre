@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Como Ajudar - Centro Assistencial Espírita Raphael Latorre</title>
+    <meta name="description" content="Conheça as formas de ajudar o Centro Assistencial Espírita Raphael Latorre: doação via PIX, transferência, doação de itens e voluntariado.">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+    <style>
+        /* Estilos específicos da página */
+        .hero-ajudar { background: linear-gradient(135deg, var(--primary-color), #2e7d32); color: #fff; padding: 3rem 0; }
+        .hero-ajudar .btn-cta { background: #fff; color: #1b5e20; font-weight: 700; padding: .8rem 1.2rem; border-radius: 30px; display: inline-flex; align-items: center; gap: .5rem; }
+        .doacao-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 1.5rem; }
+        .doacao-card { background: #fff; border-radius: var(--border-radius); box-shadow: var(--box-shadow); padding: 1.25rem; }
+        .doacao-card h3 { display:flex; align-items:center; gap:.5rem; margin-top: 0; }
+        .dados-bloco { background: #fff; border: 1px solid var(--medium-bg); border-radius: var(--border-radius); padding: 1rem; }
+        .dados-item { display:flex; justify-content: space-between; align-items:center; gap: 1rem; background:#f8f9fa; border-radius: 8px; padding:.6rem .8rem; margin:.5rem 0; }
+        .btn-copy { border: 1px solid var(--primary-color); color: var(--primary-color); background:#fff; border-radius: 20px; padding:.35rem .7rem; font-size:.9rem; }
+        .btn-copy:hover { background: var(--primary-color); color:#fff; }
+        .callout { background:#fff3cd; border:1px solid #ffeeba; color:#856404; padding:1rem; border-radius: 8px; }
+        .secao { padding: 2.5rem 0; }
+        .lista-doacoes { columns: 2; column-gap: 2rem; }
+        .lista-doacoes li { break-inside: avoid; margin:.3rem 0; }
+        .selos { display:flex; gap: .75rem; flex-wrap: wrap; }
+        .selo { background:#fff; border:1px solid var(--medium-bg); border-radius: 8px; padding:.5rem .75rem; font-size:.9rem; }
+        @media (max-width: 992px){ .doacao-grid { grid-template-columns: 1fr 1fr; } }
+        @media (max-width: 600px){ .doacao-grid { grid-template-columns: 1fr; } .lista-doacoes { columns: 1; } }
+    </style>
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="../index.html">
+                    <h1>Centro Assistencial Espírita Raphael Latorre</h1>
+                </a>
+            </div>
+            <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Início</a></li>
+                    <li><a href="sobre.html">Sobre Nós</a></li>
+                    <li><a href="atividades.html">Atividades</a></li>
+                    <li><a href="doutrina.html">Doutrina Espírita</a></li>
+                    <li><a href="assistencia-social.html">Assistência Social</a></li>
+                    <li><a href="como-ajudar.html" class="menu-ajudar active"><i class="fas fa-hands-helping"></i> Como ajudar</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Breadcrumbs -->
+    <div class="container">
+        <div class="breadcrumbs">
+            <a href="../index.html">Início</a> > <span>Como Ajudar</span>
+        </div>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero-ajudar">
+        <div class="container">
+            <h2 class="section-title" style="color:#fff">Doe Agora</h2>
+            <p class="section-desc" style="color:#eaf5ea">Sua contribuição fortalece nossos projetos de assistência e a divulgação da Doutrina Espírita.</p>
+            <a href="#doacao-pix" class="btn-cta"><i class="fas fa-bolt"></i> Doar via PIX</a>
+        </div>
+    </section>
+
+    <!-- Formas de Doação -->
+    <section class="secao">
+        <div class="container">
+            <h3 class="section-title">Formas de Doação</h3>
+            <div class="doacao-grid">
+                <!-- PIX -->
+                <div id="doacao-pix" class="doacao-card">
+                    <h3><i class="fas fa-qrcode"></i> Doação via PIX</h3>
+                    <p>Use a chave PIX abaixo para fazer sua doação de forma rápida e segura.</p>
+                    <div class="dados-bloco">
+                        <div class="dados-item">
+                            <span><strong>Chave PIX (e-mail):</strong> <span id="pix-key">centro@exemplo.com.br</span></span>
+                            <button class="btn-copy" data-copy-target="#pix-key"><i class="fas fa-copy"></i> Copiar</button>
+                        </div>
+                        <div class="dados-item">
+                            <span><strong>Nome/Recebedor:</strong> Centro Assistencial Espírita Raphael Latorre</span>
+                        </div>
+                        <div class="dados-item">
+                            <span><strong>Descrição sugerida:</strong> Doação voluntária</span>
+                        </div>
+                    </div>
+                    <div style="display:flex; gap:1rem; align-items:center; margin-top: .75rem; flex-wrap: wrap;">
+                        <figure style="margin:0;">
+                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=centro@exemplo.com.br" alt="QR Code PIX" width="180" height="180" style="border-radius:12px; border:1px solid var(--medium-bg); background:#fff" loading="lazy" decoding="async">
+                            <figcaption style="font-size:.85rem; color:#667; text-align:center; margin-top:.25rem">Aponte a câmera do banco</figcaption>
+                        </figure>
+                        <button class="btn" id="btn-copy-pix-payload" type="button"><i class="fas fa-copy"></i> Copiar tudo</button>
+                    </div>
+                    <p class="mt-1" style="font-size:.9rem;color:#555">Dica: Você também pode cadastrar uma doação mensal no seu banco usando a mesma chave.</p>
+                </div>
+                
+                <!-- Cartão de Crédito -->
+                <div class="doacao-card">
+                    <h3><i class="fas fa-credit-card"></i> Cartão de Crédito</h3>
+                    <p>Em breve você poderá doar com cartão (débito/crédito) diretamente pelo site, com opção de doação recorrente.</p>
+                    <div class="callout"><i class="fas fa-info-circle"></i> Em desenvolvimento.</div>
+                </div>
+
+                <!-- Transferência/Boleto -->
+                <div class="doacao-card">
+                    <h3><i class="fas fa-university"></i> Transferência / Depósito</h3>
+                    <p>Faça uma transferência ou depósito em nossa conta:</p>
+                    <div class="dados-bloco">
+                        <div class="dados-item"><span id="bank-banco"><strong>Banco:</strong> Exemplo</span> <button class="btn-copy" data-copy-target="#bank-banco">Copiar</button></div>
+                        <div class="dados-item"><span id="bank-agencia"><strong>Agência:</strong> 0123</span> <button class="btn-copy" data-copy-target="#bank-agencia">Copiar</button></div>
+                        <div class="dados-item"><span id="bank-conta"><strong>Conta:</strong> 12345-6</span> <button class="btn-copy" data-copy-target="#bank-conta">Copiar</button></div>
+                        <div class="dados-item"><span id="bank-cnpj"><strong>CNPJ:</strong> 00.000.000/0000-00</span> <button class="btn-copy" data-copy-target="#bank-cnpj">Copiar</button></div>
+                    </div>
+                    <button class="btn-outline" id="btn-copy-bank-all" type="button" style="margin-top:.5rem">Copiar tudo</button>
+                    <p class="mt-1" style="font-size:.9rem;color:#555">Após doar, se desejar, <a href="contato.html">avise-nos</a> para emissão de recibo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Doação Recorrente -->
+    <section class="secao" style="background:#f7fbf7">
+        <div class="container">
+            <h3 class="section-title">Doação Recorrente</h3>
+            <p class="section-desc">Sustente nossos projetos de forma contínua. Em breve, ofereceremos uma forma simples para agendar doações mensais pelo site.</p>
+            <div class="selos">
+                <div class="selo"><i class="fas fa-shield-alt"></i> Segurança</div>
+                <div class="selo"><i class="fas fa-lock"></i> Privacidade</div>
+                <div class="selo"><i class="fas fa-sync-alt"></i> Recorrência</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Doação de Itens -->
+    <section class="secao">
+        <div class="container">
+            <h3 class="section-title">Doação de Itens</h3>
+            <p>Recebemos doações de itens para os projetos sociais. Veja algumas sugestões:</p>
+            <ul class="lista-doacoes">
+                <li>Alimentos não-perecíveis</li>
+                <li>Roupas e calçados (em bom estado)</li>
+                <li>Itens de higiene e limpeza</li>
+                <li>Utensílios domésticos</li>
+                <li>Fraldas e enxoval para bebês</li>
+                <li>Material escolar</li>
+            </ul>
+            <p class="mt-1">Confira detalhes dos projetos em <a href="assistencia-social.html">Assistência Social</a>.</p>
+        </div>
+    </section>
+
+    <!-- Voluntariado -->
+    <section class="secao" style="background:#f7fbf7">
+        <div class="container">
+            <h3 class="section-title">Seja Voluntário</h3>
+            <p>Doe seu tempo e habilidades. Há muitas frentes onde sua ajuda faz a diferença.</p>
+            <a href="contato.html" class="btn"><i class="fas fa-hands-helping"></i> Quero ser voluntário</a>
+        </div>
+    </section>
+
+    <!-- Transparência -->
+    <section class="secao">
+        <div class="container">
+            <h3 class="section-title">Transparência</h3>
+            <p>Prezamos pela transparência na aplicação dos recursos recebidos. Consulte nossa prestação de contas mensal na página de <a href="assistencia-social.html">Assistência Social</a> ou entre em <a href="contato.html">contato</a> para mais informações.</p>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Centro Assistencial Espírita Raphael Latorre</h3>
+                    <p>Promovendo o estudo, a prática e a difusão da Doutrina Espírita desde 1979.</p>
+                    <p><i class="fas fa-hand-holding-heart"></i> Todas as nossas atividades são gratuitas.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Endereço</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Rua Duque de Caxias, 75</p>
+                    <p>Jardim São João - Bebedouro, SP</p>
+                    <p><i class="fas fa-phone"></i> (17) 3342-7580</p>
+                    <p><i class="fas fa-envelope"></i> metacap@mdbrasil.com.br</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Horários de Funcionamento</h3>
+                    <p><strong>Segunda a Sexta:</strong> 19h às 21h</p>
+                    <p><strong>Sábado:</strong> 14h às 17h</p>
+                    <p><strong>Domingo:</strong> 9h às 11h</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Redes Sociais</h3>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Centro Assistencial Espírita Raphael Latorre. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Copiar texto
+        document.addEventListener('click', function(e){
+            const btn = e.target.closest('.btn-copy');
+            if(!btn) return;
+            const sel = btn.getAttribute('data-copy-target');
+            const el = document.querySelector(sel);
+            if(!el) return;
+            const text = el.textContent.trim();
+            navigator.clipboard.writeText(text).then(()=>{
+                const original = btn.innerHTML;
+                btn.innerHTML = '<i class="fas fa-check"></i> Copiado!';
+                setTimeout(()=>btn.innerHTML = original, 1500);
+            });
+        });
+
+        // Copiar tudo (PIX e dados bancários)
+        document.getElementById('btn-copy-pix-payload')?.addEventListener('click', () => {
+            const payload = `Chave PIX: ${document.getElementById('pix-key')?.textContent?.trim()}`;
+            navigator.clipboard.writeText(payload).then(() => {
+                const btn = document.getElementById('btn-copy-pix-payload');
+                const original = btn.innerHTML; btn.innerHTML = '<i class="fas fa-check"></i> Copiado!';
+                setTimeout(()=>btn.innerHTML = original, 1500);
+            });
+        });
+
+        document.getElementById('btn-copy-bank-all')?.addEventListener('click', () => {
+            const banco = document.getElementById('bank-banco')?.textContent?.trim();
+            const ag = document.getElementById('bank-agencia')?.textContent?.trim();
+            const conta = document.getElementById('bank-conta')?.textContent?.trim();
+            const cnpj = document.getElementById('bank-cnpj')?.textContent?.trim();
+            const text = [banco, ag, conta, cnpj].filter(Boolean).join('\n');
+            navigator.clipboard.writeText(text).then(() => {
+                const btn = document.getElementById('btn-copy-bank-all');
+                const original = btn.innerHTML; btn.innerHTML = '<i class="fas fa-check"></i> Copiado!';
+                setTimeout(()=>btn.innerHTML = original, 1500);
+            });
+        });
+    </script>
+</body>
+</html>
