@@ -8,14 +8,14 @@
     <link rel="stylesheet" href="../css/normalize.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/llatorre-main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
     <style>
         /* Estilos específicos da página */
-        .hero-ajudar { background: linear-gradient(135deg, var(--primary-color), #2e7d32); color: #fff; padding: 3rem 0; }
-        .hero-ajudar .btn-cta { background: #fff; color: #1b5e20; font-weight: 700; padding: .8rem 1.2rem; border-radius: 30px; display: inline-flex; align-items: center; gap: .5rem; }
+    .hero-ajudar { background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); color: #fff; padding: 3rem 0; }
+    .hero-ajudar .btn-cta { background: #fff; color: var(--secondary-dark); font-weight: 700; padding: .8rem 1.2rem; border-radius: 30px; display: inline-flex; align-items: center; gap: .5rem; }
         .doacao-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 1.5rem; }
         .doacao-card { background: #fff; border-radius: var(--border-radius); box-shadow: var(--box-shadow); padding: 1.25rem; }
         .doacao-card h3 { display:flex; align-items:center; gap:.5rem; margin-top: 0; }
@@ -34,8 +34,8 @@
     </style>
 </head>
 <body>
-    <!-- Cabeçalho -->
-    <header>
+    <!-- Cabeçalho Moderno -->
+    <header class="header-modern">
         <div class="container">
             <div class="logo">
                 <a href="../index.html" aria-label="Início">
@@ -43,24 +43,40 @@
                     <span class="sr-only">Centro Assistencial Espírita Raphael Latorre</span>
                 </a>
             </div>
-            <div class="menu-toggle"><i class="fas fa-bars"></i></div>
-            <nav>
-                <ul>
-                    <li><a href="../index.html">Início</a></li>
-                    <li><a href="sobre.html">Sobre Nós</a></li>
-                    <li><a href="atividades.html">Atividades</a></li>
-                    <li><a href="doutrina.html">Doutrina Espírita</a></li>
-                    <li><a href="assistencia-social.html">Assistência Social</a></li>
-                    <li><a href="como-ajudar.html" class="menu-ajudar active"><i class="fas fa-hands-helping"></i> Como ajudar</a></li>
-                    <li><a href="contato.html">Contato</a></li>
+            
+            <nav class="nav-modern">
+                <ul class="nav-links">
+                    <li><a href="../index.html" class="nav-link">Início</a></li>
+                    <li><a href="sobre.html" class="nav-link">Sobre Nós</a></li>
+                    <li><a href="atividades.html" class="nav-link">Atividades</a></li>
+                    <li><a href="doutrina.html" class="nav-link">Doutrina Espírita</a></li>
+                    <li><a href="assistencia-social.html" class="nav-link">Assistência Social</a></li>
+                    <li><a href="como-ajudar.html" class="nav-link cta-link active">
+                        <i class="fas fa-hands-helping"></i> Como ajudar
+                    </a></li>
+                    <li><a href="contato.html" class="nav-link">Contato</a></li>
                 </ul>
-                <div class="nav-accessibility">
-                    <div class="accessibility-toolbar" aria-label="Acessibilidade">
-                        <button type="button" id="btn-font-inc" title="Aumentar fonte"><i class="fas fa-plus"></i></button>
-                        <button type="button" id="btn-font-dec" title="Diminuir fonte"><i class="fas fa-minus"></i></button>
-                    </div>
-                </div>
             </nav>
+            
+            <div class="header-actions">
+                <div class="accessibility-controls">
+                    <button type="button" id="font-increase" class="accessibility-btn" title="Aumentar fonte">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                    <button type="button" id="font-decrease" class="accessibility-btn" title="Diminuir fonte">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                </div>
+                <button class="accessibility-btn" id="theme-toggle" title="Alternar tema" aria-label="Alternar tema">
+                    <i class="fas fa-moon"></i>
+                </button>
+                
+                <button class="menu-toggle" aria-label="Menu" aria-expanded="false">
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                </button>
+            </div>
         </div>
     </header>
 
@@ -74,8 +90,8 @@
     <!-- Hero -->
     <section class="hero-ajudar">
         <div class="container">
-            <h2 class="section-title" style="color:#fff">Doe Agora</h2>
-            <p class="section-desc" style="color:#eaf5ea">Sua contribuição fortalece nossos projetos de assistência e a divulgação da Doutrina Espírita.</p>
+            <h2 class="section-title">Doe Agora</h2>
+            <p class="section-desc">Sua contribuição fortalece nossos projetos de assistência e a divulgação da Doutrina Espírita.</p>
             <a href="#doacao-pix" class="btn-cta"><i class="fas fa-bolt"></i> Doar via PIX</a>
         </div>
     </section>
@@ -101,14 +117,14 @@
                             <span><strong>Descrição sugerida:</strong> Doação voluntária</span>
                         </div>
                     </div>
-                    <div style="display:flex; gap:1rem; align-items:center; margin-top: .75rem; flex-wrap: wrap;">
-                        <figure style="margin:0;">
-                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=centro@exemplo.com.br" alt="QR Code PIX" width="180" height="180" style="border-radius:12px; border:1px solid var(--medium-bg); background:#fff" loading="lazy" decoding="async">
-                            <figcaption style="font-size:.85rem; color:#667; text-align:center; margin-top:.25rem">Aponte a câmera do banco</figcaption>
+                    <div class="pix-container">
+                        <figure class="pix-qr-figure">
+                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=centro@exemplo.com.br" alt="QR Code PIX" width="180" height="180" class="pix-qr-code" loading="lazy" decoding="async">
+                            <figcaption class="pix-qr-caption">Aponte a câmera do banco</figcaption>
                         </figure>
                         <button class="btn" id="btn-copy-pix-payload" type="button"><i class="fas fa-copy"></i> Copiar tudo</button>
                     </div>
-                    <p class="mt-1" style="font-size:.9rem;color:#555">Dica: Você também pode cadastrar uma doação mensal no seu banco usando a mesma chave.</p>
+                    <p class="donation-tip">Dica: Você também pode cadastrar uma doação mensal no seu banco usando a mesma chave.</p>
                 </div>
                 
                 <!-- Cartão de Crédito -->
@@ -128,15 +144,15 @@
                         <div class="dados-item"><span id="bank-conta"><strong>Conta:</strong> 12345-6</span> <button class="btn-copy" data-copy-target="#bank-conta">Copiar</button></div>
                         <div class="dados-item"><span id="bank-cnpj"><strong>CNPJ:</strong> 00.000.000/0000-00</span> <button class="btn-copy" data-copy-target="#bank-cnpj">Copiar</button></div>
                     </div>
-                    <button class="btn-outline" id="btn-copy-bank-all" type="button" style="margin-top:.5rem">Copiar tudo</button>
-                    <p class="mt-1" style="font-size:.9rem;color:#555">Após doar, se desejar, <a href="contato.html">avise-nos</a> para emissão de recibo.</p>
+                    <button class="btn-outline copy-bank-btn" id="btn-copy-bank-all" type="button">Copiar tudo</button>
+                    <p class="donation-receipt-info">Após doar, se desejar, <a href="contato.html">avise-nos</a> para emissão de recibo.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Doação Recorrente -->
-    <section class="secao" style="background:#f7fbf7">
+    <section class="secao section-light-bg">
         <div class="container">
             <h3 class="section-title">Doação Recorrente</h3>
             <p class="section-desc">Sustente nossos projetos de forma contínua. Em breve, ofereceremos uma forma simples para agendar doações mensais pelo site.</p>
@@ -166,7 +182,7 @@
     </section>
 
     <!-- Voluntariado -->
-    <section class="secao" style="background:#f7fbf7">
+    <section class="secao section-light-bg">
         <div class="container">
             <h3 class="section-title">Seja Voluntário</h3>
             <p>Doe seu tempo e habilidades. Há muitas frentes onde sua ajuda faz a diferença.</p>
@@ -188,7 +204,7 @@
             <div class="footer-grid">
                 <div class="footer-col">
                     <h3>Centro Assistencial Espírita Raphael Latorre</h3>
-                    <p>Promovendo o estudo, a prática e a difusão da Doutrina Espírita desde 1979.</p>
+                    <p>Promovendo o estudo, a prática e a difusão da Doutrina Espírita desde 1978.</p>
                     <p><i class="fas fa-hand-holding-heart"></i> Todas as nossas atividades são gratuitas.</p>
                 </div>
                 <div class="footer-col">

@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="../css/normalize.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/llatorre-main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <!-- Favicon -->
     <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
@@ -134,8 +134,8 @@
     </style>
 </head>
 <body>
-    <!-- Cabeçalho -->
-    <header>
+    <!-- Cabeçalho Moderno -->
+    <header class="header-modern">
         <div class="container">
             <div class="logo">
                 <a href="../index.html" aria-label="Início">
@@ -143,26 +143,40 @@
                     <span class="sr-only">Centro Assistencial Espírita Raphael Latorre</span>
                 </a>
             </div>
-            <div class="menu-toggle">
-                <i class="fas fa-bars"></i>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="../index.html">Início</a></li>
-                    <li><a href="sobre.html">Sobre Nós</a></li>
-                    <li><a href="atividades.html">Atividades</a></li>
-                    <li><a href="doutrina.html">Doutrina Espírita</a></li>
-                    <li><a href="assistencia-social.html">Assistência Social</a></li>
-                    <li><a href="como-ajudar.html" class="menu-ajudar"><i class="fas fa-hands-helping"></i> Como ajudar</a></li>
-                    <li><a href="contato.html" class="active">Contato</a></li>
+            
+            <nav class="nav-modern">
+                <ul class="nav-links">
+                    <li><a href="../index.html" class="nav-link">Início</a></li>
+                    <li><a href="sobre.html" class="nav-link">Sobre Nós</a></li>
+                    <li><a href="atividades.html" class="nav-link">Atividades</a></li>
+                    <li><a href="doutrina.html" class="nav-link">Doutrina Espírita</a></li>
+                    <li><a href="assistencia-social.html" class="nav-link">Assistência Social</a></li>
+                    <li><a href="como-ajudar.html" class="nav-link cta-link">
+                        <i class="fas fa-hands-helping"></i> Como ajudar
+                    </a></li>
+                    <li><a href="contato.html" class="nav-link active">Contato</a></li>
                 </ul>
-                <div class="nav-accessibility">
-                    <div class="accessibility-toolbar" aria-label="Acessibilidade">
-                        <button type="button" id="btn-font-inc" title="Aumentar fonte"><i class="fas fa-plus"></i></button>
-                        <button type="button" id="btn-font-dec" title="Diminuir fonte"><i class="fas fa-minus"></i></button>
-                    </div>
-                </div>
             </nav>
+            
+            <div class="header-actions">
+                <div class="accessibility-controls">
+                    <button type="button" id="font-increase" class="accessibility-btn" title="Aumentar fonte">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                    <button type="button" id="font-decrease" class="accessibility-btn" title="Diminuir fonte">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                </div>
+                <button class="accessibility-btn" id="theme-toggle" title="Alternar tema" aria-label="Alternar tema">
+                    <i class="fas fa-moon"></i>
+                </button>
+                
+                <button class="menu-toggle" aria-label="Menu" aria-expanded="false">
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                </button>
+            </div>
         </div>
     </header>
 
@@ -332,7 +346,7 @@
             <div class="footer-grid">
                 <div class="footer-col">
                     <h3>Centro Assistencial Espírita Raphael Latorre</h3>
-                    <p>Promovendo o estudo, a prática e a difusão da Doutrina Espírita desde 1979.</p>
+                    <p>Promovendo o estudo, a prática e a difusão da Doutrina Espírita desde 1978.</p>
                     <p><i class="fas fa-hand-holding-heart"></i> Todas as nossas atividades são gratuitas.</p>
                 </div>
                 <div class="footer-col">
@@ -370,6 +384,6 @@
     </footer>
 
     <!-- Scripts -->
-    <script src="../js/main.js" defer></script>
+    <script src="../js/modern-interactions.js" defer></script>
 </body>
 </html>

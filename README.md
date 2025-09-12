@@ -12,14 +12,14 @@ O site foi desenvolvido para apresentar as atividades, a doutrina e os trabalhos
 llatorre/
 ├── css/                  # Arquivos de estilo CSS
 │   ├── normalize.css     # Reset CSS para consistência entre navegadores
-│   ├── styles.css        # Estilos principais do site
-│   └── responsive.css    # Media queries e ajustes responsivos
+│   └── llatorre-main.css # Estilos consolidados do site (tema, componentes, responsivo)
 ├── images/               # Imagens e recursos visuais
 │   ├── banner-bg.webp    # Imagem do banner principal
 │   ├── placeholder-*.webp # Placeholders para diferentes seções
 │   └── favicon.ico       # Ícone do site
 ├── js/                   # Arquivos JavaScript
-│   └── main.js           # Funcionalidades interativas
+│   ├── modern-interactions.js # Comportamentos e interações (carrossel acessível, navegação, etc.)
+│   └── legacy/                 # (opcional) Arquivos legados, não utilizados em produção
 ├── pages/                # Páginas do site além da home
 │   ├── sobre.html        # Página sobre o centro
 │   ├── doutrina.html     # Página sobre doutrina espírita
@@ -33,7 +33,7 @@ llatorre/
 
 - HTML5
 - CSS3
-- JavaScript
+- JavaScript (ES6+)
 - WebP para imagens (otimização de performance)
 - FontAwesome para ícones
 - Design responsivo para todos os dispositivos
@@ -76,6 +76,21 @@ Para atualizar o conteúdo do site, você pode editar os arquivos HTML correspon
 - Para eventos e notícias: modifique a seção apropriada no `index.html`
 - Para alterar informações de atividades: edite `pages/atividades.html`
 - Para atualizar projetos sociais: edite `pages/assistencia-social.html`
+
+### Estilos e scripts canônicos
+
+- Use apenas `css/llatorre-main.css` para estilos. Evite criar novos arquivos paralelos.
+- Use apenas `js/modern-interactions.js` para comportamentos globais.
+
+### Arquivos legados
+
+O repositório pode conter arquivos de versões anteriores que não são usados pelas páginas atuais:
+
+- `css/styles.css`
+- `js/main.js`
+- `js/main-modern.js`
+
+Se necessário para referência histórica, mova-os para `js/legacy/` e `css/legacy/`. Em produção, garanta que somente `llatorre-main.css` e `modern-interactions.js` estejam referenciados.
 
 ## Contato
 

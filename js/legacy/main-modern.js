@@ -1,0 +1,1 @@
+// Arquivo legado (não utilizado). Consulte js/modern-interactions.js para a versão atual.

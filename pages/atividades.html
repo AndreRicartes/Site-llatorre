@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="../css/normalize.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/llatorre-main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <!-- Favicon -->
     <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
@@ -137,7 +137,7 @@
         
         .ame-icon {
             font-size: 2.5rem;
-            color: #2e7d32;
+            color: var(--secondary-color);
             margin-right: 1.5rem;
         }
         
@@ -148,7 +148,7 @@
         .ame-info h3 {
             margin-top: 0;
             margin-bottom: 0.5rem;
-            color: #2e7d32;
+            color: var(--secondary-color);
         }
         
         .ame-info p {
@@ -157,7 +157,7 @@
         
         .btn-ame {
             display: inline-block;
-            background-color: #2e7d32;
+            background-color: var(--secondary-color);
             color: white;
             padding: 0.5rem 1.2rem;
             border-radius: 50px;
@@ -166,7 +166,7 @@
         }
         
         .btn-ame:hover {
-            background-color: #1b5e20;
+            background-color: var(--secondary-dark);
             color: white;
             transform: translateY(-2px);
         }
@@ -271,8 +271,8 @@
     </style>
 </head>
 <body>
-    <!-- Cabeçalho -->
-    <header>
+    <!-- Cabeçalho Moderno -->
+    <header class="header-modern">
         <div class="container">
             <div class="logo">
                 <a href="../index.html" aria-label="Início">
@@ -280,26 +280,40 @@
                     <span class="sr-only">Centro Assistencial Espírita Raphael Latorre</span>
                 </a>
             </div>
-            <div class="menu-toggle">
-                <i class="fas fa-bars"></i>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="../index.html">Início</a></li>
-                    <li><a href="sobre.html">Sobre Nós</a></li>
-                    <li><a href="atividades.html" class="active">Atividades</a></li>
-                    <li><a href="doutrina.html">Doutrina Espírita</a></li>
-                    <li><a href="assistencia-social.html">Assistência Social</a></li>
-                    <li><a href="como-ajudar.html" class="menu-ajudar"><i class="fas fa-hands-helping"></i> Como ajudar</a></li>
-                    <li><a href="contato.html">Contato</a></li>
+            
+            <nav class="nav-modern">
+                <ul class="nav-links">
+                    <li><a href="../index.html" class="nav-link">Início</a></li>
+                    <li><a href="sobre.html" class="nav-link">Sobre Nós</a></li>
+                    <li><a href="atividades.html" class="nav-link active">Atividades</a></li>
+                    <li><a href="doutrina.html" class="nav-link">Doutrina Espírita</a></li>
+                    <li><a href="assistencia-social.html" class="nav-link">Assistência Social</a></li>
+                    <li><a href="como-ajudar.html" class="nav-link cta-link">
+                        <i class="fas fa-hands-helping"></i> Como ajudar
+                    </a></li>
+                    <li><a href="contato.html" class="nav-link">Contato</a></li>
                 </ul>
-                <div class="nav-accessibility">
-                    <div class="accessibility-toolbar" aria-label="Acessibilidade">
-                        <button type="button" id="btn-font-inc" title="Aumentar fonte"><i class="fas fa-plus"></i></button>
-                        <button type="button" id="btn-font-dec" title="Diminuir fonte"><i class="fas fa-minus"></i></button>
-                    </div>
-                </div>
             </nav>
+            
+            <div class="header-actions">
+                <div class="accessibility-controls">
+                    <button type="button" id="font-increase" class="accessibility-btn" title="Aumentar fonte">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                    <button type="button" id="font-decrease" class="accessibility-btn" title="Diminuir fonte">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                </div>
+                <button class="accessibility-btn" id="theme-toggle" title="Alternar tema" aria-label="Alternar tema">
+                    <i class="fas fa-moon"></i>
+                </button>
+                
+                <button class="menu-toggle" aria-label="Menu" aria-expanded="false">
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                </button>
+            </div>
         </div>
     </header>
 
@@ -438,6 +452,147 @@
                 </div>
             </section>
             
+            <!-- Atendimento Fraterno -->
+            <section id="atendimento-fraterno" class="atividade-card">
+                <div class="atividade-header">
+                    <h3><i class="fas fa-hand-holding-heart"></i> Atendimento Fraterno</h3>
+                </div>
+                <div class="atividade-content">
+                    <div class="atividade-desc">
+                        <h4>Conceito</h4>
+                        <p>O Atendimento Fraterno pelo Diálogo consiste em receber fraternalmente aquele que busca o Centro Espírita, dando-lhe a oportunidade de expor, livremente e em caráter privativo e sigiloso, suas dificuldades e necessidades.</p>
+
+                        <h4>Finalidade</h4>
+                        <p>Acolher, de forma fraterna e solidária, dentro dos princípios do Evangelho à luz da Doutrina Espírita, ouvindo e orientando com respeito, atenção e humildade aquele que:</p>
+                        <ul>
+                            <li>Deseja fazer uma visita e/ou integrar-se às atividades do Centro Espírita;</li>
+                            <li>Deseja receber ajuda material e/ou espiritual;</li>
+                            <li>Deseja informação ou estudo;</li>
+                            <li>Necessita de assistência, orientação doutrinária ou amparo;</li>
+                            <li>Tem interesse em conhecer a Doutrina Espírita e o trabalho espírita.</li>
+                        </ul>
+
+                        <h4>Diálogo fraterno</h4>
+                        <p>Receber o visitante, ouvindo-o e identificando-lhe os problemas, carências ou aspirações, orientando-o segundo os princípios evangélicos à luz da Doutrina Espírita.</p>
+                        <p>Reerguer a autoestima e a esperança, esclarecendo-o de que, com apoio espiritual, somente ele poderá mudar o quadro de sua preocupação, através da própria posição mental e renovação íntima.</p>
+                        <p>Orientar, sempre, para a necessidade da realização do Evangelho no Lar, estimulando-o para o desenvolvimento do hábito da leitura saudável e para o estudo, sugerindo os livros adequados da Codificação Espírita e obras complementares.</p>
+                    </div>
+                    <div class="atividade-image">
+                        <img src="../images/placeholder-palestra.webp" alt="Atendimento fraterno" loading="lazy" decoding="async" />
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Medicina Espiritual -->
+            <section id="medicina-espiritual" class="atividade-card">
+                <div class="atividade-header">
+                    <h3><i class="fas fa-notes-medical"></i> Medicina Espiritual</h3>
+                </div>
+                <div class="atividade-content">
+                    <div class="atividade-desc">
+                        <h4>Mensagem aos Médiuns</h4>
+                        <p>Venho exortar a quantos se entregaram na Terra à missão da mediunidade, afirmando-lhes que, ainda em vossa época, esse posto é o da renúncia, da abnegação e dos sacrifícios espontâneos. Faz-se mister que todos os Espíritos, vindos ao planeta com a incumbência de operar nos labores mediúnicos, compreendam a extensão dos seus sagrados deveres para a obtenção do êxito no seu elevado e nobilitante trabalho.</p>
+                        <p><strong>Médiuns!</strong> A vossa tarefa deve ser encarada como um santo sacerdócio; a vossa responsabilidade é grande, pela fração de certeza que vos foi outorgada, e muito se pedirá aos que muito receberam. Faz-se, portanto, necessário que busqueis cumprir, com severidade e nobreza, as vossas obrigações, mantendo a vossa consciência serena, se não quiserdes tombar na luta, o que seria crestar com as vossas próprias mãos as flores da esperança numa felicidade superior, que ainda não conseguimos alcançar! Pesai as consequências dos vossos mínimos atos, porquanto é preciso renuncieis à própria personalidade, aos desejos e aspirações de ordem material, para que a vossa felicidade se concretize.</p>
+
+                        <h5>Vigiar para Vencer</h5>
+                        <p>Felizes daqueles que, saturados de boa-vontade e de fé, laboram devotadamente para que se espalhe no mundo a Boa-Nova da imortalidade. Compreendendo a necessidade da renúncia e da dedicação, não repararam nas pedras e nos acúleos do caminho, encontrando nos recantos do seu mundo interior os tesouros do auxílio divino. Acendem nos corações a luz da crença e das esperanças, e se, na maioria das vezes, seguem pela estrada incompreendidos e desprezados, o Senhor enche com a luz do seu amor os vácuos abertos pelo mundo em suas almas, vácuos feitos de solidão e desamparo.</p>
+                        <p>Infelizmente, a Terra ainda é o orbe da sombra e da lágrima, e toda tentativa que se faz pela difusão da verdade, todo trabalho para que a luz se esparja fartamente encontram a resistência e a reação das trevas que vos cercam. Daí nascem as tentações que vos assediam, e partem as ciladas em que muitos sucumbem, à falta da oração e da vigilância apregoadas no Evangelho.</p>
+
+                        <h5>Quem são os Médiuns na sua Generalidade</h5>
+                        <p>Os médiuns, em sua generalidade, não são missionários na acepção comum do termo; são almas que fracassaram desastradamente, que contrariaram, sobremaneira, o curso das leis divinas, e que resgatam, sob o peso de severos compromissos e ilimitadas responsabilidades, o passado obscuro e delituoso. O seu pretérito, muitas vezes, se encontra enodoado de graves deslizes e de erros clamorosos. Quase sempre, são Espíritos que tombaram dos cumes sociais, pelos abusos do poder, da autoridade, da fortuna e da inteligência, e que regressam ao orbe terráqueo para se sacrificarem em favor do grande número de almas que desviaram das sendas luminosas da fé, da caridade e da virtude. São almas arrependidas que procuram arrebanhar todas as felicidades que perderam, reorganizando, com sacrifícios, tudo quanto esfacelaram nos seus instantes de criminosas arbitrariedades e de condenável insânia.</p>
+
+                        <h5>As Oportunidades do Sofrimento</h5>
+                        <p>As existências dos médiuns, em geral, têm constituído romances dolorosos, vidas de amargurosas dificuldades, em razão da necessidade do sofrimento reparador; suas estradas, no mundo, estão repletas de provações, de continências e desventuras. Faz-se, porém, necessário que reconheçam o ascetismo e o padecer, como belas oportunidades que a magnanimidade da Providência lhes oferece, para que restabeleçam a saúde dos seus organismos espirituais, combalidos nos excessos de vidas mal orientadas, nas quais se embriagaram à saciedade com os vinhos sinistros do vício e do despotismo.</p>
+                        <p>Humilhados e incompreendidos, faz-se mister que reconheçam todos os benefícios emanantes das dores que purificam e regeneram, trabalhando para que representem, de fato, o exemplo da abnegação e do desinteresse, reconquistando a felicidade perdida.</p>
+
+                        <h5>Necessidade da Exemplificação</h5>
+                        <p>Todos os médiuns, para realizarem dignamente a tarefa a que foram chamados a desempenhar no planeta, necessitam identificar-se com o ideal de Jesus, buscando para alicerce de suas vidas o ensinamento evangélico, em sua divina pureza; a eficácia de sua ação depende do seu desprendimento e da sua caridade, necessitando compreender, em toda a amplitude, a verdade contida na afirmação do Mestre: “Dai de graça o que de graça receberdes.”</p>
+                        <p>Devendo evitar, na sociedade, os ambientes nocivos e viciosos, podem perfeitamente cumprir seus deveres em qualquer posição social a que forem conduzidos, sendo uma de suas precípuas obrigações melhorar o seu meio ambiente com o exemplo mais puro de verdadeira assimilação da doutrina de que são pregoeiros.</p>
+                        <p>Não deverão encarar a mediunidade como um dom ou como um privilégio, sim como bendita possibilidade de reparar seus erros de antanho, submetendo-se, dessa forma, com humildade, aos alvitres e conselhos da Verdade, cujo ensinamento está, frequentemente, numa inteligência iluminada que se nos dirige, mas que se encontra igualmente numa provação que, humilhando, esclarece ao mesmo tempo o espírito, enchendo-lhe o íntimo com as claridades da experiência.</p>
+
+                        <h5>O Problema das Mistificações</h5>
+                        <p>O problema das mistificações não deve impressionar os que se entregam às tarefas mediúnicas, os quais devem trazer o Evangelho de Jesus no coração. Estais muito longe ainda de solucionar as incógnitas da ciência espírita, e se aos médiuns, às vezes, torna-se preciso semelhante prova, muitas vezes os acontecimentos dessa natureza são também provocados por muitos daqueles que se socorrem das suas possibilidades. Tende o coração sempre puro. É com a fé, com a pureza de intenções, com o sentimento evangélico, que se podem vencer as arremetidas dos que se comprazem nas trevas persistentes. É preciso esquecer os investigadores cheios do espírito de mercantilismo!…</p>
+                        <p>Permanecerei na fé, na esperança e na caridade em Jesus Cristo, jamais olvidando que só pela exemplificação podereis vencer.</p>
+
+                        <h5>Apelo aos Médiuns</h5>
+                        <p>Médiuns, ponderai as vossas obrigações sagradas! preferi viver na maior das provações a cairdes na estrada larga das tentações que vos atacam, insistentemente, em vossos pontos vulneráveis. Recordai-vos de que é preciso vencer, se não quiserdes soterrar a vossa alma na escuridão dos séculos de dor expiatória. Aquele que se apresenta no Espaço como vencedor de si mesmo é maior que qualquer dos generais terrenos, exímio na estratégia e tino militares. O homem que se vence faz o seu corpo espiritual apto a ingressar em outras esferas e, enquanto não colaborardes pela obtenção desse organismo etéreo, através da virtude e do dever cumprido, não saireis do círculo doloroso das reencarnações.</p>
+
+                        <p class="mt-1"><small>Do livro: <em>Emmanuel</em> — Pelo Espírito: Emmanuel — Psicografia: Francisco Cândido Xavier — FEB Editora</small></p>
+                    </div>
+                    <div class="atividade-image">
+                        <img src="../images/placeholder-gestantes.webp" alt="Medicina espiritual" loading="lazy" decoding="async" />
+                    </div>
+                </div>
+            </section>
+
+            <!-- Orientação Espiritual -->
+            <section id="orientacao" class="atividade-card">
+                <div class="atividade-header">
+                    <h3><i class="fas fa-hands-praying"></i> Orientação Espiritual</h3>
+                </div>
+                
+                <div class="atividade-content">
+                    <div class="atividade-desc">
+                        <blockquote>
+                            Vinde a mim, todos vós que estais aflitos e sobrecarregados, que eu vos aliviarei. Tomai sobre vós o meu jugo e aprendei comigo que sou brando e humilde de coração e achareis repouso para vossas almas, pois é suave o meu jugo e leve o meu fardo (Mateus, 11:28 a 30)
+                        </blockquote>
+
+                        <p>O atendimento espiritual, segundo a orientação espírita, tem como fundamento principal este ensinamento de Jesus:</p>
+
+                        <blockquote>
+                            Pedi e vos será dado, buscai e achareis; batei e vos será aberto; pois todo aquele que pede recebe; o que busca acha e ao que bate se lhe abrirá. Quem dentre vós dará uma pedra a seu filho, se este lhe pedir pão? Ou lhe dará uma cobra, se este lhe pedir peixe? Ora, se vós que sois maus sabeis dar boas dádivas aos vossos filhos, quanto mais o vosso Pai que está nos céus dará coisas boas aos que lhe pedem! (Mateus, 7:7 a 11).
+                        </blockquote>
+
+                        <p>Ao analisar essa passagem evangélica, Kardec apresenta a seguinte argumentação:</p>
+
+                        <p>Do ponto de vista terreno, a máxima: <em>Buscai e achareis</em> é semelhante a esta outra: <em>Ajuda-te, que o Céu te ajudará</em>. É o princípio da Lei do Trabalho e, por conseguinte, da Lei do Progresso, pois o progresso é filho do trabalho, visto que o trabalho põe em ação as forças da inteligência.</p>
+
+                        <p>Kardec enfatiza também que:</p>
+
+                        <blockquote>
+                            Se Deus houvesse dispensado o homem do trabalho do corpo, seus membros se teriam atrofiado; se o tivesse dispensado do trabalho da inteligência, seu espírito teria permanecido na infância, no estado de instinto animal. É por isso que Ele faz do trabalho uma necessidade e lhe disse: Busca e acharás; trabalha e produzirás. Dessa maneira serás filho das tuas obras, terás o mérito delas e serás recompensado de acordo com o que hajas feito.
+                        </blockquote>
+
+                        <p>Compreende-se, então, porque o participante deve cooperar e fazer a parte que lhe cabe sempre que o auxílio lhe for solicitado. Jamais se deve entregar aos jogos das circunstâncias, revoltar-se ou sucumbir às provações, condições que lhe agravam o sofrimento. É preciso não confundir submissão com aceitar as provas da vida com resignação. A primeira produz alienação, quando não conduz ao desespero. A segunda é sempre ativa por se encontrar alicerçada na fé.</p>
+
+                        <p>Há inúmeros fatores envolvidos no processo do atendimento espiritual, os quais podem ser assim considerados, sem nenhuma pretensão de ter esgotado o assunto.</p>
+
+                        <p>Os Espíritos benfeitores jamais estimulam a inércia, a preguiça ou a indolência em seus tutelados.</p>
+
+                        <blockquote>
+                            [...] Não, os Espíritos não vêm dispensar o homem da Lei do Trabalho, mas mostrar-lhe a meta que lhe cumpre atingir e o caminho que a ela conduz, dizendo-lhe: Anda e chegarás. Encontrarás pedras sob os teus passos; olha e tira-as tu mesmo. Nós te daremos a força necessária, se a quiseres empregar.
+                        </blockquote>
+
+                        <h4>O Atendimento Espiritual envolve compromisso moral</h4>
+                        <p>Do ponto de vista moral, as palavras de Jesus: “buscai e achareis”; “batei à nossa porta: ela se abrirá para vós”, significam:</p>
+
+                        <blockquote>
+                            [...] Pedi a luz que deve iluminar o vosso caminho e ela vos será dada; pedi forças para resistirdes ao mal e a tereis; pedi a assistência dos Espíritos bons e eles virão acompanhar-vos e vos servirão de guia, tal como o anjo de Tobias; pedi bons conselhos e eles jamais vos serão recusados; batei à nossa porta: ela se abrirá para vós; mas pedi sinceramente, com fé, fervor e confiança; apresentai-vos com humildade e não com arrogância, sem o que sereis abandonados às vossas próprias forças e caireis, como justo castigo do vosso orgulho.
+                        </blockquote>
+
+                        <h4>O auxílio espiritual não comporta ostentação</h4>
+                        <blockquote>
+                            Guardai-vos de praticar a vossa justiça diante dos homens para serdes vistos por eles. Do contrário, não recebereis recompensa junto ao vosso Pai que está nos céus. Por isso, quando derdes esmola, não te ponhas a trombetear em público, como fazem os hipócritas nas sinagogas e nas ruas, com o propósito de ser glorificados pelos homens. Em verdade vos digo: Já receberam sua recompensa. Tu, porém, quando deres esmola, não saiba a tua mão esquerda o que faz tua direita, para que tua esmola fique em segredo; e o teu Pai, que vê, te recompensará (Mateus, 6:1 a 4).
+                        </blockquote>
+
+                        <p>Em complemento à citação evangélica, Kardec analisa que:</p>
+
+                        <p>Há grande mérito em fazer o bem sem ostentação; ocultar a mão que dá é ainda mais meritório; constitui sinal incontestável de grande superioridade moral, porque, para encarar as coisas do mais alto que faz o vulgo, é preciso fazer abstração da vida presente e se identificar com a vida futura; numa palavra, é necessário colocar-se acima da Humanidade, para renunciar à satisfação que resulta do testemunho dos homens e esperar a aprovação de Deus. Aquele que prefere o sufrágio dos homens ao sufrágio divino prova que tem mais fé nos homens do que em Deus e que dá mais valor à vida presente do que à vida futura ou mesmo que não crê na vida futura. Se diz o contrário, age como se não acreditasse no que diz.</p>
+
+                        <p>Quantos há que só dão na expectativa de que o que recebe irá bradar por toda a parte o benefício recebido! que, publicamente, dariam grandes somas e que, às ocultas, não dariam uma única moeda! Foi por isso que Jesus declarou: “Os que fazem o bem com ostentação já receberam a sua recompensa” [...]</p>
+
+                        <p>Qual será, então, a recompensa daquele que faz pesar os seus benefícios sobre aquele que os recebe, que lhe impõe, de certo modo, testemunhos de reconhecimento, que lhe faz sentir sua posição, exaltando o preço dos sacrifícios a que se impõe para beneficiá-lo? [...] O bem que praticou não resulta em nenhum proveito para ele, pois que o deplora, e todo benefício deplorado é moeda falsa e sem valor.</p>
+
+                        <p><small>Fonte: <a href="https://www.febnet.org.br/portal/wp-content/uploads/2019/07/Orienta%C3%A7%C3%A3o-para-o-Atendimento-Espiritual-no-Centro-Esp%C3%ADrita.pdf" target="_blank" rel="noopener noreferrer">FEB – Orientação para o Atendimento Espiritual no Centro Espírita (PDF)</a></small></p>
+
+                        <p class="mt-1"><em>Nota:</em> No nosso Centro, a orientação espiritual costuma ocorrer às terças, às 20h (após a palestra).</p>
+                    </div>
+                    <div class="atividade-image">
+                        <img src="../images/placeholder-palestra.webp" alt="Orientação espiritual" loading="lazy" decoding="async" />
+                    </div>
+                </div>
+            </section>
+
             <!-- Passes -->
             <section id="passes" class="atividade-card">
                 <div class="atividade-header">
@@ -446,10 +601,34 @@
                 
                 <div class="atividade-content">
                     <div class="atividade-desc">
-                        <p>O passe espírita é uma transmissão de energias fluídicas de uma pessoa para outra, com o intuito de auxiliar no reequilíbrio físico, mental e espiritual. Baseia-se na imposição das mãos, técnica milenar utilizada em diversas culturas com finalidade terapêutica.</p>
-                        <p>No Centro Assistencial Espírita Raphael Latorre, os passes são aplicados por voluntários treinados para esta atividade, em ambiente adequado e harmonizado.</p>
-                        <p>Os passes são complementares às palestras e precedidos por uma breve explanação sobre o seu significado e a importância da fé e da reforma íntima no processo de cura e harmonização.</p>
-                        <p><strong>Importante:</strong> O passe espírita não substitui qualquer tratamento médico convencional, sendo considerado um complemento espiritual ao tratamento físico.</p>
+                        <blockquote>
+                            “Somente a sua fé irá te salvar”, como nos explicou Jesus Cristo.
+                        </blockquote>
+
+                        <h4>Passe Magnético – Conceito</h4>
+                        <p>Em uma expressão simples, o passe magnético é uma doação de energia. Bastante utilizado nos tratamentos espirituais nas casas espíritas, o passe magnético (ou fluidoterapia) tem como objetivo ajudar no reequilíbrio do corpo físico e perispiritual.</p>
+
+                        <p>Todos nós temos a capacidade de transferir energias para as pessoas. De acordo com a Doutrina Espírita, todos somos médiuns em diferentes graus de ostensividade. Para ser passista, não há necessidade de ser ostensivo, entrar em transe, ouvir ou ver Espíritos. Isso porque os Espíritos de luz, através do passista, transmitem boas energias para as pessoas que receberão as energias.</p>
+
+                        <p><strong>A postura é simples!</strong> Ele colabora tanto com as dificuldades espirituais quanto com as da matéria.</p>
+
+                        <p>Essa projeção de energias nada tem de sobrenatural e ocorre com base em leis naturais. Allan Kardec, na Revista Espírita de setembro de 1865, esclarece a respeito da mediunidade curadora e suas diferenças: <em>“A diferença entre o magnetizador, propriamente dito, e o médium curador, é que o primeiro magnetiza com o seu fluido pessoal, e o segundo com o fluido dos Espíritos, ao qual serve de condutor. O magnetismo produzido pelo fluido do homem é o magnetismo humano; o que provém do fluido dos Espíritos é o magnetismo espiritual”.</em></p>
+
+                        <p>Encontramos no livro <em>Evolução em Dois Mundos</em>, ditado por André Luiz e psicografado por Chico Xavier, informações complementares a respeito do fluido magnético transmitido de uma pessoa para outra, atuando beneficamente nas células do paciente.</p>
+
+                        <p>O próprio codificador da Doutrina Espírita, Allan Kardec, foi profundo conhecedor do magnetismo, tendo se dedicado ao estudo e prática do magnetismo animal pesquisado por Mesmer. Em <em>O Livro dos Espíritos</em> (q. 427) lê-se: “De que natureza é o agente que se chama fluido magnético?” — <em>Fluido vital, eletricidade animalizada, que são modificações do fluido universal</em>.</p>
+
+                        <p>Como nos esclarece a Doutrina Espírita, o fluido magnético tem duas fontes distintas: os Espíritos encarnados e os desencarnados. Em <em>O Livro dos Médiuns</em> (cap. 14) lemos: <em>“A força magnética pertence ao homem, mas é aumentada pela ajuda dos Espíritos a que ele apela.”</em></p>
+
+                        <p>Sendo o passe magnético uma transferência de fluidos, é importante destacar o preparo do médium: a disposição em ajudar, a sintonia com o amor e o trabalho em sua própria reforma íntima, para que possa ser um bom canal aos Espíritos na doação de fluidos de maior qualidade.</p>
+
+                        <p>Também cabe àquele que busca ajuda por meio do passe abrir seu coração aos bons Espíritos, fortalecendo a fé e a confiança em Deus, criando assim uma perfeita sintonia entre o mundo espiritual e o físico, entre aquele que doa e aquele que recebe ajuda.</p>
+
+                        <p>Levando em conta que a espiritualidade pode ajudar na promoção da saúde e do bem-estar, o passe magnético tem um significado importante como recurso no cuidado com a saúde e o equilíbrio do ser.</p>
+
+                        <p><em>“O passe, em sua essência, sendo a doação e troca de energias, consideramos que em todas as atividades espirituais e assistências da casa exista a magnetização do ambiente pela espiritualidade amiga que atua fielmente em nosso favor.”</em></p>
+
+                        <p><strong>Importante:</strong> O passe espírita não substitui o tratamento médico convencional; é um complemento espiritual ao cuidado com a saúde.</p>
                     </div>
                     <div class="atividade-image">
                         <img src="../images/placeholder-passe.webp" alt="Sala de passes" loading="lazy" decoding="async" />
@@ -471,12 +650,12 @@
                         </div>
                         <div class="horario-item">
                             <p class="dia">Quarta-feira quinzenal</p>
-                            <p class="descricao">Medicina espiritual</p>
+                            <p class="descricao"><a href="#medicina-espiritual">Medicina espiritual</a></p>
                             <p>20:00h (após a palestra)</p>
                         </div>
                         <div class="horario-item">
                             <p class="dia">Quinta-feira</p>
-                            <p class="descricao">Medicina espiritual</p>
+                            <p class="descricao"><a href="#medicina-espiritual">Medicina espiritual</a></p>
                             <p>20:00h (após a palestra)</p>
                         </div>
                     </div>
@@ -567,6 +746,33 @@
                 </div>
             </section>
             
+            <!-- Limpeza Espiritual (Desobsessão) -->
+            <section id="limpeza-espiritual" class="atividade-card">
+                <div class="atividade-header">
+                    <h3><i class="fas fa-broom"></i> Limpeza Espiritual (Desobsessão)</h3>
+                </div>
+                <div class="atividade-content">
+                    <div class="atividade-desc">
+                        <p><strong>Pelo Espírito André Luiz, "Desobsessão".</strong></p>
+                        <p>Como nos assinala Emmanuel, destaca-se, da coleção de André Luiz, este “livro diferente”. Objetiva prestar valioso auxílio àqueles que se propõem a tratar, com a devida seriedade, em reuniões específicas da Casa Espírita, o grave problema da obsessão, que, como as mais diferentes e temíveis doenças do corpo físico, se constitui em flagelo da humanidade.</p>
+                        <p>Através de 73 capítulos, devidamente ilustrados, escritos de maneira objetiva, aborda temas que orientam os trabalhadores das reuniões de desobsessão, desde o despertar no dia da reunião, superação de impedimentos, conversação anterior à reunião, pontualidade, equipe, educação mediúnica, passes, até o seu encerramento. Trata, ainda, de importantes procedimentos posteriores ao trabalho de desobsessão.</p>
+                        <p>Alerta sobre a gravidade do assunto, salientando que cada templo espírita deve possuir a sua equipe de servidores da desobsessão, não somente para sua defesa e conservação, como também para socorrer as vítimas da desorientação espiritual.</p>
+
+                        <blockquote>
+                            “E perguntou-lhe Jesus, dizendo: ‘Qual é o teu nome?’ E ele disse: ‘Legião’, porque tinham entrado nele muitos demônios.”<br>
+                            <small>Lucas 8:30</small>
+                        </blockquote>
+
+                        <p><em>“Um livro especial que instrui e esclarece sobre as sessões de desobsessão que compreende desde o despertar dos trabalhadores até o término dos trabalhos.”</em></p>
+
+                        <p class="mt-1"><small>Referência: André Luiz — "Desobsessão". Orientações de Emmanuel.</small></p>
+                    </div>
+                    <div class="atividade-image">
+                        <img src="../images/placeholder-palestra.webp" alt="Reuniões de desobsessão" loading="lazy" decoding="async" />
+                    </div>
+                </div>
+            </section>
+
             <!-- Rádio Fraternidade -->
             <section class="radio-banner">
                 <div class="radio-content">
@@ -610,7 +816,7 @@
             <div class="footer-grid">
                 <div class="footer-col">
                     <h3>Centro Assistencial Espírita Raphael Latorre</h3>
-                    <p>Promovendo o estudo, a prática e a difusão da Doutrina Espírita desde 1979.</p>
+                    <p>Promovendo o estudo, a prática e a difusão da Doutrina Espírita desde 1978.</p>
                     <p><i class="fas fa-hand-holding-heart"></i> Todas as nossas atividades são gratuitas.</p>
                 </div>
                 <div class="footer-col">
@@ -648,6 +854,6 @@
     </footer>
 
     <!-- Scripts -->
-    <script src="../js/main.js" defer></script>
+    <script src="../js/modern-interactions.js" defer></script>
 </body>
 </html>
