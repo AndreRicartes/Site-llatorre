@@ -258,6 +258,34 @@
             color: #666;
         }
         
+        /* Boas-vindas e Orientações */
+        .avisos-boas-vindas {
+            background-color: #e9f5ff;
+            border: 1px solid #b3e0ff;
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .avisos-boas-vindas h2 {
+            margin-top: 0;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        
+        .avisos-boas-vindas p {
+            margin-bottom: 1rem;
+        }
+        
+        .orientacoes-lista {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .orientacoes-lista li {
+            margin-bottom: 0.5rem;
+        }
+        
         /* Responsividade */
         @media (max-width: 768px) {
             .atividade-content {
@@ -323,6 +351,20 @@
             <a href="../index.html">Início</a> > <span>Atividades</span>
         </div>
     </div>
+
+    <!-- Boas-vindas e Orientações -->
+    <section id="orientacoes" class="avisos-boas-vindas" aria-labelledby="boas-vindas-titulo">
+        <div class="container">
+            <h2 id="boas-vindas-titulo" class="section-title">Bem-vindo(a) à Casa Espírita Raphael Latorre</h2>
+            <p class="section-desc">Para mantermos a harmonia e o respeito em nossos trabalhos, pedimos a colaboração de todos com as seguintes orientações:</p>
+            <ul class="orientacoes-lista">
+                <li><strong>Vestimenta e Postura:</strong> Por favor, utilize roupas adequadas ao ambiente de elevação espiritual.</li>
+                <li><strong>Silêncio e Recolhimento:</strong> Ao entrar na Casa, desligue ou silencie seu celular. O ambiente é de oração e reflexão. Mantenha-se em silêncio e eleve seus pensamentos.</li>
+                <li><strong>Prioridade nos Assentos:</strong> As duas primeiras fileiras são reservadas para atendimento preferencial, destinadas a idosos, gestantes, pessoas com deficiência e outros casos específicos.</li>
+                <li><strong>Acolhimento às Crianças:</strong> No início dos atendimentos mediúnicos, as crianças de até 10 anos serão atendidas preferencialmente, junto a um adulto responsável.</li>
+            </ul>
+        </div>
+    </section>
 
     <!-- Seção de Atividades -->
     <section class="atividades-section">
