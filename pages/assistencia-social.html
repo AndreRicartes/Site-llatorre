@@ -3,14 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light">
+    <script>
+      try {
+        if (localStorage.getItem('theme') === 'dark') {
+          document.documentElement.setAttribute('data-theme', 'dark');
+          document.querySelector('meta[name="color-scheme"]').content = 'dark';
+        }
+      } catch (e) {}
+    </script>
     <title>Assistência Social - Centro Assistencial Espírita Raphael Latorre</title>
-    <meta name="description" content="Conheça os projetos de assistência social do Centro Assistencial Espírita Raphael Latorre: cestas básicas, bazar beneficente, enxoval para gestantes e muito mais.">
+    <meta name="description" content="Conheça os projetos de assistência social do Centro Assistencial Espírita Raphael Latorre: cestas básicas, atendimento fraterno e muito mais. Conheça também nosso brechó.">
     <link rel="stylesheet" href="../css/normalize.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@600;700&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/llatorre-main.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha384-3B6NwesSXE7YJlcLI9RpRqGf2p/EgVH8BgoKTaUrmKNDkHPStTQ3EyoYjCGXaOTS" crossorigin="anonymous" referrerpolicy="no-referrer">
     <!-- Favicon -->
     <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
     <style>
@@ -265,7 +274,7 @@
         <div class="container">
             <div class="logo">
                 <a href="../index.html" aria-label="Início">
-                    <img src="../images/logo.png" alt="Centro Assistencial Espírita Raphael Latorre" class="site-logo">
+                    <img src="../images/Logo_RafaelLatorre_1000x1000.png" alt="Centro Assistencial Espírita Raphael Latorre" class="site-logo">
                     <span class="sr-only">Centro Assistencial Espírita Raphael Latorre</span>
                 </a>
             </div>
@@ -345,119 +354,57 @@
                             <p>Atualmente, beneficiamos cerca de 50 famílias mensalmente com este programa.</p>
                             
                             <div class="projeto-acoes">
+                                <a href="https://wa.me/5517992369192?text=Olá!%20Gostaria%20de%20cadastrar%20minha%20família%20para%20receber%20cestas%20básicas" target="_blank" rel="noopener noreferrer" class="btn-acao"><i class="fab fa-whatsapp"></i> Cadastrar Família</a>
                                 <a href="como-ajudar.html" class="btn-acao"><i class="fas fa-donate"></i> Como Doar</a>
-                                <a href="#" class="btn-acao"><i class="fas fa-hands-helping"></i> Voluntariar-se</a>
+                                <a href="https://wa.me/5517992369192?text=Olá!%20Gostaria%20de%20ser%20voluntário%20na%20distribuição%20de%20cestas%20básicas" target="_blank" rel="noopener noreferrer" class="btn-acao"><i class="fas fa-hands-helping"></i> Voluntariar-se</a>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Bazar Beneficente -->
+                <!-- Brechó -->
                 <div class="projeto-item">
                     <div class="projeto-header">
-                        <h3><i class="fas fa-tshirt"></i> Bazar Beneficente</h3>
+                        <h3><i class="fas fa-tshirt"></i> Brechó</h3>
                     </div>
                     <div class="projeto-content">
                         <div class="projeto-image">
-                            <img src="../images/placeholder-roupas.webp" alt="Bazar Beneficente" loading="lazy" decoding="async">
+                            <img src="../images/placeholder-roupas.webp" alt="Brechó" loading="lazy" decoding="async">
                         </div>
                         <div class="projeto-info">
-                            <p>O Bazar Beneficente arrecada, seleciona e distribui roupas, calçados, utensílios domésticos e outros itens para famílias necessitadas.</p>
-                            <p>Parte dos itens é vendida a preços simbólicos no bazar, cuja renda é revertida para outros projetos assistenciais. Outra parte é doada diretamente às famílias cadastradas conforme suas necessidades.</p>
-                            <p>O bazar funciona duas vezes por mês, geralmente no segundo e quarto sábados.</p>
+                            <p>O Brechó é uma das fontes de renda do Centro Assistencial Espírita Raphael Latorre. Comercializamos roupas, calçados, bolsas, utensílios domésticos, eletrônicos e livros em bom estado a preços acessíveis.</p>
+                            <p>Toda a receita obtida com as vendas é revertida para a manutenção do Centro e para financiar nossos projetos de assistência social, como distribuição de cestas básicas e atendimento fraterno.</p>
+                            <p><strong>Aceitamos doações de:</strong> roupas, calçados, bolsas, utensílios domésticos, eletrônicos e livros em bom estado.</p>
+                            <p><strong>Como doar:</strong> As doações devem ser deixadas na secretaria do Centro nos horários de atendimento (Segunda a Sexta: 13h às 16h e 19h às 21h30).</p>
                             
                             <div class="projeto-acoes">
-                                <a href="como-ajudar.html" class="btn-acao"><i class="fas fa-box"></i> Doar Itens</a>
-                                <a href="#" class="btn-acao"><i class="fas fa-hands-helping"></i> Voluntariar-se</a>
-                                <a href="#" class="btn-acao"><i class="fas fa-calendar-alt"></i> Próximas Datas</a>
+                                <a href="https://wa.me/5517992369192?text=Olá!%20Gostaria%20de%20doar%20itens%20para%20o%20Brechó" target="_blank" rel="noopener noreferrer" class="btn-acao"><i class="fab fa-whatsapp"></i> Informar Doação</a>
+                                <a href="https://wa.me/5517992369192?text=Olá!%20Gostaria%20de%20saber%20os%20horários%20de%20funcionamento%20do%20Brechó" target="_blank" rel="noopener noreferrer" class="btn-acao"><i class="fas fa-clock"></i> Horários</a>
+                                <a href="https://wa.me/5517992369192?text=Olá!%20Gostaria%20de%20ser%20voluntário%20no%20Brechó" target="_blank" rel="noopener noreferrer" class="btn-acao"><i class="fas fa-hands-helping"></i> Voluntariar-se</a>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Enxoval para Gestantes -->
+                <!-- Atendimento Fraterno -->
                 <div class="projeto-item">
                     <div class="projeto-header">
-                        <h3><i class="fas fa-baby"></i> Enxoval para Gestantes</h3>
+                        <h3><i class="fas fa-hands-holding-heart"></i> Atendimento Fraterno</h3>
                     </div>
                     <div class="projeto-content">
                         <div class="projeto-image">
-                            <img src="../images/placeholder-gestantes.webp" alt="Enxoval para Gestantes" loading="lazy" decoding="async">
+                            <img src="../images/placeholder-gestantes.webp" alt="Atendimento Fraterno" loading="lazy" decoding="async">
                         </div>
                         <div class="projeto-info">
-                            <p>O projeto "Mamãe e Bebê" confecciona e doa enxovais completos para gestantes em situação de vulnerabilidade social.</p>
-                            <p>Cada kit contém peças essenciais para os primeiros meses do bebê, incluindo roupas, fraldas, produtos de higiene, manta, toalhas e outros itens necessários.</p>
-                            <p>A entrega é feita após um acompanhamento da gestante, que inclui orientações sobre cuidados com o bebê, amamentação e saúde.</p>
+                            <p>O Atendimento Fraterno é um espaço de acolhimento e orientação espiritual para pessoas que estão passando por momentos difíceis, conflitos pessoais, familiares ou questões emocionais.</p>
+                            <p>Oferecemos escuta acolhedora, amparo fraterno e orientações à luz da Doutrina Espírita, sempre com respeito, sigilo e carinho. O atendimento é realizado por voluntários capacitados e acontece quinzenalmente às terças-feiras.</p>
+                            <p><strong>Horário:</strong> Terças-feiras (quinzenal), 19:30h</p>
+                            <p><strong>Atendente:</strong> Érica Helena Rosa Lui</p>
+                            <p><strong>Importante:</strong> É necessário agendamento prévio.</p>
                             
                             <div class="projeto-acoes">
-                                <a href="como-ajudar.html" class="btn-acao"><i class="fas fa-baby-carriage"></i> Doar Itens para Bebês</a>
-                                <a href="#" class="btn-acao"><i class="fas fa-hands-helping"></i> Voluntariar-se</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Sopa Fraterna -->
-                <div class="projeto-item">
-                    <div class="projeto-header">
-                        <h3><i class="fas fa-utensils"></i> Sopa Fraterna</h3>
-                    </div>
-                    <div class="projeto-content">
-                        <div class="projeto-image">
-                            <img src="../images/placeholder-sopa.webp" alt="Sopa Fraterna" loading="lazy" decoding="async">
-                        </div>
-                        <div class="projeto-info">
-                            <p>Semanalmente, preparamos e distribuímos sopa nutritiva para pessoas em situação de rua e famílias carentes da região.</p>
-                            <p>A ação acontece todas as quintas-feiras à noite, quando voluntários preparam, embalam e distribuem aproximadamente 100 marmitas contendo sopa, pão e fruta.</p>
-                            <p>Além do alimento, oferecemos palavras de conforto e apoio, seguindo o princípio da caridade material e moral.</p>
-                            
-                            <div class="projeto-acoes">
-                                <a href="como-ajudar.html" class="btn-acao"><i class="fas fa-donate"></i> Contribuir</a>
-                                <a href="#" class="btn-acao"><i class="fas fa-hands-helping"></i> Voluntariar-se</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Campanha de Material Escolar -->
-                <div class="projeto-item">
-                    <div class="projeto-header">
-                        <h3><i class="fas fa-pencil-alt"></i> Campanha de Material Escolar</h3>
-                    </div>
-                    <div class="projeto-content">
-                        <div class="projeto-image">
-                            <img src="../images/placeholder-material.webp" alt="Material Escolar" loading="lazy" decoding="async">
-                        </div>
-                        <div class="projeto-info">
-                            <p>Anualmente, realizamos uma campanha para arrecadação e distribuição de materiais escolares para crianças carentes no início do ano letivo.</p>
-                            <p>Os kits são montados de acordo com a série escolar da criança, contendo cadernos, lápis, borracha, apontador, régua, tesoura, cola e outros materiais necessários.</p>
-                            <p>Em 2025, pretendemos atender 150 crianças da comunidade local.</p>
-                            
-                            <div class="projeto-acoes">
-                                <a href="como-ajudar.html" class="btn-acao"><i class="fas fa-book"></i> Doar Material</a>
-                                <a href="#" class="btn-acao"><i class="fas fa-hands-helping"></i> Voluntariar-se</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Visita a Asilos -->
-                <div class="projeto-item">
-                    <div class="projeto-header">
-                        <h3><i class="fas fa-heart"></i> Visita a Asilos e Hospitais</h3>
-                    </div>
-                    <div class="projeto-content">
-                        <div class="projeto-image">
-                            <img src="../images/placeholder-visita.webp" alt="Visita a Asilos" loading="lazy" decoding="async">
-                        </div>
-                        <div class="projeto-info">
-                            <p>Mensalmente, realizamos visitas a asilos e hospitais da região, levando conforto, atenção e carinho aos idosos e enfermos.</p>
-                            <p>Durante as visitas, os voluntários conversam, cantam, fazem leituras, distribuem lembrancinhas e oferecem momentos de alegria e distração.</p>
-                            <p>Este trabalho visa minimizar o sentimento de solidão e abandono, proporcionando um momento de acolhimento fraterno.</p>
-                            
-                            <div class="projeto-acoes">
-                                <a href="como-ajudar.html" class="btn-acao"><i class="fas fa-gift"></i> Doar Itens</a>
-                                <a href="#" class="btn-acao"><i class="fas fa-hands-helping"></i> Voluntariar-se</a>
+                                <a href="https://wa.me/5517992369192?text=Olá!%20Gostaria%20de%20agendar%20um%20Atendimento%20Fraterno" target="_blank" rel="noopener noreferrer" class="btn-acao"><i class="fab fa-whatsapp"></i> Agendar Atendimento</a>
+                                <a href="https://wa.me/5517992369192?text=Olá!%20Gostaria%20de%20ser%20voluntário%20no%20Atendimento%20Fraterno" target="_blank" rel="noopener noreferrer" class="btn-acao"><i class="fas fa-hands-helping"></i> Voluntariar-se</a>
                             </div>
                         </div>
                     </div>
@@ -508,7 +455,7 @@
                                 <i class="fas fa-box-open"></i>
                             </div>
                             <h3>Doação de Itens</h3>
-                            <p>Doe alimentos não-perecíveis, roupas, calçados, utensílios domésticos, itens de higiene, material escolar, etc.</p>
+                            <p>Doe alimentos não-perecíveis, roupas, calçados, utensílios domésticos, itens de higiene, etc.</p>
                             <p>Você pode entregar suas doações diretamente na sede do Centro nos horários de funcionamento.</p>
                         </div>
                         
@@ -523,34 +470,6 @@
                     </div>
                 </div>
             </section>
-            
-            <!-- Prestação de Contas -->
-            <div class="prestacao-contas">
-                <h3><i class="fas fa-chart-pie"></i> Prestação de Contas</h3>
-                <p>O Centro Assistencial Espírita Raphael Latorre preza pela transparência na gestão dos recursos recebidos. Mensalmente, divulgamos um resumo das doações recebidas e das ações realizadas.</p>
-                
-                <div class="prestacao-contas-info">
-                    <div class="mes-prestacao">
-                        <h4>Junho/2025</h4>
-                        <p><strong>Doações recebidas:</strong> R$ 3.250,00</p>
-                        <p><strong>Alimentos arrecadados:</strong> 420kg</p>
-                        <p><strong>Roupas e calçados:</strong> 380 peças</p>
-                        <p><strong>Famílias atendidas:</strong> 48</p>
-                        <p><strong>Cestas básicas distribuídas:</strong> 52</p>
-                    </div>
-                    
-                    <div class="mes-prestacao">
-                        <h4>Maio/2025</h4>
-                        <p><strong>Doações recebidas:</strong> R$ 2.980,00</p>
-                        <p><strong>Alimentos arrecadados:</strong> 385kg</p>
-                        <p><strong>Roupas e calçados:</strong> 410 peças</p>
-                        <p><strong>Famílias atendidas:</strong> 45</p>
-                        <p><strong>Cestas básicas distribuídas:</strong> 50</p>
-                    </div>
-                </div>
-                
-                <p class="mt-3">Para mais informações sobre a prestação de contas, entre em <a href="contato.html">contato conosco</a>.</p>
-            </div>
         </div>
     </section>
 
@@ -567,36 +486,27 @@
                     <h3>Endereço</h3>
                     <p><i class="fas fa-map-marker-alt"></i> Rua Duque de Caxias, 75</p>
                     <p>Jardim São João - Bebedouro, SP</p>
-                    <p><i class="fas fa-phone"></i> (17) 3342-7580</p>
-                    <p><i class="fas fa-envelope"></i> metacap@mdbrasil.com.br</p>
+                    <p><i class="fas fa-phone"></i> (17) 99236-9192</p>
+                    <p><i class="fas fa-envelope"></i> caeraphaellatorre@hotmail.com</p>
                 </div>
                 <div class="footer-col">
-                    <h3>Horários de Funcionamento</h3>
-                    <p><strong>Segunda a Sexta:</strong> 19h às 21h</p>
-                    <p><strong>Sábado:</strong> 14h às 17h</p>
-                    <p><strong>Domingo:</strong> 9h às 11h</p>
-                </div>
-                <div class="footer-col">
-                    <h3>Redes Sociais</h3>
-                    <div class="social-links">
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    </div>
+                    <h3>Apoie Nossa Missão</h3>
+                    <p><strong>Doação via PIX:</strong></p>
+                    <p><i class="fas fa-qrcode"></i> 50.721.240/0001-53</p>
                     <div class="radio-link mt-3">
-                        <a href="https://www.radiofraternidade.com.br/" target="_blank" rel="noopener noreferrer" class="radio-btn">
-                            <i class="fas fa-broadcast-tower"></i> Ouça a Rádio Fraternidade
-                        </a>
-                    </div>
-                    <div class="ame-link mt-3">
-                        <a href="https://amebrasil.org.br/" target="_blank" rel="noopener noreferrer" class="ame-btn-small">
-                            <i class="fas fa-heartbeat"></i> AME Brasil
+                        <a href="como-ajudar.html" class="radio-btn">
+                            <i class="fas fa-hand-holding-heart"></i> Como Ajudar
                         </a>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Centro Assistencial Espírita Raphael Latorre. Todos os direitos reservados.</p>
+                <div class="social-links" style="display: flex; justify-content: center; gap: 1rem; margin-bottom: 1.5rem;">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+                <p>&copy; 2026 Centro Assistencial Espírita Raphael Latorre. Todos os direitos reservados.</p>
                 <p class="footer-info">Desenvolvido com <i class="fas fa-heart"></i> e respeito à Doutrina Espírita.</p>
             </div>
         </div>

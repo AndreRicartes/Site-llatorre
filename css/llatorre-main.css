@@ -3,6 +3,7 @@
 
 /* ===== VARIÁVEIS MODERNAS ===== */
 :root {
+  color-scheme: light;
   /* Cores principais (Tradição + Modernidade) */
   --primary-color: #1e3a5f;      /* Azul Marinho */
   --primary-light: #355a8a;      /* Azul mais claro */
@@ -52,6 +53,7 @@
 
 /* ===== TEMA ESCURO (DARK MODE) ===== */
 [data-theme="dark"] {
+  color-scheme: dark;
   /* Fundos escuros com tonalidade terrosa/azulada para conforto visual */
   --bg-primary: #0f1420;   /* Navy muito escuro */
   --bg-secondary: #141b2b; /* Azul-petróleo escuro */
@@ -841,23 +843,40 @@ footer {
   background: #fff;
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.5rem;
+  transition: var(--transition-smooth);
+}
+.event-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+.event-card-header {
   display: grid;
   grid-template-columns: auto 1fr;
   gap: 1rem;
-  padding: 1rem;
-  align-items: center;
+  align-items: start;
 }
 .event-date {
   display: flex; flex-direction: column; align-items: center; justify-content: center;
   background: var(--gradient-primary); color: #fff; border-radius: var(--radius-md);
   width: 72px; height: 72px; font-weight: 700; box-shadow: var(--shadow-md);
+  flex-shrink: 0;
 }
 .event-date .day { font-size: 1.25rem; line-height: 1; }
 .event-date .month { font-size: 0.85rem; opacity: 0.9; }
-.event-content { display: grid; gap: 0.4rem; }
+.event-content { display: grid; gap: 0.5rem; flex: 1; }
 .event-title { margin: 0; font-size: 1.1rem; color: var(--text-primary); }
-.event-details { display: flex; gap: 1rem; color: var(--text-tertiary); font-size: 0.9rem; }
-.event-actions { justify-self: end; }
+.event-details { display: flex; gap: 1rem; color: var(--text-tertiary); font-size: 0.9rem; flex-wrap: wrap; }
+.event-description { margin: 0.5rem 0 0; color: var(--text-secondary); font-size: 0.95rem; line-height: 1.5; }
+.event-actions { 
+  display: flex; 
+  justify-content: flex-start; 
+  margin-top: auto; 
+  padding-top: 0.5rem;
+}
 
 /* ===== SEÇÃO RÁDIO FEATURE ===== */
 .radio-feature { margin: 2rem 0 3rem; }

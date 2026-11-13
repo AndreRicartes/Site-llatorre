@@ -3,6 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light">
+    <script>
+      try {
+        if (localStorage.getItem('theme') === 'dark') {
+          document.documentElement.setAttribute('data-theme', 'dark');
+          document.querySelector('meta[name="color-scheme"]').content = 'dark';
+        }
+      } catch (e) {}
+    </script>
     <title>Atividades - Centro Assistencial Espírita Raphael Latorre</title>
     <meta name="description" content="Conheça as atividades do Centro Assistencial Espírita Raphael Latorre: palestras, passes, estudos doutrinários e evangelização infantil.">
     <link rel="stylesheet" href="../css/normalize.css">
@@ -10,7 +19,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/llatorre-main.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha384-3B6NwesSXE7YJlcLI9RpRqGf2p/EgVH8BgoKTaUrmKNDkHPStTQ3EyoYjCGXaOTS" crossorigin="anonymous" referrerpolicy="no-referrer">
     <!-- Favicon -->
     <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
     <style>
@@ -304,7 +313,7 @@
         <div class="container">
             <div class="logo">
                 <a href="../index.html" aria-label="Início">
-                    <img src="../images/logo.png" alt="Centro Assistencial Espírita Raphael Latorre" class="site-logo">
+                    <img src="../images/Logo_RafaelLatorre_1000x1000.png" alt="Centro Assistencial Espírita Raphael Latorre" class="site-logo">
                     <span class="sr-only">Centro Assistencial Espírita Raphael Latorre</span>
                 </a>
             </div>
@@ -366,87 +375,105 @@
         </div>
     </section>
 
+                    <!-- Cronograma Semanal Detalhado -->
+                <div class="cronograma-semanal" style="margin-top: 3rem;">
+                    <h3 style="text-align: center; margin-bottom: 2rem; color: var(--primary-color);">Cronograma Semanal de Atividades</h3>
+                    
+                    <div style="display: grid; gap: 1.5rem;">
+                        <!-- Segunda -->
+                        <div style="background: white; padding: 1.5rem; border-radius: var(--radius-md); box-shadow: var(--shadow-md); border-left: 4px solid var(--primary-color);">
+                            <h4 style="color: var(--primary-color); margin-top: 0;"><i class="fas fa-calendar-day"></i> Segunda-feira</h4>
+                            <p style="margin: 0.5rem 0;"><i class="fas fa-clock"></i> <strong>19:00</strong></p>
+                            <ul style="margin: 0.5rem 0; padding-left: 1.5rem;">
+                                <li>Palestra com <strong>Marcel Lui</strong></li>
+                                <li>Passe Fluídico</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Terça -->
+                        <div style="background: white; padding: 1.5rem; border-radius: var(--radius-md); box-shadow: var(--shadow-md); border-left: 4px solid var(--primary-color);">
+                            <h4 style="color: var(--primary-color); margin-top: 0;"><i class="fas fa-calendar-day"></i> Terça-feira</h4>
+                            <p style="margin: 0.5rem 0;"><i class="fas fa-clock"></i> <strong>19:00</strong></p>
+                            <ul style="margin: 0.5rem 0; padding-left: 1.5rem;">
+                                <li>Palestra com <strong>Luiz Roberto</strong> alternando com <strong>André Hernandes</strong></li>
+                                <li>Orientação Espiritual</li>
+                                <li>Atendimento Fraterno (quinzenal) com <strong>Érica Helena Rosa Lui</strong></li>
+                            </ul>
+                            <p style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--text-secondary);"><i class="fas fa-info-circle"></i> Para o Atendimento Fraterno é necessário agendamento: <a href="https://wa.me/5517992369192" target="_blank" rel="noopener noreferrer">(17) 99236-9192</a></p>
+                        </div>
+                        
+                        <!-- Quarta -->
+                        <div style="background: white; padding: 1.5rem; border-radius: var(--radius-md); box-shadow: var(--shadow-md); border-left: 4px solid var(--primary-color);">
+                            <h4 style="color: var(--primary-color); margin-top: 0;"><i class="fas fa-calendar-day"></i> Quarta-feira</h4>
+                            <p style="margin: 0.5rem 0;"><i class="fas fa-clock"></i> <strong>19:00</strong></p>
+                            <ul style="margin: 0.5rem 0; padding-left: 1.5rem;">
+                                <li>Palestra com <strong>Luiz Robertos</strong></li>
+                                <li>Tratamento Espiritual (alternado semanalmente com Reunião Mediúnica)</li>
+                            </ul>
+                            <p style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--text-secondary);"><i class="fas fa-info-circle"></i> Os trabalhos de Tratamento Espiritual e Reunião Mediúnica são alternados semanalmente. A Reunião Mediúnica é fechada ao público.</p>
+                        </div>
+                        
+                        <!-- Quinta -->
+                        <div style="background: white; padding: 1.5rem; border-radius: var(--radius-md); box-shadow: var(--shadow-md); border-left: 4px solid var(--primary-color);">
+                            <h4 style="color: var(--primary-color); margin-top: 0;"><i class="fas fa-calendar-day"></i> Quinta-feira</h4>
+                            <p style="margin: 0.5rem 0;"><i class="fas fa-clock"></i> <strong>19:00</strong></p>
+                            <ul style="margin: 0.5rem 0; padding-left: 1.5rem;">
+                                <li>Palestra (a confirmar)</li>
+                                <li>Tratamento Espiritual</li>
+                                <li>Passe Fluídico</li>
+                                <li>Estudo da Doutrina Espírita (salão ao lado)</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Sexta -->
+                        <div style="background: white; padding: 1.5rem; border-radius: var(--radius-md); box-shadow: var(--shadow-md); border-left: 4px solid var(--primary-color);">
+                            <h4 style="color: var(--primary-color); margin-top: 0;"><i class="fas fa-calendar-day"></i> Sexta-feira</h4>
+                            <p style="margin: 0.5rem 0;"><i class="fas fa-clock"></i> <strong>19:00</strong></p>
+                            <ul style="margin: 0.5rem 0; padding-left: 1.5rem;">
+                                <li>Estudo da Doutrina Espírita com <strong>Luiz Roberto</strong></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-section mt-4">
+                <h3 class="text-center">Perguntas Frequentes</h3>
+                
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <h4>É necessário agendar para participar das atividades?</h4>
+                        <p>Não, todas as nossas palestras públicas e passes são de livre acesso. Para os grupos de estudo e algumas atividades específicas, recomendamos verificar a disponibilidade de vagas.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h4>Preciso ser espírita para participar das atividades?</h4>
+                        <p>Não, nossa casa está aberta a todas as pessoas, independentemente de suas crenças ou religiões. O importante é o respeito mútuo e o desejo de aprendizado.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h4>Como posso fazer doações?</h4>
+                        <p>Aceitamos doações de alimentos, roupas, materiais de higiene e limpeza, que podem ser entregues diretamente em nossa sede nos horários de funcionamento. Para doações financeiras, entre em contato conosco para mais informações.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h4>Como posso me tornar voluntário?</h4>
+                        <p>Entre em contato conosco via WhatsApp pelo número (17) 99236-9192 ou visite-nos pessoalmente para conversar sobre as possibilidades de voluntariado. Temos diversas áreas onde você pode contribuir, de acordo com suas habilidades e disponibilidade.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+<!---
     <!-- Seção de Atividades -->
     <section class="atividades-section">
         <div class="container">
             <h2 class="section-title">Nossas Atividades</h2>
             <p class="section-desc">O Centro Assistencial Espírita Raphael Latorre oferece diversas atividades gratuitas, voltadas ao estudo, à prática e à divulgação da Doutrina Espírita. Conheça nossas principais atividades:</p>
             
-            <!-- Calendário de Eventos -->
-            <div class="calendario-eventos">
-                <div class="calendario-header">
-                    <h3>Calendário de Eventos - Julho/2025</h3>
-                    <div class="calendario-nav">
-                        <button aria-label="Mês anterior"><i class="fas fa-chevron-left"></i></button>
-                        <button aria-label="Próximo mês"><i class="fas fa-chevron-right"></i></button>
-                    </div>
-                </div>
-                
-                <div class="eventos-lista">
-                    <div class="evento-item">
-                        <div class="evento-item-data">
-                            <span class="evento-item-dia">25</span>
-                            <span class="evento-item-mes">Jul</span>
-                        </div>
-                        <div class="evento-item-info">
-                            <h4>Palestra: A Lei de Causa e Efeito</h4>
-                            <p><i class="fas fa-clock"></i> 19:30h</p>
-                            <p><i class="fas fa-user"></i> Palestrante: Maria Silva</p>
-                            <p><i class="fas fa-map-marker-alt"></i> Salão Principal</p>
-                        </div>
-                    </div>
-                    
-                    <div class="evento-item">
-                        <div class="evento-item-data">
-                            <span class="evento-item-dia">27</span>
-                            <span class="evento-item-mes">Jul</span>
-                        </div>
-                        <div class="evento-item-info">
-                            <h4>Evangelização Infantil</h4>
-                            <p><i class="fas fa-clock"></i> 10:00h</p>
-                            <p><i class="fas fa-map-marker-alt"></i> Sala de Evangelização</p>
-                        </div>
-                    </div>
-                    
-                    <div class="evento-item">
-                        <div class="evento-item-data">
-                            <span class="evento-item-dia">30</span>
-                            <span class="evento-item-mes">Jul</span>
-                        </div>
-                        <div class="evento-item-info">
-                            <h4>Palestra: O Evangelho Segundo o Espiritismo</h4>
-                            <p><i class="fas fa-clock"></i> 19:30h</p>
-                            <p><i class="fas fa-user"></i> Palestrante: José Santos</p>
-                            <p><i class="fas fa-map-marker-alt"></i> Salão Principal</p>
-                        </div>
-                    </div>
-                    
-                    <div class="evento-item">
-                        <div class="evento-item-data">
-                            <span class="evento-item-dia">05</span>
-                            <span class="evento-item-mes">Ago</span>
-                        </div>
-                        <div class="evento-item-info">
-                            <h4>Estudo Sistematizado da Doutrina Espírita</h4>
-                            <p><i class="fas fa-clock"></i> 19:00h</p>
-                            <p><i class="fas fa-map-marker-alt"></i> Sala de Estudos</p>
-                        </div>
-                    </div>
-                    
-                    <div class="evento-item">
-                        <div class="evento-item-data">
-                            <span class="evento-item-dia">10</span>
-                            <span class="evento-item-mes">Ago</span>
-                        </div>
-                        <div class="evento-item-info">
-                            <h4>Campanha de Arrecadação de Alimentos</h4>
-                            <p><i class="fas fa-clock"></i> 09:00h às 17:00h</p>
-                            <p><i class="fas fa-map-marker-alt"></i> Centro Espírita</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
+                        
             <!-- Palestras -->
             <section id="palestras" class="atividade-card">
                 <div class="atividade-header">
@@ -476,19 +503,19 @@
                     <div class="horarios-grid">
                         <div class="horario-item">
                             <p class="dia">Segunda-feira</p>
-                            <p>19:30h - Estudo de O Livro dos Espíritos</p>
+                            <p>19:00h - Estudo de O Livro dos Espíritos</p>
                         </div>
                         <div class="horario-item">
                             <p class="dia">Terça-feira</p>
-                            <p>19:30h - Palestras Doutrinárias</p>
+                            <p>19:00h - Palestras Doutrinárias</p>
                         </div>
                         <div class="horario-item">
                             <p class="dia">Quarta-feira quinzenal</p>
-                            <p>19:30h - Estudo de O Evangelho Segundo o Espiritismo</p>
+                            <p>19:00h - Estudo de O Evangelho Segundo o Espiritismo</p>
                         </div>
                         <div class="horario-item">
                             <p class="dia">Quinta-feira</p>
-                            <p>19:30h - Palestras e Reflexões</p>
+                            <p>19:00h - Palestras e Reflexões</p>
                         </div>
                     </div>
                 </div>
@@ -525,10 +552,10 @@
                 </div>
             </section>
             
-            <!-- Medicina Espiritual -->
+            <!-- Tratamento Espiritual -->
             <section id="medicina-espiritual" class="atividade-card">
                 <div class="atividade-header">
-                    <h3><i class="fas fa-notes-medical"></i> Medicina Espiritual</h3>
+                    <h3><i class="fas fa-notes-medical"></i> Tratamento Espiritual</h3>
                 </div>
                 <div class="atividade-content">
                     <div class="atividade-desc">
@@ -562,10 +589,12 @@
                         <p class="mt-1"><small>Do livro: <em>Emmanuel</em> — Pelo Espírito: Emmanuel — Psicografia: Francisco Cândido Xavier — FEB Editora</small></p>
                     </div>
                     <div class="atividade-image">
-                        <img src="../images/placeholder-gestantes.webp" alt="Medicina espiritual" loading="lazy" decoding="async" />
+                        <img src="../images/placeholder-gestantes.webp" alt="Tratamento Espiritual" loading="lazy" decoding="async" />
                     </div>
                 </div>
             </section>
+
+        
 
             <!-- Orientação Espiritual -->
             <section id="orientacao" class="atividade-card">
@@ -683,111 +712,29 @@
                         <div class="horario-item">
                             <p class="dia">Segunda-feira</p>
                             <p class="descricao">Passe magnético</p>
-                            <p>20:00h (após a palestra)</p>
+                            <p>19:00h (após a palestra)</p>
                         </div>
                         <div class="horario-item">
                             <p class="dia">Terça-feira</p>
                             <p class="descricao">Orientação espiritual</p>
-                            <p>20:00h (após a palestra)</p>
+                            <p>19:30h (após a palestra)</p>
                         </div>
                         <div class="horario-item">
                             <p class="dia">Quarta-feira quinzenal</p>
-                            <p class="descricao"><a href="#medicina-espiritual">Medicina espiritual</a></p>
-                            <p>20:00h (após a palestra)</p>
+                            <p class="descricao"><a href="#medicina-espiritual">Tratamento Espiritual</a></p>
+                            <p>19:30h (após a palestra)</p>
                         </div>
                         <div class="horario-item">
                             <p class="dia">Quinta-feira</p>
-                            <p class="descricao"><a href="#medicina-espiritual">Medicina espiritual</a></p>
-                            <p>20:00h (após a palestra)</p>
+                            <p class="descricao"><a href="#medicina-espiritual">Tratamento Espiritual</a></p>
+                            <p>19:30h (após a palestra)</p>
                         </div>
                     </div>
                 </div>
             </section>
             
-            <!-- Evangelização -->
-            <section id="evangelizacao" class="atividade-card">
-                <div class="atividade-header">
-                    <h3><i class="fas fa-child"></i> Evangelização Infantil</h3>
-                </div>
-                
-                <div class="atividade-content">
-                    <div class="atividade-desc">
-                        <p>A Evangelização Infantil é uma atividade voltada para crianças e jovens, com o objetivo de transmitir os ensinamentos morais do Evangelho à luz da Doutrina Espírita, de forma adequada à sua faixa etária.</p>
-                        <p>Por meio de recursos pedagógicos como histórias, músicas, brincadeiras, teatro e artes plásticas, os evangelizadores estimulam o desenvolvimento de valores como:</p>
-                        <ul>
-                            <li>Amor ao próximo</li>
-                            <li>Respeito às diferenças</li>
-                            <li>Solidariedade e caridade</li>
-                            <li>Responsabilidade e disciplina</li>
-                            <li>Fé raciocinada e conhecimento espírita</li>
-                        </ul>
-                        <p>As turmas são divididas por faixa etária para que o conteúdo seja adequado ao desenvolvimento de cada criança.</p>
-                    </div>
-                    <div class="atividade-image">
-                        <img src="../images/placeholder-evangelizacao.webp" alt="Evangelização infantil" loading="lazy" decoding="async" />
-                    </div>
-                </div>
-                
-                <div class="atividade-horarios">
-                    <h4><i class="fas fa-clock"></i> Horários da Evangelização</h4>
-                    <div class="horarios-grid">
-                        <div class="horario-item">
-                            <p class="dia">Domingo</p>
-                            <p>10:00h às 11:30h</p>
-                            <p>Idade: 3 a 6 anos (Turma Infantil 1)</p>
-                        </div>
-                        <div class="horario-item">
-                            <p class="dia">Domingo</p>
-                            <p>10:00h às 11:30h</p>
-                            <p>Idade: 7 a 12 anos (Turma Infantil 2)</p>
-                        </div>
-                        <div class="horario-item">
-                            <p class="dia">Sábado</p>
-                            <p>15:00h às 16:30h</p>
-                            <p>Idade: 13 a 17 anos (Juventude)</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            
-            <!-- Grupos de Estudo -->
-            <section id="estudos" class="atividade-card">
-                <div class="atividade-header">
-                    <h3><i class="fas fa-users"></i> Grupos de Estudo</h3>
-                </div>
-                
-                <div class="atividade-content">
-                    <div class="atividade-desc">
-                        <p>Os Grupos de Estudo são atividades voltadas para o aprofundamento no conhecimento da Doutrina Espírita, através do estudo sistematizado das obras básicas e complementares.</p>
-                        <p>Em nosso Centro, oferecemos o ESDE (Estudo Sistematizado da Doutrina Espírita), que abrange um programa completo de estudo dos princípios espíritas, dividido em módulos.</p>
-                        <p>Além disso, realizamos estudos específicos de obras importantes como:</p>
-                        <ul>
-                            <li>O Livro dos Espíritos</li>
-                            <li>O Livro dos Médiuns</li>
-                            <li>O Evangelho Segundo o Espiritismo</li>
-                            <li>O Céu e o Inferno</li>
-                            <li>A Gênese</li>
-                            <li>Obras complementares de autores respeitados</li>
-                        </ul>
-                        <p>Para participar dos grupos de estudo, é necessário fazer uma inscrição prévia, pois as turmas têm número limitado de participantes.</p>
-                    </div>
-                    <div class="atividade-image">
-                        <img src="../images/placeholder-estudo.webp" alt="Grupo de estudo da Doutrina Espírita" loading="lazy" decoding="async" />
-                    </div>
-                </div>
-                
-                <div class="atividade-horarios">
-                    <h4><i class="fas fa-clock"></i> Horários dos Grupos de Estudo</h4>
-                    <div class="horarios-grid">
-                        <div class="horario-item">
-                            <p class="dia">Sexta-feira</p>
-                            <p>19:30h às 20:30h</p>
-                            <p>ESDE - Nível 1 (Introdução ao Espiritismo)</p>
-                        </div>                        
-                    </div>
-                </div>
-            </section>
-            
+                       
+                     
             <!-- Limpeza Espiritual (Desobsessão) -->
             <section id="limpeza-espiritual" class="atividade-card">
                 <div class="atividade-header">
@@ -865,31 +812,27 @@
                     <h3>Endereço</h3>
                     <p><i class="fas fa-map-marker-alt"></i> Rua Duque de Caxias, 75</p>
                     <p>Jardim São João - Bebedouro, SP</p>
-                    <p><i class="fas fa-phone"></i> (17) 3342-7580</p>
-                    <p><i class="fas fa-envelope"></i> metacap@mdbrasil.com.br</p>
+                    <p><i class="fas fa-phone"></i> (17) 99236-9192</p>
+                    <p><i class="fas fa-envelope"></i> caeraphaellatorre@hotmail.com</p>
                 </div>
                 <div class="footer-col">
-                    <h3>Horários de Funcionamento</h3>
-                    <p><strong>Segunda a Sexta:</strong> 19h às 21h</p>
-                    <p><strong>Sábado:</strong> 14h às 17h</p>
-                    <p><strong>Domingo:</strong> 9h às 11h</p>
-                </div>
-                <div class="footer-col">
-                    <h3>Redes Sociais</h3>
-                    <div class="social-links">
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    </div>
+                    <h3>Apoie Nossa Missão</h3>
+                    <p><strong>Doação via PIX:</strong></p>
+                    <p><i class="fas fa-qrcode"></i> 50.721.240/0001-53</p>
                     <div class="radio-link mt-3">
-                        <a href="https://www.radiofraternidade.com.br/" target="_blank" rel="noopener noreferrer" class="radio-btn">
-                            <i class="fas fa-broadcast-tower"></i> Ouça a Rádio Fraternidade
+                        <a href="como-ajudar.html" class="radio-btn">
+                            <i class="fas fa-hand-holding-heart"></i> Como Ajudar
                         </a>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Centro Assistencial Espírita Raphael Latorre. Todos os direitos reservados.</p>
+                <div class="social-links" style="display: flex; justify-content: center; gap: 1rem; margin-bottom: 1.5rem;">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+                <p>&copy; 2026 Centro Assistencial Espírita Raphael Latorre. Todos os direitos reservados.</p>
                 <p class="footer-info">Desenvolvido com <i class="fas fa-heart"></i> e respeito à Doutrina Espírita.</p>
             </div>
         </div>

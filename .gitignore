@@ -1,0 +1,10 @@
+# Pastas locais de apoio / mídias não publicadas no site
+docs/
+RedesSociais/
+videos/
+
+# Arquivos temporários e de sistema
+.DS_Store
+Thumbs.db
+*.log
+

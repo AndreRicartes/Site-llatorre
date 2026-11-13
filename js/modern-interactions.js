@@ -555,8 +555,24 @@ class ModernWebsite {
     // === TEMA ESCURO/CLARO ===
     initThemeToggle() {
         const root = document.documentElement;
-        const saved = localStorage.getItem('theme');
-        if (saved === 'dark') root.setAttribute('data-theme', 'dark');
+        const metaColorScheme = document.querySelector('meta[name="color-scheme"]');
+        const applyTheme = (theme) => {
+            const isDark = theme === 'dark';
+            if (isDark) {
+                root.setAttribute('data-theme', 'dark');
+            } else {
+                root.removeAttribute('data-theme');
+            }
+            if (metaColorScheme) {
+                metaColorScheme.setAttribute('content', isDark ? 'dark' : 'light');
+            }
+        };
+
+        let saved = null;
+        try {
+            saved = localStorage.getItem('theme');
+        } catch (e) {}
+        applyTheme(saved === 'dark' ? 'dark' : 'light');
 
         const btn = document.getElementById('theme-toggle');
         if (!btn) return;
@@ -568,15 +584,19 @@ class ModernWebsite {
         setIcon();
 
         btn.addEventListener('click', () => {
-            const isDark = root.getAttribute('data-theme') === 'dark';
-            if (isDark) {
-                root.removeAttribute('data-theme');
-                localStorage.setItem('theme', 'light');
-            } else {
-                root.setAttribute('data-theme', 'dark');
-                localStorage.setItem('theme', 'dark');
-            }
+            const nextTheme = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            applyTheme(nextTheme);
+            try {
+                localStorage.setItem('theme', nextTheme);
+            } catch (e) {}
             setIcon();
+        });
+
+        window.addEventListener('storage', (e) => {
+            if (e.key === 'theme') {
+                applyTheme(e.newValue === 'dark' ? 'dark' : 'light');
+                setIcon();
+            }
         });
     }
 
