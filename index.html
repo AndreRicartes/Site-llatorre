@@ -4,64 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="color-scheme" content="light">
-    <script>
-      try {
-        if (localStorage.getItem('theme') === 'dark') {
-          document.documentElement.setAttribute('data-theme', 'dark');
-          document.querySelector('meta[name="color-scheme"]').content = 'dark';
-        }
-      } catch (e) {}
-    </script>
     <title>Centro Assistencial Espírita Raphael Latorre</title>
-    <meta name="description" content="Centro Assistencial Espírita Raphael Latorre - Promovendo a doutrina espírita em Bebedouro-SP através de palestras, passes e assistência social desde 1978.">
+    <meta name="description" content="Centro Assistencial Espírita Raphael Latorre - Acolhimento fraterno, palestras, passes, estudos e assistência social em Bebedouro-SP desde 1978.">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/llatorre-main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha384-3B6NwesSXE7YJlcLI9RpRqGf2p/EgVH8BgoKTaUrmKNDkHPStTQ3EyoYjCGXaOTS" crossorigin="anonymous" referrerpolicy="no-referrer">
-    <!-- Favicon -->
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
 </head>
-<body>
-    <!-- Cabeçalho Moderno -->
+<body class="home-brand">
+    <!-- Cabeçalho -->
     <header class="header-modern">
         <div class="container">
             <div class="logo">
                 <a href="index.html" aria-label="Início">
-                    <img src="images/Logo_RafaelLatorre_1000x1000.png" alt="Centro Assistencial Espírita Raphael Latorre" class="site-logo" width="44" height="44">
+                    <img src="images/logo-latorre.jpg" alt="Centro Assistencial Espírita Raphael Latorre" class="site-logo" width="52" height="52">
                     <span class="sr-only">Centro Assistencial Espírita Raphael Latorre</span>
                 </a>
             </div>
-            
-            <nav class="nav-modern">
+
+            <nav class="nav-modern" aria-label="Navegação principal">
                 <ul class="nav-links">
                     <li><a href="index.html" class="nav-link active">Início</a></li>
-                    <li><a href="pages/sobre.html" class="nav-link">Sobre Nós</a></li>
+                    <li><a href="pages/sobre.html" class="nav-link">A Casa</a></li>
                     <li><a href="pages/atividades.html" class="nav-link">Atividades</a></li>
-                    <li><a href="pages/doutrina.html" class="nav-link">Doutrina Espírita</a></li>
+                    <li><a href="pages/doutrina.html" class="nav-link">Doutrina</a></li>
                     <li><a href="pages/assistencia-social.html" class="nav-link">Assistência Social</a></li>
-                    <li><a href="pages/como-ajudar.html" class="nav-link cta-link">
-                        <i class="fas fa-hands-helping"></i> Como ajudar
-                    </a></li>
+                    <li><a href="pages/como-ajudar.html" class="nav-link cta-link">Como ajudar</a></li>
                     <li><a href="pages/contato.html" class="nav-link">Contato</a></li>
                 </ul>
             </nav>
-            
+
             <div class="header-actions">
-                <div class="accessibility-controls">
-                    <button type="button" id="font-increase" class="accessibility-btn" title="Aumentar fonte">
-                        <i class="fas fa-plus"></i>
-                    </button>
-                    <button type="button" id="font-decrease" class="accessibility-btn" title="Diminuir fonte">
-                        <i class="fas fa-minus"></i>
-                    </button>
-                </div>
-                <button class="accessibility-btn" id="theme-toggle" title="Alternar tema" aria-label="Alternar tema">
-                    <i class="fas fa-moon"></i>
-                </button>
-                
                 <button class="menu-toggle" aria-label="Menu" aria-expanded="false">
                     <span class="hamburger"></span>
                     <span class="hamburger"></span>
@@ -71,163 +48,422 @@
         </div>
     </header>
 
-    <!-- Banner Principal -->
-    <!-- Hero Moderno -->
+    <!-- Hero Acolhedor -->
     <section class="hero-modern">
         <div class="hero-background">
-            <img src="images/banner-bg.webp" alt="Banner Centro Espírita" class="hero-bg-img" decoding="async" fetchpriority="high" width="1920" height="1080">
+            <img src="images/banner-bg.webp" alt="Centro Assistencial Espírita Raphael Latorre" class="hero-bg-img" decoding="async" fetchpriority="high" width="1920" height="1080">
             <div class="hero-overlay"></div>
         </div>
-        
+
         <div class="container">
             <div class="hero-content">
+                <span class="hero-welcome-badge">
+                    Portas abertas em Bebedouro desde 1978
+                </span>
+
                 <h1 class="hero-title">
                     <span class="hero-subtitle">Bem-vindos ao</span>
                     Centro Assistencial Espírita
                     <span class="hero-highlight">Raphael Latorre</span>
                 </h1>
-                
-                <div class="hero-quote">
-                    <p>"O Espiritismo é, ao mesmo tempo, ciência experimental e doutrina filosófica. Como ciência prática, tem por base as relações que se podem estabelecer com os Espíritos; como filosofia, compreende todas as consequências morais decorrentes dessas relações."</p>
-                    <cite>Allan Kardec</cite>
-                </div>
-                
+
+                <p class="hero-lead">
+                    Um espaço simples e fraterno para ouvir palestras, receber o passe, estudar o Evangelho e caminhar juntos na prática do bem. Todas as atividades são gratuitas.
+                </p>
+
                 <div class="hero-actions">
-                    <a href="pages/sobre.html" class="btn-primary">
-                        <i class="fas fa-home"></i>
-                        Conheça Nossa Casa
+                    <a href="#horarios" class="btn-primary">
+                        Ver Horários da Semana
                     </a>
-                    <a href="pages/como-ajudar.html" class="btn-secondary">
-                        <i class="fas fa-hands-helping"></i>
-                        Como Ajudar
+                    <a href="pages/contato.html" class="btn-secondary">
+                        Como Chegar
                     </a>
                 </div>
             </div>
-            
-            <div class="hero-stats">
-                <div class="stat-item">
-                    <span class="stat-number">45+</span>
-                    <span class="stat-label">Anos de História</span>
+
+            <aside class="hero-welcome-card" aria-label="Primeira visita">
+                <h2>Primeira vez na Casa?</h2>
+                <p>Você é muito bem-vindo. Não é preciso agendar nem ter vínculo prévio — basta chegar alguns minutos antes do início das atividades.</p>
+                <div class="hero-welcome-meta">
+                    <span><i class="fas fa-map-marker-alt"></i> Rua Duque de Caxias, 75 — Jd. São João</span>
                 </div>
-                <div class="stat-item">
-                    <span class="stat-number">500+</span>
-                    <span class="stat-label">Famílias Assistidas</span>
+                <div>
+                    <a href="https://wa.me/5517992369192?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20as%20atividades%20da%20Casa." target="_blank" rel="noopener noreferrer" class="btn-accent btn-sm">
+                        <i class="fab fa-whatsapp"></i> Falar com a Casa
+                    </a>
                 </div>
-                <div class="stat-item">
-                    <span class="stat-number">100+</span>
-                    <span class="stat-label">Voluntários</span>
-                </div>
-            </div>
+            </aside>
         </div>
     </section>
 
-    <!-- Próximos Eventos Modernos -->
-    <section class="events-section">
+    <!-- Horários da Semana -->
+    <section id="horarios" class="schedule-strip">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Próximos Eventos</h2>
-                <p class="section-subtitle">Participe das nossas atividades e estudos doutrinários</p>
+            <div class="section-header reveal-on-scroll">
+                <h2 class="section-title">Horários da Semana</h2>
+                <p class="section-subtitle">Escolha o melhor dia para nos visitar</p>
             </div>
-            
-            <div class="events-grid">
-                <div class="event-card">
-                    <div class="event-card-header">
-                        <div class="event-date">
-                            <span class="day">27</span>
-                            <span class="month">Jun</span>
-                        </div>
-                        <div class="event-content">
-                            <h3 class="event-title">Iniciação ao Espiritismo</h3>
-                            <div class="event-details">
-                                <span class="event-time">
-                                    <i class="fas fa-clock"></i> 16:00h
-                                </span>
-                                <span class="event-location">
-                                    <i class="fas fa-calendar-week"></i> 12 semanas
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="event-description">Espaço acolhedor para aprender, tirar dúvidas e compreender os princípios da doutrina espírita. <strong>Instrutora: Lica Camolezi.</strong> Um caminho de aprendizado e reflexão. ✨</p>
-                    <div class="event-actions">
-                        <a href="https://wa.me/5517992369192?text=Olá!%20Gostaria%20de%20me%20inscrever%20no%20estudo%20de%20Iniciação%20ao%20Espiritismo" target="_blank" rel="noopener noreferrer" class="btn-accent btn-sm">
-                            <i class="fab fa-whatsapp"></i> Fazer Inscrição
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="event-card">
-                    <div class="event-card-header">
-                        <div class="event-date">
-                            <span class="day">Sex</span>
-                            <span class="month">Semanal</span>
-                        </div>
-                        <div class="event-content">
-                            <h3 class="event-title">Estudo Sistematizado da Doutrina Espírita</h3>
-                            <div class="event-details">
-                                <span class="event-time">
-                                    <i class="fas fa-clock"></i> 19:00h
-                                </span>
-                                <span class="event-location">
-                                    <i class="fas fa-calendar-week"></i> Todas as Sextas
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="event-description">Estudo aprofundado das obras fundamentais do espiritismo. <strong>Instrutor: Luiz Roberto Mendes.</strong></p>
-                    <div class="event-actions">
-                        <a href="https://wa.me/5517992369192?text=Olá!%20Gostaria%20de%20participar%20do%20Estudo%20Sistematizado%20da%20Doutrina%20Espírita" target="_blank" rel="noopener noreferrer" class="btn-accent btn-sm">
-                            <i class="fab fa-whatsapp"></i> Participar
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="event-card">
-                    <div class="event-card-header">
-                        <div class="event-date">
-                            <span class="day"><i class="fas fa-infinity"></i></span>
-                            <span class="month">Permanente</span>
-                        </div>
-                        <div class="event-content">
-                            <h3 class="event-title">Campanha de Arrecadação de Alimentos</h3>
-                            <div class="event-details">
-                                <span class="event-time">
-                                    <i class="fas fa-calendar-check"></i> Campanha contínua
-                                </span>
-                                <span class="event-location">
-                                    <i class="fas fa-map-marker-alt"></i> Centro Espírita
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="event-description">Ação social para arrecadação de alimentos para famílias necessitadas.</p>
-                    <div class="event-actions">
-                        <a href="https://wa.me/5517992369192?text=Olá!%20Gostaria%20de%20ajudar%20na%20Campanha%20de%20Arrecadação%20de%20Alimentos" target="_blank" rel="noopener noreferrer" class="btn-accent btn-sm">
-                            <i class="fab fa-whatsapp"></i> Como Ajudar
-                        </a>
-                    </div>
-                </div>
+
+            <div class="schedule-cards">
+                <article class="schedule-card reveal-on-scroll">
+                    <h3 class="schedule-day">Segunda-feira</h3>
+                    <span class="schedule-time"><i class="fas fa-clock"></i> 19:00h</span>
+                    <p class="schedule-desc">Palestra Pública seguida de Passe Magnético.</p>
+                </article>
+
+                <article class="schedule-card reveal-on-scroll">
+                    <h3 class="schedule-day">Terça-feira</h3>
+                    <span class="schedule-time"><i class="fas fa-clock"></i> 19:00h</span>
+                    <p class="schedule-desc">Palestra Doutrinária e Orientação Espiritual após a palestra.</p>
+                </article>
+
+                <article class="schedule-card reveal-on-scroll">
+                    <h3 class="schedule-day">Quarta-feira (quinzenal)</h3>
+                    <span class="schedule-time"><i class="fas fa-clock"></i> 19:00h</span>
+                    <p class="schedule-desc">Estudo de <em>O Evangelho Segundo o Espiritismo</em> e Tratamento Espiritual.</p>
+                </article>
+
+                <article class="schedule-card reveal-on-scroll">
+                    <h3 class="schedule-day">Quinta-feira</h3>
+                    <span class="schedule-time"><i class="fas fa-clock"></i> 19:00h</span>
+                    <p class="schedule-desc">Palestras, Reflexões e Tratamento Espiritual.</p>
+                </article>
+
+                <article class="schedule-card reveal-on-scroll">
+                    <h3 class="schedule-day">Sexta-feira</h3>
+                    <span class="schedule-time"><i class="fas fa-clock"></i> 19:00h</span>
+                    <p class="schedule-desc">Estudo Sistematizado da Doutrina Espírita (ESDE).</p>
+                </article>
+
+                <article class="schedule-card reveal-on-scroll">
+                    <h3 class="schedule-day">Sábado</h3>
+                    <span class="schedule-time"><i class="fas fa-clock"></i> 16:00h</span>
+                    <p class="schedule-desc">Curso de Iniciação ao Espiritismo.</p>
+                </article>
             </div>
-            
-            <div class="section-footer">
+
+            <div class="section-footer reveal-on-scroll">
                 <a href="pages/atividades.html" class="btn-secondary">
-                    <i class="fas fa-calendar-alt"></i>
-                    Ver Todos os Eventos
+                    Detalhes das Atividades e Estudos
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Atividades Modernas -->
+    <!-- Como é sua primeira visita -->
+    <section class="first-visit-section">
+        <div class="container">
+            <div class="section-header reveal-on-scroll">
+                <h2 class="section-title">Como é sua primeira visita</h2>
+                <p class="section-subtitle">Um passo a passo simples para você se sentir em casa desde o primeiro dia</p>
+            </div>
+
+            <ol class="visit-steps">
+                <li class="visit-step reveal-on-scroll">
+                    <span class="visit-step-num">1</span>
+                    <h3>Chegue com calma</h3>
+                    <p>Procure chegar 10 a 15 minutos antes do horário. Não é necessário agendamento nem vínculo prévio.</p>
+                </li>
+                <li class="visit-step reveal-on-scroll">
+                    <span class="visit-step-num">2</span>
+                    <h3>Acompanhe a palestra</h3>
+                    <p>Sente-se à vontade no salão para ouvir a prece inicial e a explanação sobre o Evangelho e o Espiritismo.</p>
+                </li>
+                <li class="visit-step reveal-on-scroll">
+                    <span class="visit-step-num">3</span>
+                    <h3>Receba o passe</h3>
+                    <p>Após a palestra, quem desejar é convidado a receber o passe espiritual em ambiente tranquilo e acolhedor.</p>
+                </li>
+                <li class="visit-step reveal-on-scroll">
+                    <span class="visit-step-num">4</span>
+                    <h3>Conversa fraterna</h3>
+                    <p>Se precisar de escuta ou orientação, nossa equipe está à disposição. Todas as atividades são gratuitas.</p>
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- Galeria da Casa -->
+    <section class="house-gallery-section">
+        <div class="container">
+            <div class="section-header reveal-on-scroll">
+                <h2 class="section-title">Nossa Casa</h2>
+                <p class="section-subtitle">Deslize para conhecer um pouco do nosso espaço e da nossa história</p>
+            </div>
+
+            <ul class="house-gallery-scroller" tabindex="0" aria-label="Fotos do Centro Assistencial Espírita Raphael Latorre">
+                <li class="house-gallery-item">
+                    <img src="images/fachada-latorre.png" alt="Fachada do Centro Assistencial Espírita Raphael Latorre" loading="lazy" decoding="async">
+                    <p class="house-gallery-caption">Nossa Casa em Bebedouro/SP — fundada em 15/08/1978</p>
+                </li>
+                <li class="house-gallery-item">
+                    <img src="images/historia/05.webp" alt="Salão de palestras e estudo do Centro Assistencial Espírita Raphael Latorre" loading="lazy" decoding="async">
+                    <p class="house-gallery-caption">Espaço de acolhimento e estudo</p>
+                </li>
+                <li class="house-gallery-item">
+                    <img src="images/historia/01.webp" alt="Registro histórico da Casa" loading="lazy" decoding="async">
+                    <p class="house-gallery-caption">Nossa caminhada desde 1978</p>
+                </li>
+                <li class="house-gallery-item">
+                    <img src="images/historia/02.webp" alt="Momentos da comunidade no Centro" loading="lazy" decoding="async">
+                    <p class="house-gallery-caption">Convivência fraterna e estudo</p>
+                </li>
+                <li class="house-gallery-item">
+                    <img src="images/historia/03.webp" alt="Atividades comunitárias da Casa" loading="lazy" decoding="async">
+                    <p class="house-gallery-caption">Trabalho voluntário e acolhimento</p>
+                </li>
+                <li class="house-gallery-item">
+                    <img src="images/historia/04.webp" alt="Registros da história do Centro Raphael Latorre" loading="lazy" decoding="async">
+                    <p class="house-gallery-caption">Construção coletiva e serviço</p>
+                </li>
+            </ul>
+
+            <div class="founder-highlight reveal-on-scroll">
+                <img src="images/Fundador.jpg" alt="Raphael Latorre" class="founder-portrait" loading="lazy" decoding="async">
+                <div class="founder-note">
+                    <h3>Um legado de simplicidade desde 1978</h3>
+                    <p>Nossa Casa nasceu do propósito de servir com respeito, estudo sério e portas abertas a toda a comunidade de Bebedouro.</p>
+                </div>
+            </div>
+
+            <div class="section-footer reveal-on-scroll">
+                <a href="pages/sobre.html" class="btn-primary">
+                    Conhecer Nossa História
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Inspiracional -->
+    <section class="inspiration-section">
+        <div class="container">
+            <div class="inspiration-content reveal-on-scroll">
+                <div class="inspiration-quote">
+                    <blockquote>
+                        "Vinde a mim todos os que estais cansados e oprimidos, e eu vos aliviarei."
+                    </blockquote>
+                    <cite>Jesus Cristo</cite>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Assistência Social e Como Ajudar -->
+    <section class="assistance-section">
+        <div class="container">
+            <div class="section-header reveal-on-scroll">
+                <h2 class="section-title">Assistência Social &amp; Fraternidade</h2>
+                <p class="section-subtitle">"Fora da caridade não há salvação" — ações simples feitas com o coração</p>
+            </div>
+
+            <div class="activities-guide-grid" style="margin-top: 2rem;">
+                <article class="activity-guide-card reveal-on-scroll">
+                    <span class="activity-guide-icon" aria-hidden="true"><i class="fas fa-shopping-basket"></i></span>
+                    <h3>Cestas Básicas</h3>
+                    <p>Apoio mensal a cerca de 50 famílias cadastradas com alimentos essenciais não-perecíveis.</p>
+                    <div class="activity-guide-meta">
+                        <a href="pages/como-ajudar.html" class="activity-guide-link">
+                            <span>Como doar</span>
+                            <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="activity-guide-card reveal-on-scroll">
+                    <span class="activity-guide-icon" aria-hidden="true"><i class="fas fa-tshirt"></i></span>
+                    <h3>Brechó Solidário</h3>
+                    <p>Roupas, calçados e utensílios a preços acessíveis, com renda revertida aos projetos da Casa.</p>
+                    <div class="activity-guide-meta">
+                        <a href="pages/assistencia-social.html" class="activity-guide-link">
+                            <span>Saiba como contribuir</span>
+                            <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="activity-guide-card reveal-on-scroll">
+                    <span class="activity-guide-icon" aria-hidden="true"><i class="fas fa-hands-helping"></i></span>
+                    <h3>Atendimento Fraterno</h3>
+                    <p>Escuta acolhedora, reservada e orientação evangélica às terças-feiras (quinzenal), 19h30.</p>
+                    <div class="activity-guide-meta">
+                        <a href="https://wa.me/5517992369192?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20Atendimento%20Fraterno." target="_blank" rel="noopener noreferrer" class="activity-guide-link">
+                            <span>Agendar no WhatsApp</span>
+                            <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </article>
+            </div>
+
+            <div class="section-footer reveal-on-scroll" style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="pages/como-ajudar.html" class="btn-primary">
+                    Quero Ajudar
+                </a>
+                <a href="pages/assistencia-social.html" class="btn-secondary">
+                    Conhecer os Projetos
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Palestras no YouTube -->
+    <section class="youtube-section">
+        <div class="container">
+            <div class="section-header reveal-on-scroll">
+                <h2 class="section-title">Palestras no YouTube</h2>
+                <p class="section-subtitle">Acompanhe os encontros recentes do canal @CAE-RaphaelLatorre de onde estiver</p>
+            </div>
+
+            <div class="youtube-grid">
+                <article class="youtube-card reveal-on-scroll">
+                    <div class="yt-facade" data-yt-id="MDf9uO3Txi0" data-yt-title="Vença o medo, limpe o ressentimento e faça a sua parte">
+                        <img src="https://i.ytimg.com/vi/MDf9uO3Txi0/hqdefault.jpg" alt="Vença o medo, limpe o ressentimento e faça a sua parte" loading="lazy" decoding="async" width="480" height="360">
+                        <button type="button" class="yt-play-btn" aria-label="Assistir: Vença o medo, limpe o ressentimento e faça a sua parte">
+                            <span class="yt-play-icon"><i class="fas fa-play"></i></span>
+                        </button>
+                    </div>
+                    <div class="youtube-card-body">
+                        <h3 class="youtube-card-title">Vença o medo, limpe o ressentimento e faça a sua parte</h3>
+                    </div>
+                </article>
+
+                <article class="youtube-card reveal-on-scroll">
+                    <div class="yt-facade" data-yt-id="Mm9-9F6n_0s" data-yt-title="Por que o mal parece vencer?">
+                        <img src="https://i.ytimg.com/vi/Mm9-9F6n_0s/hqdefault.jpg" alt="Por que o mal parece vencer?" loading="lazy" decoding="async" width="480" height="360">
+                        <button type="button" class="yt-play-btn" aria-label="Assistir: Por que o mal parece vencer?">
+                            <span class="yt-play-icon"><i class="fas fa-play"></i></span>
+                        </button>
+                    </div>
+                    <div class="youtube-card-body">
+                        <h3 class="youtube-card-title">Por que o mal parece vencer?</h3>
+                    </div>
+                </article>
+
+                <article class="youtube-card reveal-on-scroll">
+                    <div class="yt-facade" data-yt-id="bkVuyO3S4zs" data-yt-title="O desafio da convivência no lar">
+                        <img src="https://i.ytimg.com/vi/bkVuyO3S4zs/hqdefault.jpg" alt="O desafio da convivência no lar" loading="lazy" decoding="async" width="480" height="360">
+                        <button type="button" class="yt-play-btn" aria-label="Assistir: O desafio da convivência no lar">
+                            <span class="yt-play-icon"><i class="fas fa-play"></i></span>
+                        </button>
+                    </div>
+                    <div class="youtube-card-body">
+                        <h3 class="youtube-card-title">O desafio da convivência no lar</h3>
+                    </div>
+                </article>
+            </div>
+
+            <div class="section-footer reveal-on-scroll" style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="https://www.youtube.com/@CAE-RaphaelLatorre" target="_blank" rel="noopener noreferrer" class="btn-primary">
+                    Ver Canal no YouTube
+                </a>
+                <a href="https://www.youtube.com/playlist?list=UU22iPJX8V-sw8UBAnHj3-cQ" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+                    Lista Completa de Palestras
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mensagens de Luz e Reflexão (Cartas Psicografadas Coletivas) -->
+    <section id="mensagens" class="messages-section">
+        <div class="container">
+            <div class="section-header reveal-on-scroll">
+                <h2 class="section-title">Mensagens de Luz e Reflexão</h2>
+                <p class="section-subtitle">Comunicações espirituais de caráter coletivo recebidas na Casa — toque em um título para ler</p>
+            </div>
+
+            <div class="messages-accordion-grid">
+                <details class="message-disclosure">
+                    <summary>A Prática da Bondade Contínua</summary>
+                    <div class="message-disclosure-body">
+                        <p>Queridos Irmãos, toda Bondade que fazemos reverte para nós próprios. Esse ato tem que ser praticado a todo momento e não apenas quando queremos; a todo minuto há alguém que necessita de ajuda. Não é apenas nas casas de oração que se pratica o bem, e sim todo dia, sem escolher a quem.</p>
+                        <p>Prestem atenção à sua volta, pois com certeza haverá alguém que vocês podem ajudar, mesmo que seja apenas uma conversa breve. Sejam luz para o próximo e espalhem o amor verdadeiro por onde passarem. Que a Luz Divina do Nosso Senhor Jesus Cristo ilumine a todos.</p>
+                    </div>
+                </details>
+
+                <details class="message-disclosure">
+                    <summary>Comprometimento e Respeito à Casa</summary>
+                    <div class="message-disclosure-body">
+                        <p>Aos irmãos que vierem com a missão de ajudar os irmãos necessitados, devem fazê-lo com amor e que tenham comprometimento e respeito ao local que os acolhe. Com a sua colaboração, esta Casa ajudará cada vez mais os irmãos necessitados — tenham isso como prioridade.</p>
+                        <p>Que Deus, com sua infinita bondade, lhes ajude a iluminar seus caminhos.</p>
+                    </div>
+                </details>
+
+                <details class="message-disclosure">
+                    <summary>A Família como Berço das Provas</summary>
+                    <div class="message-disclosure-body">
+                        <p>Quando vocês escutam "amar ao próximo", não pensem que o próximo é apenas o pedinte ou o necessitado; esses também são merecedores do nosso amor, mas a maior prova de amor começa em sua família. Se vocês conseguirem ter uma família com amor, respeito e união, servirão de exemplo às gerações posteriores.</p>
+                        <p>Nós estamos em processo de evolução e, com nossos familiares e amigos, usamos nossas encarnações para aprender e melhorar sempre. Que a Paz esteja abençoando a todos.</p>
+                    </div>
+                </details>
+
+                <details class="message-disclosure">
+                    <summary>Viver o Presente e Desapegar das Mágoas</summary>
+                    <div class="message-disclosure-body">
+                        <p>Não se prendam em coisas feitas no passado, não se cobrem por erros cometidos, e sim procurem viver o hoje do melhor jeito possível. O futuro só existirá se o seu presente for bem aproveitado: faça todo o bem possível, não guarde mágoa e procure resolver suas angústias hoje.</p>
+                        <p>O hoje é o mais importante — não deixe essa chance de ser melhor passar. Que o exemplo que o Cristo deixou seja força para vencerem essa jornada terrena.</p>
+                    </div>
+                </details>
+
+                <details class="message-disclosure">
+                    <summary>Blindagem Espiritual pela Fé e Resiliência</summary>
+                    <div class="message-disclosure-body">
+                        <p>Irmãos, estamos passando por provas difíceis, em que a mudança de valores e a falta de empatia estão muito presentes no dia a dia. Não entrem nessa sintonia baixa e blindem-se com a fé: vai passar, pois o Pai está no comando e conduzindo tudo para um mundo melhor.</p>
+                        <p>Façam a sua parte, sejam bons, não propaguem boatos ou notícias ruins e sejam luz onde passarem. Sejam resilientes no auxílio ao próximo; se cada um fizer a sua parte, o bem prevalecerá.</p>
+                    </div>
+                </details>
+
+                <details class="message-disclosure">
+                    <summary>A Batalha Espiritual e a Vitória do Bem</summary>
+                    <div class="message-disclosure-body">
+                        <p>Não permitam que as provas que estamos passando abalem sua fé; não abram espaço para o desânimo. Mesmo diante das dificuldades, lembrem-se de que há um Deus no controle de tudo que só quer o nosso bem. Basta ter fé e confiar que o melhor virá.</p>
+                        <p>Olhem com olhos de amor e compreensão e percebam que já estamos seguindo para um mundo melhor. Sejam obreiros de boas ações, paz e amor divino ao próximo, e continuem orando e confiando.</p>
+                    </div>
+                </details>
+
+                <details class="message-disclosure">
+                    <summary>Leis Divinas e Dívidas como Oportunidades</summary>
+                    <div class="message-disclosure-body">
+                        <p>Aos olhos de Deus somos todos luz. Nascemos da luz, de forma limpa e ingênua, e à medida que vamos evoluindo espiritualmente também vamos contraindo dívidas, que são novas chances para evoluirmos ainda mais.</p>
+                        <p>Sempre temos a chance de aprender e auxiliar quem necessita quando desencarnados, e de evoluir ainda mais quando encarnados, desde que as oportunidades sejam aproveitadas. Fiquem com Deus.</p>
+                    </div>
+                </details>
+
+                <details class="message-disclosure">
+                    <summary>Atendimento Comunitário e Renovação Fluídica</summary>
+                    <div class="message-disclosure-body">
+                        <p>Queridos irmãos, boa noite. Celebramos o atendimento comunitário onde energias diferentes são mescladas. Abram suas mentes e absorvam essa energia de limpeza profunda e renovação, tentando manter esse equilíbrio pelo maior tempo possível.</p>
+                        <p>Levem essa energia para suas casas, compartilhem com seus familiares e amigos. Sigam com Deus, queridos amigos.</p>
+                    </div>
+                </details>
+
+                <details class="message-disclosure">
+                    <summary>O Fundamento da Casa e a Convivência Fraterna</summary>
+                    <div class="message-disclosure-body">
+                        <p>Meus amigos, nada é por acaso e ocupamos no planeta exatamente as posições que deveríamos ocupar. Vamos nos preocupar em estudar mais e reclamar menos. Sabemos como é fácil julgar ou corrigir sem nos colocarmos no lugar do outro.</p>
+                        <p>Esta casa que construímos tem uma fundação sólida baseada na Doutrina Espírita. Continuem esse belo trabalho. Até breve, abraços fraternos.</p>
+                    </div>
+                </details>
+
+                <details class="message-disclosure">
+                    <summary>O Chamado e o Sentido do Ser Espírita</summary>
+                    <div class="message-disclosure-body">
+                        <p>Ser espírita é acreditar em Deus e na essência da vida, reconhecendo que somos espíritos imortais ligados à centelha Divina. É praticar os ensinamentos de Jesus, amar a Deus sobre todas as coisas e ao próximo como a si mesmo, procurando ser melhor a cada dia e fazer o bem sem esperar retorno.</p>
+                        <p>É entender o outro, aceitar nossas limitações, não julgar e reconhecer que não somos donos da verdade. O verdadeiro espírita não cultiva dogmas: mantém a mente e o coração abertos, cultiva a humildade, a compreensão e a liberdade interior.</p>
+                    </div>
+                </details>
+            </div>
+
+            <div class="section-footer reveal-on-scroll">
+                <a href="pages/doutrina.html#mensagens" class="btn-secondary">
+                    Ler todas abertas em Doutrina Espírita
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rádio Fraternidade -->
     <section class="activities-section">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Nossas Atividades</h2>
-                <p class="section-subtitle">Conheça as principais atividades do nosso centro espírita</p>
-            </div>
-            
-            <!-- Rádio Fraternidade Banner Moderno -->
-            <div class="radio-feature">
+            <div class="radio-feature reveal-on-scroll">
                 <div class="radio-content">
                     <div class="radio-visual">
                         <div class="radio-icon">
@@ -241,257 +477,17 @@
                     </div>
                     <div class="radio-info">
                         <h3>Rádio Fraternidade</h3>
-                        <p>Programação espírita 24 horas com palestras, músicas e conteúdo doutrinário para elevação espiritual</p>
+                        <p>Programação espírita 24 horas com palestras, músicas e conteúdo doutrinário para acompanhar o seu dia.</p>
                         <a href="https://www.radiofraternidade.com.br/" target="_blank" rel="noopener noreferrer" class="btn-accent">
                             <i class="fas fa-play-circle"></i> Ouça Agora
                         </a>
                     </div>
                 </div>
             </div>
-            
-            <div class="activities-grid">
-                <div class="activity-card">
-                    <div class="activity-icon">
-                        <i class="fas fa-book"></i>
-                    </div>
-                    <div class="activity-content">
-                        <h3 class="activity-title">Palestras Públicas</h3>
-                        <p class="activity-description">Palestras e explanações sobre temas da Doutrina Espírita com base nas obras de Allan Kardec.</p>
-                        <a href="pages/atividades.html#palestras" class="activity-link">
-                            <span>Saiba mais</span>
-                            <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="activity-card">
-                    <div class="activity-icon">
-                        <i class="fas fa-hands"></i>
-                    </div>
-                    <div class="activity-content">
-                        <h3 class="activity-title">Passes Espirituais</h3>
-                        <p class="activity-description">Atendimento fraterno através do passe espírita, transmitindo energias benéficas para harmonização.</p>
-                        <a href="pages/atividades.html#passes" class="activity-link">
-                            <span>Saiba mais</span>
-                            <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="activity-card">
-                    <div class="activity-icon">
-                        <i class="fas fa-child"></i>
-                    </div>
-                    <div class="activity-content">
-                        <h3 class="activity-title">Evangelização Infantil</h3>
-                        <p class="activity-description">Atividades para crianças e jovens, com ensino dos valores morais e éticos do Evangelho à luz do Espiritismo.</p>
-                        <div style="display: inline-flex; align-items: center; gap: 0.5rem; color: var(--accent-color); font-weight: 600; margin-top: 0.5rem;">
-                            <i class="fas fa-clock"></i>
-                            <span>Em breve</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="activity-card">
-                    <div class="activity-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <div class="activity-content">
-                        <h3 class="activity-title">Grupos de Estudo</h3>
-                        <p class="activity-description">Estudo sistematizado da Doutrina Espírita em diferentes níveis para aprofundamento no conhecimento.</p>
-                        <a href="pages/atividades.html#estudos" class="activity-link">
-                            <span>Saiba mais</span>
-                            <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 
-    <!-- Seção Inspiracional -->
-    <section class="inspiration-section">
-        <div class="container">
-            <div class="inspiration-content">
-                <div class="inspiration-quote">
-                    <blockquote>
-                        "Vinde a mim todos os que estais cansados e oprimidos, e eu vos aliviarei."
-                    </blockquote>
-                    <cite>Jesus Cristo</cite>
-                </div>
-                <div class="inspiration-visual">
-                    <div class="inspiration-icon">
-                        <i class="fas fa-heart"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Seção da Doutrina Espírita -->
-    <section class="doctrine-section">
-        <div class="container">
-            <div class="doctrine-content">
-                <div class="section-header">
-                    <h2 class="section-title">A Doutrina Espírita</h2>
-                    <p class="section-subtitle">Conhecimento, filosofia e religiosidade em harmonia</p>
-                </div>
-                
-                <div class="doctrine-description">
-                    <p>O Espiritismo, codificado por Allan Kardec no século XIX, é uma doutrina de caráter científico, filosófico e religioso que estuda a natureza, origem e destino dos Espíritos, bem como suas relações com o mundo corporal.</p>
-                    
-                    <div class="doctrine-pillars">
-                        <div class="pillar">
-                            <div class="pillar-icon">
-                                <i class="fas fa-microscope"></i>
-                            </div>
-                            <h4>Científico</h4>
-                            <p>Baseado na observação e experimentação dos fenômenos mediúnicos</p>
-                        </div>
-                        <div class="pillar">
-                            <div class="pillar-icon">
-                                <i class="fas fa-brain"></i>
-                            </div>
-                            <h4>Filosófico</h4>
-                            <p>Oferece explicações racionais sobre a vida e o universo</p>
-                        </div>
-                        <div class="pillar">
-                            <div class="pillar-icon">
-                                <i class="fas fa-pray"></i>
-                            </div>
-                            <h4>Religioso</h4>
-                            <p>Ensina a prática da caridade e do amor ao próximo</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="doctrine-actions">
-                    <a href="pages/doutrina.html" class="btn-primary">
-                        <i class="fas fa-book-open"></i>
-                        Saiba mais sobre a Doutrina
-                    </a>
-                    <a href="https://kardecpedia.com/" target="_blank" rel="noopener noreferrer" class="btn-secondary">
-                        <i class="fas fa-external-link-alt"></i>
-                        Acesse a Kardecpedia
-                    </a>
-                </div>
-                
-                <div class="doctrine-resources">
-                    <div class="resource-item">
-                        <p><strong>Kardecpedia:</strong> Biblioteca digital com as obras completas de Allan Kardec e outros autores espíritas para consulta gratuita.</p>
-                    </div>
-                    <div class="resource-item">
-                        <a href="https://amebrasil.org.br/" target="_blank" rel="noopener noreferrer" class="resource-link">
-                            <i class="fas fa-heartbeat"></i>
-                            <span>
-                                <strong>AME Brasil</strong>
-                                Associação Médico-Espírita que promove o paradigma médico-espírita integrando ciência, filosofia e religiosidade.
-                            </span>
-                        </a>
-                    </div>
-                    <div class="resource-item">
-                        <h4>Entidades e Federações</h4>
-                        <ul class="resource-links">
-                            <li>
-                                <a href="https://www.febnet.org.br/portal/" target="_blank" rel="noopener noreferrer">
-                                    <i class="fas fa-university"></i>
-                                    Federação Espírita Brasileira (FEB)
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://usesp.org.br/" target="_blank" rel="noopener noreferrer">
-                                    <i class="fas fa-landmark"></i>
-                                    União das Sociedades Espíritas do Estado de São Paulo (USESP)
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.feesp.com.br/" target="_blank" rel="noopener noreferrer">
-                                    <i class="fas fa-hands-helping"></i>
-                                    Federação Espírita do Estado de São Paulo (FEESP)
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Assistência Social Moderna -->
-    <section class="assistance-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Assistência Social</h2>
-                <p class="section-subtitle">Seguindo o princípio "Fora da caridade não há salvação", exercitamos a caridade através de ações concretas</p>
-            </div>
-            
-            <div class="assistance-grid">
-                <div class="assistance-card">
-                    <div class="assistance-image">
-                        <img src="images/placeholder-cestas.webp" alt="Distribuição de Cestas Básicas" loading="lazy" decoding="async">
-                        <div class="assistance-overlay">
-                            <i class="fas fa-shopping-basket"></i>
-                        </div>
-                    </div>
-                    <div class="assistance-content">
-                        <h3 class="assistance-title">Distribuição de Cestas Básicas</h3>
-                        <p class="assistance-description">Auxílio mensal a famílias carentes com cestas de alimentos nutritivos e essenciais.</p>
-                        <div class="assistance-impact">
-                            <span class="impact-number">150+</span>
-                            <span class="impact-label">Famílias Atendidas</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="assistance-card">
-                    <div class="assistance-image">
-                        <img src="images/placeholder-roupas.webp" alt="Brechó" loading="lazy" decoding="async">
-                        <div class="assistance-overlay">
-                            <i class="fas fa-tshirt"></i>
-                        </div>
-                    </div>
-                    <div class="assistance-content">
-                        <h3 class="assistance-title">Brechó</h3>
-                        <p class="assistance-description">Venda de roupas, calçados e utensílios domésticos. A renda é revertida para manutenção do Centro e projetos assistenciais.</p>
-                        <div class="assistance-impact">
-                            <span class="impact-number">300+</span>
-                            <span class="impact-label">Itens por Mês</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="assistance-card">
-                    <div class="assistance-image">
-                        <img src="images/placeholder-gestantes.webp" alt="Atendimento Fraterno" loading="lazy" decoding="async">
-                        <div class="assistance-overlay">
-                            <i class="fas fa-hands-holding-heart"></i>
-                        </div>
-                    </div>
-                    <div class="assistance-content">
-                        <h3 class="assistance-title">Atendimento Fraterno</h3>
-                        <p class="assistance-description">Acolhimento e orientação espiritual para pessoas em momentos de dificuldade, com escuta acolhedora e amparo fraterno.</p>
-                        <div class="assistance-impact">
-                            <span class="impact-number">100+</span>
-                            <span class="impact-label">Atendimentos por Mês</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="section-footer" style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                <a href="pages/como-ajudar.html" class="btn-primary">
-                    <i class="fas fa-hand-holding-heart"></i>
-                    Quero Ajudar
-                </a>
-                <a href="pages/assistencia-social.html" class="btn-primary">
-                    <i class="fas fa-heart"></i>
-                    Ver Projetos
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Rodapé Moderno -->
+    <!-- Rodapé -->
     <footer class="footer-modern">
         <div class="container">
             <div class="footer-content">
@@ -506,9 +502,9 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="footer-section">
-                        <h4>Endereço & Contato</h4>
+                        <h4>Endereço &amp; Contato</h4>
                         <div class="contact-info">
                             <div class="contact-item">
                                 <i class="fas fa-map-marker-alt"></i>
@@ -527,33 +523,36 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="footer-section">
-                        <h4>Apoie Nossa Missão</h4>
+                        <h4>Estudo &amp; Apoio</h4>
                         <p class="footer-pix-text">Faça sua doação via PIX</p>
                         <div class="footer-pix-key">
                             <i class="fas fa-qrcode"></i>
                             <span>50.721.240/0001-53</span>
                         </div>
-                        <a href="pages/como-ajudar.html" class="footer-donate-btn">
-                            <i class="fas fa-hand-holding-heart"></i>
-                            <span>Como Ajudar</span>
-                        </a>
+                        <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 0.75rem;">
+                            <a href="pages/como-ajudar.html" class="footer-donate-btn">
+                                <i class="fas fa-hand-holding-heart"></i>
+                                <span>Como Ajudar</span>
+                            </a>
+                            <a href="pages/doutrina.html#mensagens" class="footer-link-btn">
+                                <i class="fas fa-book-open"></i>
+                                <span>Doutrina &amp; Mensagens</span>
+                            </a>
+                            <a href="https://www.instagram.com/caeraphaellatorre/" target="_blank" rel="noopener noreferrer" class="footer-link-btn">
+                                <i class="fab fa-instagram"></i>
+                                <span>Instagram</span>
+                            </a>
+                            <a href="https://www.youtube.com/@CAE-RaphaelLatorre" target="_blank" rel="noopener noreferrer" class="footer-link-btn">
+                                <i class="fab fa-youtube"></i>
+                                <span>YouTube</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
-                
+
                 <div class="footer-bottom">
-                    <div class="social-links" style="display: flex; justify-content: center; gap: 1rem; margin-bottom: 1.5rem;">
-                        <a href="#" class="social-link" aria-label="Facebook">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#" class="social-link" aria-label="YouTube">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                        <a href="#" class="social-link" aria-label="Instagram">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                    </div>
                     <div class="footer-copyright">
                         <p>&copy; 2026 Centro Assistencial Espírita Raphael Latorre. Todos os direitos reservados.</p>
                         <p class="footer-tagline">
@@ -565,7 +564,6 @@
         </div>
     </footer>
 
-    <!-- Scripts -->
-    <script src="js/modern-interactions.js" defer></script>
+    <script src="js/modern-interactions.js"></script>
 </body>
 </html>

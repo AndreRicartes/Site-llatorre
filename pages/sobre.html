@@ -4,14 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="color-scheme" content="light">
-    <script>
-      try {
-        if (localStorage.getItem('theme') === 'dark') {
-          document.documentElement.setAttribute('data-theme', 'dark');
-          document.querySelector('meta[name="color-scheme"]').content = 'dark';
-        }
-      } catch (e) {}
-    </script>
     <title>Sobre Nós - Centro Assistencial Espírita Raphael Latorre</title>
     <meta name="description" content="Conheça a história e a missão do Centro Assistencial Espírita Raphael Latorre em Bebedouro-SP. Saiba mais sobre nossos valores e princípios.">
     <link rel="stylesheet" href="../css/normalize.css">
@@ -22,152 +14,31 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha384-3B6NwesSXE7YJlcLI9RpRqGf2p/EgVH8BgoKTaUrmKNDkHPStTQ3EyoYjCGXaOTS" crossorigin="anonymous" referrerpolicy="no-referrer">
     <!-- Favicon -->
     <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
-    <style>
-        /* Estilos específicos para a página Sobre Nós */
-        .sobre-nos {
-            padding: 4rem 0;
-        }
-        
-        .sobre-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        
-        .sobre-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-        
-        .sobre-imagem {
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: var(--box-shadow);
-        }
-        
-        .sobre-texto h3 {
-            color: var(--primary-color);
-            margin-bottom: 1.5rem;
-        }
-        
-        .valores {
-            padding: 4rem 0;
-            background-color: var(--light-bg);
-        }
-        
-        .valores-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-        
-        .valor-card {
-            background-color: white;
-            padding: 2rem;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-            text-align: center;
-        }
-        
-        .valor-icon {
-            font-size: 2rem;
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
-        
-        .timeline {
-            padding: 4rem 0;
-        }
-        
-        .timeline-item {
-            position: relative;
-            padding-left: 3rem;
-            padding-bottom: 3rem;
-            border-left: 2px solid var(--primary-color);
-            margin-left: 1rem;
-        }
-        
-        .timeline-item:last-child {
-            border-left: none;
-            padding-bottom: 0;
-        }
-        
-        .timeline-date {
-            position: absolute;
-            left: -1rem;
-            top: 0;
-            background-color: var(--primary-color);
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: var(--border-radius);
-            font-weight: bold;
-            font-size: 0.875rem;
-            white-space: nowrap;
-            z-index: 1;
-        }
-        
-        .timeline-content {
-            background-color: white;
-            padding: 1.5rem;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-            margin-top: 4.5rem;
-        }
-        
-        @media (max-width: 768px) {
-            .sobre-content {
-                grid-template-columns: 1fr;
-            }
-            
-            .sobre-imagem {
-                order: 1;
-            }
-            
-            .sobre-texto {
-                order: 2;
-            }
-        }
-    </style>
 </head>
-<body>
+<body class="home-brand">
     <!-- Cabeçalho Moderno -->
     <header class="header-modern">
         <div class="container">
             <div class="logo">
                 <a href="../index.html" aria-label="Início">
-                    <img src="../images/Logo_RafaelLatorre_1000x1000.png" alt="Centro Assistencial Espírita Raphael Latorre" class="site-logo" width="44" height="44">
+                    <img src="../images/logo-latorre.jpg" alt="Centro Assistencial Espírita Raphael Latorre" class="site-logo" width="52" height="52">
                     <span class="sr-only">Centro Assistencial Espírita Raphael Latorre</span>
                 </a>
             </div>
-            
-            <nav class="nav-modern">
+
+            <nav class="nav-modern" aria-label="Navegação principal">
                 <ul class="nav-links">
                     <li><a href="../index.html" class="nav-link">Início</a></li>
-                    <li><a href="sobre.html" class="nav-link active">Sobre Nós</a></li>
+                    <li><a href="sobre.html" class="nav-link active">A Casa</a></li>
                     <li><a href="atividades.html" class="nav-link">Atividades</a></li>
-                    <li><a href="doutrina.html" class="nav-link">Doutrina Espírita</a></li>
+                    <li><a href="doutrina.html" class="nav-link">Doutrina</a></li>
                     <li><a href="assistencia-social.html" class="nav-link">Assistência Social</a></li>
-                    <li><a href="como-ajudar.html" class="nav-link cta-link">
-                        <i class="fas fa-hands-helping"></i> Como ajudar
-                    </a></li>
+                    <li><a href="como-ajudar.html" class="nav-link cta-link">Como ajudar</a></li>
                     <li><a href="contato.html" class="nav-link">Contato</a></li>
                 </ul>
             </nav>
-            
+
             <div class="header-actions">
-                <div class="accessibility-controls">
-                    <button type="button" id="font-increase" class="accessibility-btn" title="Aumentar fonte">
-                        <i class="fas fa-plus"></i>
-                    </button>
-                    <button type="button" id="font-decrease" class="accessibility-btn" title="Diminuir fonte">
-                        <i class="fas fa-minus"></i>
-                    </button>
-                </div>
-                <button class="accessibility-btn" id="theme-toggle" title="Alternar tema" aria-label="Alternar tema">
-                    <i class="fas fa-moon"></i>
-                </button>
-                
                 <button class="menu-toggle" aria-label="Menu" aria-expanded="false">
                     <span class="hamburger"></span>
                     <span class="hamburger"></span>
@@ -177,29 +48,23 @@
         </div>
     </header>
 
-    <!-- Banner Principal Sobre -->
+        <!-- Banner Principal Sobre -->
     <section class="hero-modern hero-sobre">
         <img 
-            src="../images/centro.webp" 
-            alt="Centro Assistencial Espírita Raphael Latorre - Fachada" 
+            src="../images/fachada-latorre.png" 
+            alt="Fachada do Centro Assistencial Espírita Raphael Latorre" 
             class="hero-background"
             decoding="async" 
             fetchpriority="high"
-            width="1920" height="1080"
+            width="1200" height="800"
         >
         <div class="hero-overlay"></div>
         <div class="hero-pattern"></div>
         <div class="container">
             <div class="hero-content">
-                <nav aria-label="Breadcrumb" class="breadcrumb-hero">
-                    <ol class="breadcrumb">
-                        <li><a href="../index.html">Início</a></li>
-                        <li>Sobre Nós</li>
-                    </ol>
-                </nav>
                 <h1 class="hero-title">Sobre Nós</h1>
                 <p class="hero-subtitle">Conheça a história e os valores do Centro Assistencial Espírita Raphael Latorre</p>
-                <p class="hero-description">Uma trajetória de mais de 50 anos dedicada ao estudo e prática da Doutrina Espírita em Bebedouro-SP</p>
+                <p class="hero-description">Desde 15 de agosto de 1978, dedicados ao acolhimento, ao estudo e à prática da Doutrina Espírita em Bebedouro-SP.</p>
                 <div class="hero-actions">
                     <a href="#main-content" class="btn btn-primary">Nossa História</a>
                     <a href="como-ajudar.html" class="btn btn-secondary">Como ajudar</a>
@@ -208,40 +73,36 @@
         </div>
     </section>
 
-    <!-- Seção Sobre Nós -->
-    <section class="sobre-nos" id="main-content">
+    <!-- História Resumida + Relato Completo em Acordeão -->
+    <section class="sobre-page-section" id="main-content">
         <div class="container">
-            <p class="section-desc"><i class="fas fa-info-circle" aria-hidden="true"></i> Veja as <a href="atividades.html#orientacoes">orientações da Casa</a> na página de Atividades.</p>
-            <div class="sobre-header sobre-header-hidden">
-                <h2 class="section-title">Nossa História</h2>
-            </div>
-            
-            <div class="sobre-content">
-                <div class="sobre-texto-completo">
-                    <div class="autor-creditos">
-                        <h3>por Ângelo Varrichio Filho</h3>
-                        <p class="autor-titulo">Fundador e Presidente de Honra (in memoriam) - Presidente: 1978-2017</p>
+            <div class="sobre-story-card">
+                <h2>Nossa História</h2>
+                <p>Fundado oficialmente em <strong>15 de agosto de 1978</strong>, o Centro Assistencial Espírita Raphael Latorre nasceu das reuniões simples na residência de Dona Izabel Leme da Silva, no final da década de 1960, com amigos dedicados ao estudo do Espiritismo codificado por Allan Kardec.</p>
+                <p>O nome homenageia <strong>Raphael Latorre</strong>, exemplo de caridade que levava consolo evangélico aos lares em dificuldade. Ao longo de mais de quatro décadas, a Casa consolidou suas atividades gratuitas de palestras, passes, estudos e assistência social (como a Casa da Sopa, cestas básicas e brechó solidário).</p>
+
+                <div class="founder-highlight" style="margin: 1.25rem 0 0; max-width: 100%;">
+                    <img src="../images/Fundador.jpg" alt="Ângelo Varrichio Filho" class="founder-portrait" loading="lazy" decoding="async">
+                    <div class="founder-note">
+                        <h3>Ângelo Varrichio Filho (in memoriam)</h3>
+                        <p>Fundador e Presidente de Honra — conduziu a presidência da Casa de 1978 a 2017.</p>
                     </div>
-                    <p>Pelos meados dos anos de 1968 e 1970, juntamente com alguns amigos simpatizantes da doutrina espírita de Kardec, reuníamos na residência de nossa querida e amada irmã já desencarnada Izabel Leme da Silva, atualmente presidente de honra da nossa casa.</p>
-                    <p>Com o passar do tempo, a frequência naquela residência foi crescendo e não havia mais lugares para os frequentadores.</p>
-                    <p>Então, resolvemos pedir ao Prefeito Municipal daquela época, Sr. Hélio de Almeida Bastos a doação de um terreno, onde ele pediu que também conversássemos com os vereadores.</p>
-                    <p>Conseguimos a doação do terreno para que pudéssemos fundar nosso centro.</p>
-                    <p>E assim, com a ajuda de “muitos irmãos” e algumas doações na época feita pelo prefeito Edne José Piffer, conseguimos levantar nosso centro, que aconteceu no ano de 1981.</p>
-                    <p>Na reunião que fazíamos na residência de Dona Izabel, um dos frequentadores o Sr. José Ribeiro de Souza, pai de nosso irmão Rui Ribeiro de Souza, que foi um grande colaborador para o Centro disse: Ângelo, você vai ser o presidente do Centro! Eu fiquei sem saber o que dizer, mas eu disse: Sr. Juca (era o apelido dele) eu não tenho condições para assumir esse cargo.</p>
-                    <p>Você nada sabe, disse ele, mas, estude porque assim será.</p>
-                    <p>E aqui estou, fiquei como presidente do Centro de 15 de agosto de 1978, até dezembro de 2017. Entreguei o cargo para nosso irmão Thiago Zancheta de Almeida para a presidência do biênio 2018/2019, ficando eu responsável pelos trabalhos espirituais da casa.</p>
-                    <p>Colocamos o nome do Centro como Raphael Latorre que foi uma pessoa que levava aos lares onde haviam conflitos e mal-estar a palavra de Cristo as famílias. Foi e continua sendo uma alma boníssima e iluminada. Depois disso, voltamos ao prefeito para pedir o terreno ao lado, para construirmos a Casa da Sopa e conseguimos. atualidade ali entregamos com a ajuda de muitos irmãos, aproximadamente 40 marmitas aos moradores de rua nas segundas e quartas-feiras e distribuímos cerca de 40 cestas básicas mensais com a ajuda de muitos irmãos. No salão superior estudamos a doutrina as quintas-feiras e vamos reiniciar a Evangelização Infantil. Na parte inferior, localiza-se atualmente nosso brechó.</p>
-                    <div class="destaque-crescimento">
-                        <p><strong>A nossa casa vem crescendo dia após dia porque o número de irmãos necessitados são muitos.</strong></p>
-                        <p><strong>A frequência nas terças e quintas-feiras aproxima-se de 200 pessoas por dia de trabalho.</strong></p>
-                    </div>
-                    <p>Temos uma equipe de médiuns que acreditamos satisfazerem aqueles que nos procuram, porque nossa casa foi destinada a ser socorrista.</p>
-                    <p>Texto escrito por Ângelo Varrichio Filho em 2017.</p>
-                    <p>Este texto reflete a trajetória e os desafios enfrentados pelo Centro ao longo dos anos, bem como o compromisso contínuo com a caridade e o auxílio aos necessitados.</p>
                 </div>
+
+                <details class="sobre-relato-details">
+                    <summary>Ler relato histórico completo escrito por Ângelo Varrichio Filho (2017)</summary>
+                    <div class="sobre-relato-body">
+                        <p>Pelos meados dos anos de 1968 e 1970, juntamente com alguns amigos simpatizantes da doutrina espírita de Kardec, reuníamos na residência de nossa querida e amada irmã já desencarnada Izabel Leme da Silva, atualmente presidente de honra da nossa casa.</p>
+                        <p>Com o passar do tempo, a frequência naquela residência foi crescendo e não havia mais lugares para os frequentadores. Então, resolvemos pedir ao Prefeito Municipal daquela época, Sr. Hélio de Almeida Bastos, a doação de um terreno, onde ele pediu que também conversássemos com os vereadores. Conseguimos a doação do terreno para que pudéssemos fundar nosso centro.</p>
+                        <p>E assim, com a ajuda de “muitos irmãos” e algumas doações na época feitas pelo prefeito Edne José Piffer, conseguimos levantar nosso centro, no ano de 1981.</p>
+                        <p>Na reunião que fazíamos na residência de Dona Izabel, um dos frequentadores, o Sr. José Ribeiro de Souza (Sr. Juca), pai de nosso irmão Rui Ribeiro de Souza, disse: "Ângelo, você vai ser o presidente do Centro!". Eu disse que não tinha condições para assumir esse cargo, e ele respondeu: "Estude porque assim será."</p>
+                        <p>Fiquei como presidente do Centro de 15 de agosto de 1978 até dezembro de 2017, quando entreguei o cargo para nosso irmão Thiago Zancheta de Almeida para o biênio 2018/2019, ficando responsável pelos trabalhos espirituais da casa.</p>
+                        <p>Colocamos o nome do Centro como Raphael Latorre, que levava aos lares onde havia conflitos e mal-estar a palavra de Cristo às famílias. Depois, conseguimos o terreno ao lado para construirmos a Casa da Sopa, as cestas básicas, os estudos no salão superior e o brechó.</p>
+                        <p><em>Texto escrito por Ângelo Varrichio Filho em 2017.</em></p>
+                    </div>
+                </details>
             </div>
         </div>
-        
     </section>
 
     <!-- Seção Carrossel História -->
@@ -267,27 +128,27 @@
                         </div>
                     </div>
                     <div class="carousel-slide" role="listitem">
+                        <span class="year-badge">1980</span>
+                        <img src="../images/historia/04.webp" alt="Primeiras atividades assistenciais e atendimentos à comunidade" loading="lazy" width="1280" height="720">
+                        <div class="carousel-caption">
+                            <h4>Atividades Assistenciais</h4>
+                            <p>Primeiros atendimentos e ações sociais à comunidade</p>
+                        </div>
+                    </div>
+                    <div class="carousel-slide" role="listitem">
                         <span class="year-badge">1981</span>
                         <img src="../images/historia/03.webp" alt="Construção da sede própria do Centro em 1981" loading="lazy" width="1280" height="720">
                         <div class="carousel-caption">
                             <h4>Construção da Sede</h4>
-                            <p>Início das obras na sede do endereço atual</p>
-                        </div>
-                    </div>
-                    <div class="carousel-slide" role="listitem">
-                        <span class="year-badge">1980</span>
-                        <img src="../images/historia/04.webp" alt="Primeiras atividades assistenciais e atendimentos à comunidade na nova sede" loading="lazy" width="1280" height="720">
-                        <div class="carousel-caption">
-                            <h4>Atividades Assistenciais</h4>
-                            <p>Primeiros atendimentos e ações sociais na nova sede</p>
+                            <p>Conclusão das obras na sede do endereço atual</p>
                         </div>
                     </div>
                     <div class="carousel-slide" role="listitem">
                         <span class="year-badge">1970–1981</span>
-                        <img src="../images/historia/05.webp" alt="Construção da Casa da Sopa e consolidação da assistência" loading="lazy" width="1280" height="720">
+                        <img src="../images/historia/05.webp" alt="Consolidação das reuniões de estudo e assistência da Casa" loading="lazy" width="1280" height="720">
                         <div class="carousel-caption">
-                            <h4>Casa da Sopa</h4>
-                            <p>Consolidação das ações de assistência, com a Casa da Sopa</p>
+                            <h4>Consolidação da Casa</h4>
+                            <p>Salão de palestras, estudos e trabalho fraterno contínuo</p>
                         </div>
                     </div>
                 </div>
@@ -299,197 +160,213 @@
                 <div class="dots-list">
                     <button class="dot active" role="tab" aria-selected="true" aria-controls="slide-1" onclick="irParaSlide(1)"><span class="dot-label">1970</span></button>
                     <button class="dot" role="tab" aria-selected="false" aria-controls="slide-2" onclick="irParaSlide(2)"><span class="dot-label">1978</span></button>
-                    <button class="dot" role="tab" aria-selected="false" aria-controls="slide-3" onclick="irParaSlide(3)"><span class="dot-label">1981</span></button>
-                    <button class="dot" role="tab" aria-selected="false" aria-controls="slide-4" onclick="irParaSlide(4)"><span class="dot-label">1980</span></button>
+                    <button class="dot" role="tab" aria-selected="false" aria-controls="slide-3" onclick="irParaSlide(3)"><span class="dot-label">1980</span></button>
+                    <button class="dot" role="tab" aria-selected="false" aria-controls="slide-4" onclick="irParaSlide(4)"><span class="dot-label">1981</span></button>
                     <button class="dot" role="tab" aria-selected="false" aria-controls="slide-5" onclick="irParaSlide(5)"><span class="dot-label">1970–81</span></button>
                 </div>
             </div>
         </div>
     </section>
 
-                    <p>Fundado em 1978, o Centro Assistencial Espírita Raphael Latorre nasceu do desejo de um grupo de pessoas dedicadas ao estudo e à prática da Doutrina Espírita em Bebedouro-SP. Ao longo de mais de quatro décadas, nosso Centro tem sido um espaço de acolhimento, estudo, prática da caridade e divulgação dos ensinamentos codificados por Allan Kardec.</p>
-                    <p>O nome é uma homenagem a Raphael Latorre, um exemplo de dedicação à causa espírita e ao trabalho fraterno. Sua trajetória de vida inspirou os fundadores a seguirem os princípios de amor ao próximo e caridade que norteiam nossa Casa.</p>
-                    <p>Desde nossa fundação, mantemos o compromisso com a simplicidade e a seriedade no estudo doutrinário, oferecendo atividades gratuitas de assistência espiritual e social para todos que nos procuram, independentemente de suas crenças.</p>
-                    <p>Texto escrito por Ângelo Varrichio Filho em 2017.</p>
-
     <!-- Seção Missão, Visão e Valores -->
-    <section class="valores">
+    <section class="valores-modern">
         <div class="container">
-            <h2 class="section-title">Missão, Visão e Valores</h2>
-            
-            <div class="valores-grid">
-                <div class="valor-card">
-                    <div class="valor-icon">
-                        <i class="fas fa-bullseye"></i>
-                    </div>
+            <h2 class="section-title text-center">Missão, Visão e Valores</h2>
+
+            <div class="valores-grid-modern">
+                <article class="activity-guide-card">
+                    <span class="activity-guide-icon" aria-hidden="true"><i class="fas fa-bullseye"></i></span>
                     <h3>Missão</h3>
-                    <p>Promover o estudo, a difusão e a prática da Doutrina Espírita, oferecendo acolhimento fraterno e auxílio material e espiritual à comunidade, com base nos ensinamentos codificados por Allan Kardec.</p>
-                </div>
-                <div class="valor-card">
-                    <div class="valor-icon">
-                        <i class="fas fa-eye"></i>
-                    </div>
+                    <p>Promover o estudo, a difusão e a prática da Doutrina Espírita, oferecendo acolhimento fraterno e auxílio material e espiritual à comunidade, com base na Codificação de Allan Kardec.</p>
+                </article>
+                <article class="activity-guide-card">
+                    <span class="activity-guide-icon" aria-hidden="true"><i class="fas fa-eye"></i></span>
                     <h3>Visão</h3>
-                    <p>Ser uma referência em Bebedouro e região como um centro espírita que promove a transformação moral do ser humano através do conhecimento e da prática da Doutrina Espírita em sua pureza original.</p>
-                </div>
-                <div class="valor-card">
-                    <div class="valor-icon">
-                        <i class="fas fa-heart"></i>
-                    </div>
+                    <p>Ser referência em Bebedouro e região como uma Casa acolhedora que estimula a transformação moral pelo conhecimento e pela vivência do Evangelho.</p>
+                </article>
+                <article class="activity-guide-card">
+                    <span class="activity-guide-icon" aria-hidden="true"><i class="fas fa-heart"></i></span>
                     <h3>Valores</h3>
-                    <p>Caridade, fraternidade, estudo, humildade, simplicidade, transparência e respeito à diversidade, sempre orientados pelos princípios espíritas.</p>
-                </div>
+                    <p>Caridade, fraternidade, estudo sério, humildade, simplicidade, transparência e respeito a todas as pessoas.</p>
+                </article>
             </div>
         </div>
     </section>
 
     <!-- Seção Linha do Tempo -->
-<section class="timeline">
-    <div class="container">
-        <h2 class="section-title">Nossa Trajetória</h2>
-        
-        <div class="timeline-container">
-            <div class="timeline-item">
-                <div class="timeline-date">1968-1970</div>
-                <div class="timeline-content">
+    <section class="timeline-modern-section">
+        <div class="container">
+            <h2 class="section-title text-center">Nossa Trajetória</h2>
+
+            <div class="timeline-modern-list">
+                <article class="timeline-modern-item">
+                    <span class="timeline-modern-date">1968–1970</span>
                     <h3>Início das Reuniões Espíritas</h3>
                     <p>Reuniões começam na residência de Izabel Leme da Silva, com simpatizantes da doutrina espírita de Kardec.</p>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-date">Meados dos anos 1970</div>
-                <div class="timeline-content">
+                </article>
+                <article class="timeline-modern-item">
+                    <span class="timeline-modern-date">Meados dos anos 1970</span>
                     <h3>Crescimento e Doação do Terreno</h3>
-                    <p>Aumento da frequência nas reuniões torna a residência insuficiente. Pedido de terreno ao prefeito Hélio de Almeida Bastos, que orienta consultar vereadores, resultando na doação do terreno.</p>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-date">15 de Agosto de 1978</div>
-                <div class="timeline-content">
+                    <p>Com o aumento da frequência, a Casa consegue a doação do terreno junto à Prefeitura e Câmara de Bebedouro.</p>
+                </article>
+                <article class="timeline-modern-item">
+                    <span class="timeline-modern-date">15 de Agosto de 1978</span>
                     <h3>Fundação do Centro Raphael Latorre</h3>
-                    <p>Fundação oficial do Centro Espírita Raphael Latorre, com a primeira diretoria formada por Ângelo Varrichio Filho (Presidente), Lourenço Justo Bianchi (Vice-Presidente), Hélio Buchetti (Tesoureiro), Katia Elizabeth Ribeiro de Souza (Secretária), e outros membros.</p>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-date">1981</div>
-                <div class="timeline-content">
-                    <h3>Construção do Centro</h3>
-                    <p>Construção do centro é concluída com doações e apoio do prefeito Edne José Piffer.</p>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-date">Após 1981</div>
-                <div class="timeline-content">
+                    <p>Fundação oficial com a primeira diretoria: Ângelo Varrichio Filho (Presidente), Lourenço Justo Bianchi (Vice-Presidente), Hélio Buchetti (Tesoureiro) e Katia Elizabeth Ribeiro de Souza (Secretária).</p>
+                </article>
+                <article class="timeline-modern-item">
+                    <span class="timeline-modern-date">1981</span>
+                    <h3>Construção da Sede</h3>
+                    <p>Conclusão das obras da sede própria com doações da comunidade e apoio do prefeito Edne José Piffer.</p>
+                </article>
+                <article class="timeline-modern-item">
+                    <span class="timeline-modern-date">Após 1981</span>
                     <h3>Construção da Casa da Sopa</h3>
-                    <p>Doação de terreno ao lado do centro para a construção da Casa da Sopa, atendendo às necessidades da comunidade.</p>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-date">Dezembro de 2017</div>
-                <div class="timeline-content">
+                    <p>Doação do terreno ao lado para ampliar o atendimento assistencial às famílias e moradores em vulnerabilidade.</p>
+                </article>
+                <article class="timeline-modern-item">
+                    <span class="timeline-modern-date">Dezembro de 2017</span>
                     <h3>Transição de Presidência</h3>
-                    <p>Ângelo Varrichio Filho deixa a presidência após 39 anos (1978-2017) e passa o cargo a Thiago Zancheta de Almeida para o biênio 2018/2019, assumindo os trabalhos espirituais da casa.</p>
-                </div>
+                    <p>Após 39 anos à frente da instituição (1978–2017), Ângelo Varrichio Filho passa a presidência a Thiago Zancheta de Almeida e segue na condução dos trabalhos espirituais.</p>
+                </article>
+                <article class="timeline-modern-item">
+                    <span class="timeline-modern-date">2026 — Atualidade</span>
+                    <h3>Continuidade e Novos Projetos</h3>
+                    <p>Palestras semanais gratuitas, passes, atendimento fraterno, grupos de estudo, distribuição mensal de cestas básicas, brechó solidário e Curso de Iniciação ao Espiritismo aos sábados.</p>
+                </article>
             </div>
-            <div class="timeline-item">
-                <div class="timeline-date">Em (2017)</div>
-                <div class="timeline-content">
-                    <h3>Atividades</h3>
-                    <p>Distribuição de 40 marmitas às segundas e quartas-feiras, 40 cestas básicas mensais, estudos da doutrina às quintas-feiras, reinício planejado da Evangelização Infantil, funcionamento de brechó, e frequência de cerca de 200 pessoas por dia às terças e quintas-feiras, com uma equipe de médiuns dedicada.</p>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-date">Hoje (2025)</div>
-                <div class="timeline-content">
-                    <h3>Atividades Atuais</h3>
-                    <p>texto em produção.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-
-    <!-- Seção Equipe/Diretoria -->
-    <section class="equipe">
-        <div class="container">
-            <h2 class="section-title">Nossa Diretoria</h2>
-            <p class="section-desc">O Centro Assistencial Espírita Raphael Latorre é conduzido por uma equipe de voluntários dedicados à causa espírita e ao bem-estar da comunidade.</p>
-
-            <p class="text-center"><strong>CENTRO ASSISTENCIAL ESPÍRITA RAPHAEL LATORRE</strong></p>
-            <p class="text-center"><strong>ADMINISTRAÇÃO 2026-2027</strong></p>
-
-            <h3 class="text-center mt-3">DIRETORIA EXECUTIVA</h3>
-            <div class="equipe-lista text-center">
-                <p><strong>PRESIDENTE DE HONRA</strong>: Ademir Furegato</p>
-                <p><strong>PRESIDENTE</strong>: Marcel Augusto Rosa Lui</p>
-                <p><strong>VICE PRESIDENTE</strong>: Luiz Roberto Mendes</p>
-                <p><strong>SECRETÁRIO-GERAL</strong>: Sérgio Gustavo Rosa Lui</p>
-                <p><strong>1º SECRETÁRIO</strong>: Érica Helena Rosa Lui</p>
-                <p><strong>TESOUREIRO-GERAL</strong>: Fabio Peloja Fregatti</p>
-                <p><strong>1º TESOUREIRO</strong>: Anderson Luiz Alves</p>
-                <p><strong>DIRETOR SOCIAL</strong>: Guilherme Antonio Consolin</p>
-                <p><strong>DIRETOR DE PATRIMÔNIO</strong>: Hermes Gobbo</p>
-            </div>
-
-            <h3 class="text-center mt-4">CONSELHO FISCAL</h3>
-            <div class="equipe-lista text-center">
-                <p><strong>1º MEMBRO CONS. FISCAL</strong>: Aparecida de Fátima Boldrin Mendes</p>
-                <p><strong>2º MEMBRO CONS. FISCAL</strong>: Maria Helena Rodrigues</p>
-                <p><strong>3º MEMBRO CONS. FISCAL</strong>: Reginaldo Mantovani Cunha</p>
-            </div>
-
-            <h3 class="text-center mt-4">CONSELHO DELIBERATIVO</h3>
-            <div class="equipe-lista text-center">
-                <p><strong>PRESIDENTE</strong>: Weslley Bolbrin Mendes</p>
-                <p><strong>1º MEMBRO CONS. DELIB.</strong>: Lislene Camolezi Neves</p>
-                <p><strong>2º MEMBRO CONS. DELIB.</strong>: Isabel Cristina da Cruz Lopes Boldrin</p>
-                <p><strong>3º MEMBRO CONS. DELIB.</strong>: Jorge Ricardo Matheus</p>
-                <p><strong>4º MEMBRO CONS. DELIB.</strong>: Lucinda Aparecida Martins da Silva</p>
-            </div>
-            
-            <p class="text-center mt-4">Nossa equipe é formada por voluntários que dedicam seu tempo e conhecimento para manter as atividades do Centro. Se você deseja participar como voluntário em alguma das nossas atividades, entre em <a href="contato.html">contato conosco</a>.</p>
         </div>
     </section>
 
-    
-
-    <!-- Rodapé -->
-    <footer>
+    <!-- Seção Equipe/Diretoria -->
+    <section class="equipe-modern-section">
         <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h3>Centro Assistencial Espírita Raphael Latorre</h3>
-                    <p>Promovendo o estudo, a prática e a difusão da Doutrina Espírita desde 1978.</p>
-                    <p><i class="fas fa-hand-holding-heart"></i> Todas as nossas atividades são gratuitas.</p>
-                </div>
-                <div class="footer-col">
-                    <h3>Endereço</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> Rua Duque de Caxias, 75</p>
-                    <p>Jardim São João - Bebedouro, SP</p>
-                    <p><i class="fas fa-phone"></i> (17) 99236-9192</p>
-                    <p><i class="fas fa-envelope"></i> caeraphaellatorre@hotmail.com</p>
-                </div>
-                <div class="footer-col">
-                    <h3>Apoie Nossa Missão</h3>
-                    <p><strong>Doação via PIX:</strong></p>
-                    <p><i class="fas fa-qrcode"></i> 50.721.240/0001-53</p>
-                    <div class="radio-link mt-3">
-                        <a href="como-ajudar.html" class="radio-btn">
-                            <i class="fas fa-hand-holding-heart"></i> Como Ajudar
-                        </a>
-                    </div>
+            <div class="contato-hero-head">
+                <h2 class="section-title">Administração 2026–2027</h2>
+                <p class="section-subtitle">Voluntários eleitos que conduzem o Centro Assistencial Espírita Raphael Latorre com dedicação e transparência.</p>
+            </div>
+
+            <div class="equipe-cards-grid">
+                <article class="contato-card">
+                    <h3>Diretoria Executiva</h3>
+                    <ul class="equipe-role-list">
+                        <li><span class="equipe-role-title">Presidente de Honra</span><span class="equipe-role-name">Ademir Furegato</span></li>
+                        <li><span class="equipe-role-title">Presidente</span><span class="equipe-role-name">Marcel Augusto Rosa Lui</span></li>
+                        <li><span class="equipe-role-title">Vice-Presidente</span><span class="equipe-role-name">Luiz Roberto Mendes</span></li>
+                        <li><span class="equipe-role-title">Secretário-Geral</span><span class="equipe-role-name">Sérgio Gustavo Rosa Lui</span></li>
+                        <li><span class="equipe-role-title">1º Secretário</span><span class="equipe-role-name">Érica Helena Rosa Lui</span></li>
+                        <li><span class="equipe-role-title">Tesoureiro-Geral</span><span class="equipe-role-name">Fabio Peloja Fregatti</span></li>
+                        <li><span class="equipe-role-title">1º Tesoureiro</span><span class="equipe-role-name">Anderson Luiz Alves</span></li>
+                        <li><span class="equipe-role-title">Diretor Social</span><span class="equipe-role-name">Guilherme Antonio Consolin</span></li>
+                        <li><span class="equipe-role-title">Diretor de Patrimônio</span><span class="equipe-role-name">Hermes Gobbo</span></li>
+                    </ul>
+                </article>
+
+                <article class="contato-card">
+                    <h3>Conselho Fiscal</h3>
+                    <ul class="equipe-role-list">
+                        <li><span class="equipe-role-title">1º Membro</span><span class="equipe-role-name">Aparecida de Fátima Boldrin Mendes</span></li>
+                        <li><span class="equipe-role-title">2º Membro</span><span class="equipe-role-name">Maria Helena Rodrigues</span></li>
+                        <li><span class="equipe-role-title">3º Membro</span><span class="equipe-role-name">Reginaldo Mantovani Cunha</span></li>
+                    </ul>
+                </article>
+
+                <article class="contato-card">
+                    <h3>Conselho Deliberativo</h3>
+                    <ul class="equipe-role-list">
+                        <li><span class="equipe-role-title">Presidente</span><span class="equipe-role-name">Weslley Bolbrin Mendes</span></li>
+                        <li><span class="equipe-role-title">1º Membro</span><span class="equipe-role-name">Lislene Camolezi Neves</span></li>
+                        <li><span class="equipe-role-title">2º Membro</span><span class="equipe-role-name">Isabel Cristina da Cruz Lopes Boldrin</span></li>
+                        <li><span class="equipe-role-title">3º Membro</span><span class="equipe-role-name">Jorge Ricardo Matheus</span></li>
+                        <li><span class="equipe-role-title">4º Membro</span><span class="equipe-role-name">Lucinda Aparecida Martins da Silva</span></li>
+                    </ul>
+                </article>
+            </div>
+
+            <div class="assistencia-cta-box" style="margin-top: 2rem;">
+                <h2>Quer fazer parte dessa equipe?</h2>
+                <p>Nossa Casa funciona graças ao trabalho voluntário. Conheça nossas atividades ou fale com a secretaria.</p>
+                <div class="assistencia-cta-actions">
+                    <a href="atividades.html" class="btn-primary">Ver Atividades</a>
+                    <a href="contato.html" class="btn-secondary">Falar com a Casa</a>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <div class="social-links" style="display: flex; justify-content: center; gap: 1rem; margin-bottom: 1.5rem;">
-                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="footer-modern">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-main">
+                    <div class="footer-section">
+                        <div class="footer-brand">
+                            <h3>Centro Assistencial Espírita<br>Raphael Latorre</h3>
+                            <p>Promovendo o estudo, a prática e a difusão da Doutrina Espírita desde 1978.</p>
+                            <div class="footer-highlight">
+                                <i class="fas fa-hand-holding-heart"></i>
+                                <span>Todas as nossas atividades são gratuitas</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="footer-section">
+                        <h4>Endereço &amp; Contato</h4>
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                    <span>Rua Duque de Caxias, 75</span>
+                                    <span>Jardim São João - Bebedouro, SP</span>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <span>(17) 99236-9192</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>caeraphaellatorre@hotmail.com</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="footer-section">
+                        <h4>Estudo &amp; Apoio</h4>
+                        <p class="footer-pix-text">Faça sua doação via PIX</p>
+                        <div class="footer-pix-key">
+                            <i class="fas fa-qrcode"></i>
+                            <span>50.721.240/0001-53</span>
+                        </div>
+                        <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 0.75rem;">
+                            <a href="como-ajudar.html" class="footer-donate-btn">
+                                <i class="fas fa-hand-holding-heart"></i>
+                                <span>Como Ajudar</span>
+                            </a>
+                            <a href="doutrina.html" class="footer-link-btn">
+                                <i class="fas fa-book-open"></i>
+                                <span>Doutrina Espírita</span>
+                            </a>
+                            <a href="https://www.youtube.com/@CAE-RaphaelLatorre" target="_blank" rel="noopener noreferrer" class="footer-link-btn">
+                                <i class="fab fa-youtube"></i>
+                                <span>YouTube</span>
+                            </a>
+                            <a href="https://www.instagram.com/caeraphaellatorre/" target="_blank" rel="noopener noreferrer" class="footer-link-btn">
+                                <i class="fab fa-instagram"></i>
+                                <span>Instagram</span>
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <p>&copy; 2026 Centro Assistencial Espírita Raphael Latorre. Todos os direitos reservados.</p>
-                <p class="footer-info">Desenvolvido com <i class="fas fa-heart"></i> e respeito à Doutrina Espírita.</p>
+
+                <div class="footer-bottom">
+                    <div class="footer-copyright">
+                        <p>&copy; 2026 Centro Assistencial Espírita Raphael Latorre. Todos os direitos reservados.</p>
+                        <p class="footer-tagline">
+                            Desenvolvido com <i class="fas fa-heart"></i> e respeito à Doutrina Espírita
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     </footer>

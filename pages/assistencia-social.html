@@ -4,14 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="color-scheme" content="light">
-    <script>
-      try {
-        if (localStorage.getItem('theme') === 'dark') {
-          document.documentElement.setAttribute('data-theme', 'dark');
-          document.querySelector('meta[name="color-scheme"]').content = 'dark';
-        }
-      } catch (e) {}
-    </script>
     <title>Assistência Social - Centro Assistencial Espírita Raphael Latorre</title>
     <meta name="description" content="Conheça os projetos de assistência social do Centro Assistencial Espírita Raphael Latorre: cestas básicas, atendimento fraterno e muito mais. Conheça também nosso brechó.">
     <link rel="stylesheet" href="../css/normalize.css">
@@ -22,290 +14,31 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha384-3B6NwesSXE7YJlcLI9RpRqGf2p/EgVH8BgoKTaUrmKNDkHPStTQ3EyoYjCGXaOTS" crossorigin="anonymous" referrerpolicy="no-referrer">
     <!-- Favicon -->
     <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
-    <style>
-        /* Estilos específicos para a página de Assistência Social */
-        .assistencia-section {
-            padding: 4rem 0;
-        }
-        
-        .assistencia-intro {
-            max-width: 800px;
-            margin: 0 auto 3rem;
-            text-align: center;
-        }
-        
-        .assistencia-banner {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 2rem;
-            border-radius: var(--border-radius);
-            margin-bottom: 3rem;
-            text-align: center;
-        }
-        
-        .assistencia-banner h3 {
-            margin-top: 0;
-            font-size: 1.8rem;
-        }
-        
-        .assistencia-banner p {
-            margin-bottom: 0;
-            font-size: 1.1rem;
-        }
-        
-        .projeto-item {
-            background-color: white;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-            overflow: hidden;
-            margin-bottom: 2.5rem;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .projeto-header {
-            background-color: var(--accent-color);
-            color: white;
-            padding: 1.2rem 1.5rem;
-            position: relative;
-        }
-        
-        .projeto-header h3 {
-            margin: 0;
-            font-size: 1.5rem;
-            display: flex;
-            align-items: center;
-        }
-        
-        .projeto-header i {
-            margin-right: 0.8rem;
-            font-size: 1.5rem;
-        }
-        
-        .projeto-content {
-            padding: 1.5rem;
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 1.5rem;
-        }
-        
-        .projeto-image {
-            height: 100%;
-            border-radius: var(--border-radius);
-            overflow: hidden;
-        }
-        
-        .projeto-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .projeto-info {
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .projeto-info p {
-            margin-top: 0;
-            line-height: 1.6;
-        }
-        
-        .projeto-acoes {
-            margin-top: auto;
-            padding-top: 1rem;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-        
-        .btn-acao {
-            display: inline-block;
-            background-color: var(--light-bg);
-            color: var(--primary-color);
-            border: 1px solid var(--primary-color);
-            padding: 0.5rem 1rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-        }
-        
-        .btn-acao:hover {
-            background-color: var(--primary-color);
-            color: white;
-        }
-        
-        .btn-acao i {
-            margin-right: 0.5rem;
-        }
-        
-        .como-ajudar {
-            background-color: var(--light-bg);
-            padding: 3rem 0;
-            margin: 4rem 0 2rem;
-        }
-        
-        .como-ajudar-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        
-        .forma-ajuda {
-            background-color: white;
-            padding: 1.5rem;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-            text-align: center;
-            height: 100%;
-        }
-        
-        .forma-ajuda-icon {
-            font-size: 2.5rem;
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
-        
-        .forma-ajuda h3 {
-            margin-top: 0;
-        }
-        
-        .forma-ajuda p {
-            margin-bottom: 1.5rem;
-        }
-        
-        .prestacao-contas {
-            background-color: white;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-            padding: 2rem;
-            margin: 3rem 0;
-        }
-        
-        .prestacao-contas h3 {
-            color: var(--primary-color);
-            margin-top: 0;
-        }
-        
-        .prestacao-contas-info {
-            margin-top: 1.5rem;
-        }
-        
-        .mes-prestacao {
-            border-bottom: 1px solid #eee;
-            padding: 1rem 0;
-        }
-        
-        .mes-prestacao:last-child {
-            border-bottom: none;
-        }
-        
-        .mes-prestacao h4 {
-            margin: 0 0 0.5rem;
-            color: var(--primary-color);
-        }
-        
-        .mes-prestacao p {
-            margin: 0.3rem 0;
-        }
-        
-        .depoimento {
-            background-color: #f8f8f8;
-            border-left: 4px solid var(--primary-color);
-            padding: 1.5rem;
-            margin: 3rem 0;
-            font-style: italic;
-        }
-        
-        .depoimento-autor {
-            text-align: right;
-            font-style: normal;
-            margin-top: 1rem;
-            font-weight: bold;
-        }
-        
-        /* AME Brasil Banner */
-        .ame-saude-banner {
-            background-color: #f5f9f5;
-            border: 1px solid #d8e6d8;
-            border-radius: var(--border-radius);
-            padding: 2rem;
-            margin: 3rem 0;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-        }
-        
-        .ame-saude-content h3 {
-            color: var(--secondary-color);
-            margin-top: 0;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .ame-saude-content h3 i {
-            font-size: 1.5rem;
-        }
-        
-        .ame-saude-link {
-            margin-top: 1.5rem;
-            text-align: center;
-        }
-        
-        /* Responsividade */
-        @media (max-width: 768px) {
-            .projeto-content {
-                grid-template-columns: 1fr;
-            }
-            
-            .projeto-image {
-                margin-bottom: 1rem;
-            }
-            
-            .como-ajudar-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
 </head>
-<body>
+<body class="home-brand">
     <!-- Cabeçalho Moderno -->
     <header class="header-modern">
         <div class="container">
             <div class="logo">
                 <a href="../index.html" aria-label="Início">
-                    <img src="../images/Logo_RafaelLatorre_1000x1000.png" alt="Centro Assistencial Espírita Raphael Latorre" class="site-logo">
+                    <img src="../images/logo-latorre.jpg" alt="Centro Assistencial Espírita Raphael Latorre" class="site-logo" width="52" height="52">
                     <span class="sr-only">Centro Assistencial Espírita Raphael Latorre</span>
                 </a>
             </div>
-            
-            <nav class="nav-modern">
+
+            <nav class="nav-modern" aria-label="Navegação principal">
                 <ul class="nav-links">
                     <li><a href="../index.html" class="nav-link">Início</a></li>
-                    <li><a href="sobre.html" class="nav-link">Sobre Nós</a></li>
+                    <li><a href="sobre.html" class="nav-link">A Casa</a></li>
                     <li><a href="atividades.html" class="nav-link">Atividades</a></li>
-                    <li><a href="doutrina.html" class="nav-link">Doutrina Espírita</a></li>
+                    <li><a href="doutrina.html" class="nav-link">Doutrina</a></li>
                     <li><a href="assistencia-social.html" class="nav-link active">Assistência Social</a></li>
-                    <li><a href="como-ajudar.html" class="nav-link cta-link">
-                        <i class="fas fa-hands-helping"></i> Como ajudar
-                    </a></li>
+                    <li><a href="como-ajudar.html" class="nav-link cta-link">Como ajudar</a></li>
                     <li><a href="contato.html" class="nav-link">Contato</a></li>
                 </ul>
             </nav>
-            
+
             <div class="header-actions">
-                <div class="accessibility-controls">
-                    <button type="button" id="font-increase" class="accessibility-btn" title="Aumentar fonte">
-                        <i class="fas fa-plus"></i>
-                    </button>
-                    <button type="button" id="font-decrease" class="accessibility-btn" title="Diminuir fonte">
-                        <i class="fas fa-minus"></i>
-                    </button>
-                </div>
-                <button class="accessibility-btn" id="theme-toggle" title="Alternar tema" aria-label="Alternar tema">
-                    <i class="fas fa-moon"></i>
-                </button>
-                
                 <button class="menu-toggle" aria-label="Menu" aria-expanded="false">
                     <span class="hamburger"></span>
                     <span class="hamburger"></span>
@@ -315,199 +48,161 @@
         </div>
     </header>
 
-    <!-- Breadcrumbs -->
-    <div class="container">
-        <div class="breadcrumbs">
-            <a href="../index.html">Início</a> > <span>Assistência Social</span>
-        </div>
-    </div>
-
-    <!-- Seção de Assistência Social -->
-    <section class="assistencia-section">
+        <!-- Seção Principal de Assistência Social -->
+    <section class="ajudar-page-section">
         <div class="container">
-            <h2 class="section-title">Assistência Social</h2>
-            
-            <div class="assistencia-intro">
-                <p>A prática da caridade é um pilar fundamental da Doutrina Espírita. Seguindo o princípio "Fora da caridade não há salvação", o Centro Assistencial Espírita Raphael Latorre desenvolve diversos projetos de assistência social para ajudar pessoas em situação de vulnerabilidade.</p>
-                <p>Conheça nossos projetos e saiba como você pode contribuir.</p>
+            <div class="contato-hero-head">
+                <h1 class="section-title">Assistência Social</h1>
+                <p class="section-subtitle">Ações práticas de acolhimento e amparo às famílias em situação de vulnerabilidade, mantidas com transparência e trabalho voluntário.</p>
             </div>
-            
-            <div class="assistencia-banner">
-                <h3><i class="fas fa-hand-holding-heart"></i> "Fora da caridade não há salvação"</h3>
-                <p>Allan Kardec, O Evangelho Segundo o Espiritismo</p>
+
+            <div class="assistencia-quote-band">
+                <blockquote>"Fora da caridade não há salvação"</blockquote>
+                <cite>Allan Kardec — O Evangelho Segundo o Espiritismo</cite>
             </div>
-            
-            <!-- Projetos de Assistência Social -->
-            <div class="projetos-grid">
-                <!-- Distribuição de Cestas Básicas -->
-                <div class="projeto-item">
-                    <div class="projeto-header">
-                        <h3><i class="fas fa-shopping-basket"></i> Distribuição de Cestas Básicas</h3>
-                    </div>
-                    <div class="projeto-content">
-                        <div class="projeto-image">
-                            <img src="../images/placeholder-cestas.webp" alt="Distribuição de Cestas Básicas" loading="lazy" decoding="async">
-                        </div>
-                        <div class="projeto-info">
-                            <p>O programa de distribuição de cestas básicas auxilia famílias carentes cadastradas, fornecendo mensalmente alimentos essenciais para garantir a segurança alimentar.</p>
-                            <p>Cada cesta contém itens como arroz, feijão, óleo, macarrão, açúcar, café, entre outros produtos não-perecíveis que garantem uma alimentação básica para uma família por aproximadamente um mês.</p>
-                            <p>Atualmente, beneficiamos cerca de 50 famílias mensalmente com este programa.</p>
-                            
-                            <div class="projeto-acoes">
-                                <a href="https://wa.me/5517992369192?text=Olá!%20Gostaria%20de%20cadastrar%20minha%20família%20para%20receber%20cestas%20básicas" target="_blank" rel="noopener noreferrer" class="btn-acao"><i class="fab fa-whatsapp"></i> Cadastrar Família</a>
-                                <a href="como-ajudar.html" class="btn-acao"><i class="fas fa-donate"></i> Como Doar</a>
-                                <a href="https://wa.me/5517992369192?text=Olá!%20Gostaria%20de%20ser%20voluntário%20na%20distribuição%20de%20cestas%20básicas" target="_blank" rel="noopener noreferrer" class="btn-acao"><i class="fas fa-hands-helping"></i> Voluntariar-se</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Brechó -->
-                <div class="projeto-item">
-                    <div class="projeto-header">
-                        <h3><i class="fas fa-tshirt"></i> Brechó</h3>
-                    </div>
-                    <div class="projeto-content">
-                        <div class="projeto-image">
-                            <img src="../images/placeholder-roupas.webp" alt="Brechó" loading="lazy" decoding="async">
-                        </div>
-                        <div class="projeto-info">
-                            <p>O Brechó é uma das fontes de renda do Centro Assistencial Espírita Raphael Latorre. Comercializamos roupas, calçados, bolsas, utensílios domésticos, eletrônicos e livros em bom estado a preços acessíveis.</p>
-                            <p>Toda a receita obtida com as vendas é revertida para a manutenção do Centro e para financiar nossos projetos de assistência social, como distribuição de cestas básicas e atendimento fraterno.</p>
-                            <p><strong>Aceitamos doações de:</strong> roupas, calçados, bolsas, utensílios domésticos, eletrônicos e livros em bom estado.</p>
-                            <p><strong>Como doar:</strong> As doações devem ser deixadas na secretaria do Centro nos horários de atendimento (Segunda a Sexta: 13h às 16h e 19h às 21h30).</p>
-                            
-                            <div class="projeto-acoes">
-                                <a href="https://wa.me/5517992369192?text=Olá!%20Gostaria%20de%20doar%20itens%20para%20o%20Brechó" target="_blank" rel="noopener noreferrer" class="btn-acao"><i class="fab fa-whatsapp"></i> Informar Doação</a>
-                                <a href="https://wa.me/5517992369192?text=Olá!%20Gostaria%20de%20saber%20os%20horários%20de%20funcionamento%20do%20Brechó" target="_blank" rel="noopener noreferrer" class="btn-acao"><i class="fas fa-clock"></i> Horários</a>
-                                <a href="https://wa.me/5517992369192?text=Olá!%20Gostaria%20de%20ser%20voluntário%20no%20Brechó" target="_blank" rel="noopener noreferrer" class="btn-acao"><i class="fas fa-hands-helping"></i> Voluntariar-se</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Atendimento Fraterno -->
-                <div class="projeto-item">
-                    <div class="projeto-header">
-                        <h3><i class="fas fa-hands-holding-heart"></i> Atendimento Fraterno</h3>
-                    </div>
-                    <div class="projeto-content">
-                        <div class="projeto-image">
-                            <img src="../images/placeholder-gestantes.webp" alt="Atendimento Fraterno" loading="lazy" decoding="async">
-                        </div>
-                        <div class="projeto-info">
-                            <p>O Atendimento Fraterno é um espaço de acolhimento e orientação espiritual para pessoas que estão passando por momentos difíceis, conflitos pessoais, familiares ou questões emocionais.</p>
-                            <p>Oferecemos escuta acolhedora, amparo fraterno e orientações à luz da Doutrina Espírita, sempre com respeito, sigilo e carinho. O atendimento é realizado por voluntários capacitados e acontece quinzenalmente às terças-feiras.</p>
-                            <p><strong>Horário:</strong> Terças-feiras (quinzenal), 19:30h</p>
-                            <p><strong>Atendente:</strong> Érica Helena Rosa Lui</p>
-                            <p><strong>Importante:</strong> É necessário agendamento prévio.</p>
-                            
-                            <div class="projeto-acoes">
-                                <a href="https://wa.me/5517992369192?text=Olá!%20Gostaria%20de%20agendar%20um%20Atendimento%20Fraterno" target="_blank" rel="noopener noreferrer" class="btn-acao"><i class="fab fa-whatsapp"></i> Agendar Atendimento</a>
-                                <a href="https://wa.me/5517992369192?text=Olá!%20Gostaria%20de%20ser%20voluntário%20no%20Atendimento%20Fraterno" target="_blank" rel="noopener noreferrer" class="btn-acao"><i class="fas fa-hands-helping"></i> Voluntariar-se</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Depoimento -->
-            <div class="depoimento">
-                <p>"A assistência social que recebi do Centro Assistencial Espírita Raphael Latorre foi fundamental para mim em um momento muito difícil da minha vida. Além da ajuda material com cestas básicas e roupas para meus filhos, recebi palavras de conforto e apoio que me ajudaram a seguir em frente. Hoje estou em melhores condições e também ajudo como posso."</p>
-                <div class="depoimento-autor">Maria A., beneficiária</div>
-            </div>
-            
-            <!-- AME Brasil Banner para Assistência na Área da Saúde -->
-            <div class="ame-saude-banner">
-                <div class="ame-saude-content">
-                    <h3><i class="fas fa-heartbeat"></i> Apoio à Saúde Integral</h3>
-                    <p>Nossa casa apoia a visão da Associação Médico-Espírita do Brasil (AME Brasil) que promove a integração entre medicina e espiritualidade no tratamento do ser humano em sua totalidade - corpo, mente e espírito.</p>
-                    <p>Conheça os estudos e pesquisas que integram conhecimentos médicos e espíritas para uma abordagem holística da saúde humana.</p>
-                    <div class="ame-saude-link">
-                        <a href="https://amebrasil.org.br/" target="_blank" rel="noopener noreferrer" class="btn-acao">
-                            <i class="fas fa-external-link-alt"></i> Visite o site da AME Brasil
+
+            <!-- Projetos Reais -->
+            <div class="activities-guide-grid">
+                <article class="activity-guide-card">
+                    <span class="activity-guide-icon" aria-hidden="true"><i class="fas fa-shopping-basket"></i></span>
+                    <h3>Distribuição de Cestas Básicas</h3>
+                    <p>Auxílio mensal a cerca de 50 famílias cadastradas com alimentos essenciais não-perecíveis (arroz, feijão, óleo, macarrão, açúcar, café e itens básicos).</p>
+                    <div class="project-actions-row">
+                        <a href="https://wa.me/5517992369192?text=Ol%C3%A1!%20Gostaria%20de%20informacoes%20sobre%20o%20cadastro%20de%20cestas%20basicas." target="_blank" rel="noopener noreferrer" class="social-pill">
+                            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                            <span>Cadastrar família</span>
+                        </a>
+                        <a href="como-ajudar.html" class="social-pill">
+                            <i class="fas fa-hand-holding-heart" aria-hidden="true"></i>
+                            <span>Doar</span>
                         </a>
                     </div>
+                </article>
+
+                <article class="activity-guide-card">
+                    <span class="activity-guide-icon" aria-hidden="true"><i class="fas fa-tshirt"></i></span>
+                    <h3>Brechó Solidário</h3>
+                    <p>Comercialização de roupas, calçados, bolsas, utensílios e livros em bom estado a preços acessíveis. Toda a renda é revertida para a manutenção da Casa e das cestas básicas.</p>
+                    <p><strong>Entrega de doações:</strong> Seg a Sex, 13h–16h e 19h–21h30, na secretaria.</p>
+                    <div class="project-actions-row">
+                        <a href="https://wa.me/5517992369192?text=Ol%C3%A1!%20Gostaria%20de%20doar%20itens%20para%20o%20Brech%C3%B3." target="_blank" rel="noopener noreferrer" class="social-pill">
+                            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                            <span>Informar doação</span>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="activity-guide-card">
+                    <span class="activity-guide-icon" aria-hidden="true"><i class="fas fa-hands-helping"></i></span>
+                    <h3>Atendimento Fraterno</h3>
+                    <p>Escuta acolhedora, reservada e sigilosa para quem enfrenta momentos difíceis ou conflitos familiares, com orientação evangélica à luz da Doutrina Espírita.</p>
+                    <p><strong>Terças (quinzenal), 19h30</strong> · com Érica Helena Rosa Lui (agendamento prévio).</p>
+                    <div class="project-actions-row">
+                        <a href="https://wa.me/5517992369192?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20Atendimento%20Fraterno." target="_blank" rel="noopener noreferrer" class="social-pill">
+                            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                            <span>Agendar atendimento</span>
+                        </a>
+                    </div>
+                </article>
+            </div>
+
+            <!-- AME Brasil -->
+            <div class="transparencia-banner" style="margin-top: 2rem;">
+                <h3><i class="fas fa-heartbeat" aria-hidden="true"></i> Apoio à Saúde Integral — AME Brasil</h3>
+                <p>Nossa Casa apoia a visão da Associação Médico-Espírita do Brasil (AME Brasil), que promove a integração entre medicina e espiritualidade no cuidado ao ser humano em sua totalidade. <a href="https://amebrasil.org.br/" target="_blank" rel="noopener noreferrer">Conhecer a AME Brasil</a>.</p>
+            </div>
+
+            <!-- Chamada única para Como Ajudar -->
+            <div class="assistencia-cta-box">
+                <h2>Quer apoiar esses projetos?</h2>
+                <p>Você pode contribuir via PIX oficial (CNPJ 50.721.240/0001-53), doar alimentos e roupas ou atuar como voluntário.</p>
+                <div class="assistencia-cta-actions">
+                    <a href="como-ajudar.html" class="btn-primary">
+                        <i class="fas fa-hand-holding-heart" aria-hidden="true"></i>
+                        <span>Ver formas de ajudar</span>
+                    </a>
+                    <a href="https://wa.me/5517992369192?text=Ol%C3%A1!%20Gostaria%20de%20ser%20volunt%C3%A1rio%20na%20Assist%C3%AAncia%20Social." target="_blank" rel="noopener noreferrer" class="btn-secondary">
+                        <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                        <span>Ser voluntário</span>
+                    </a>
                 </div>
             </div>
-            
-            <!-- Como Ajudar -->
-            <section id="como-ajudar" class="como-ajudar">
-                <div class="container">
-                    <h2 class="section-title">Como Você Pode Ajudar</h2>
-                    <p class="section-desc">Há diversas formas de contribuir com os projetos de assistência social do Centro Assistencial Espírita Raphael Latorre:</p>
-                    
-                    <div class="como-ajudar-grid">
-                        <div class="forma-ajuda">
-                            <div class="forma-ajuda-icon">
-                                <i class="fas fa-donate"></i>
-                            </div>
-                            <h3>Doação Financeira</h3>
-                            <p>Contribua com qualquer valor para ajudar na manutenção dos projetos assistenciais.</p>
-                            <p><strong>Banco:</strong> Exemplo<br>
-                            <strong>Agência:</strong> 0123<br>
-                            <strong>Conta:</strong> 12345-6<br>
-                            <strong>PIX:</strong> centro@exemplo.com.br</p>
-                        </div>
-                        
-                        <div class="forma-ajuda">
-                            <div class="forma-ajuda-icon">
-                                <i class="fas fa-box-open"></i>
-                            </div>
-                            <h3>Doação de Itens</h3>
-                            <p>Doe alimentos não-perecíveis, roupas, calçados, utensílios domésticos, itens de higiene, etc.</p>
-                            <p>Você pode entregar suas doações diretamente na sede do Centro nos horários de funcionamento.</p>
-                        </div>
-                        
-                        <div class="forma-ajuda">
-                            <div class="forma-ajuda-icon">
-                                <i class="fas fa-hands-helping"></i>
-                            </div>
-                            <h3>Trabalho Voluntário</h3>
-                            <p>Doe seu tempo e talentos para ajudar nos projetos assistenciais, desde a separação de doações até o atendimento às pessoas assistidas.</p>
-                            <p>Preencha o <a href="contato.html">formulário de contato</a> informando sua disponibilidade.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
         </div>
     </section>
 
     <!-- Rodapé -->
-    <footer>
+    <footer class="footer-modern">
         <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h3>Centro Assistencial Espírita Raphael Latorre</h3>
-                    <p>Promovendo o estudo, a prática e a difusão da Doutrina Espírita desde 1978.</p>
-                    <p><i class="fas fa-hand-holding-heart"></i> Todas as nossas atividades são gratuitas.</p>
-                </div>
-                <div class="footer-col">
-                    <h3>Endereço</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> Rua Duque de Caxias, 75</p>
-                    <p>Jardim São João - Bebedouro, SP</p>
-                    <p><i class="fas fa-phone"></i> (17) 99236-9192</p>
-                    <p><i class="fas fa-envelope"></i> caeraphaellatorre@hotmail.com</p>
-                </div>
-                <div class="footer-col">
-                    <h3>Apoie Nossa Missão</h3>
-                    <p><strong>Doação via PIX:</strong></p>
-                    <p><i class="fas fa-qrcode"></i> 50.721.240/0001-53</p>
-                    <div class="radio-link mt-3">
-                        <a href="como-ajudar.html" class="radio-btn">
-                            <i class="fas fa-hand-holding-heart"></i> Como Ajudar
-                        </a>
+            <div class="footer-content">
+                <div class="footer-main">
+                    <div class="footer-section">
+                        <div class="footer-brand">
+                            <h3>Centro Assistencial Espírita<br>Raphael Latorre</h3>
+                            <p>Promovendo o estudo, a prática e a difusão da Doutrina Espírita desde 1978.</p>
+                            <div class="footer-highlight">
+                                <i class="fas fa-hand-holding-heart"></i>
+                                <span>Todas as nossas atividades são gratuitas</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="footer-section">
+                        <h4>Endereço &amp; Contato</h4>
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                    <span>Rua Duque de Caxias, 75</span>
+                                    <span>Jardim São João - Bebedouro, SP</span>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <span>(17) 99236-9192</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>caeraphaellatorre@hotmail.com</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="footer-section">
+                        <h4>Estudo &amp; Apoio</h4>
+                        <p class="footer-pix-text">Faça sua doação via PIX</p>
+                        <div class="footer-pix-key">
+                            <i class="fas fa-qrcode"></i>
+                            <span>50.721.240/0001-53</span>
+                        </div>
+                        <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 0.75rem;">
+                            <a href="como-ajudar.html" class="footer-donate-btn">
+                                <i class="fas fa-hand-holding-heart"></i>
+                                <span>Como Ajudar</span>
+                            </a>
+                            <a href="doutrina.html" class="footer-link-btn">
+                                <i class="fas fa-book-open"></i>
+                                <span>Doutrina Espírita</span>
+                            </a>
+                            <a href="https://www.youtube.com/@CAE-RaphaelLatorre" target="_blank" rel="noopener noreferrer" class="footer-link-btn">
+                                <i class="fab fa-youtube"></i>
+                                <span>YouTube</span>
+                            </a>
+                            <a href="https://www.instagram.com/caeraphaellatorre/" target="_blank" rel="noopener noreferrer" class="footer-link-btn">
+                                <i class="fab fa-instagram"></i>
+                                <span>Instagram</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="footer-bottom">
-                <div class="social-links" style="display: flex; justify-content: center; gap: 1rem; margin-bottom: 1.5rem;">
-                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+
+                <div class="footer-bottom">
+                    <div class="footer-copyright">
+                        <p>&copy; 2026 Centro Assistencial Espírita Raphael Latorre. Todos os direitos reservados.</p>
+                        <p class="footer-tagline">
+                            Desenvolvido com <i class="fas fa-heart"></i> e respeito à Doutrina Espírita
+                        </p>
+                    </div>
                 </div>
-                <p>&copy; 2026 Centro Assistencial Espírita Raphael Latorre. Todos os direitos reservados.</p>
-                <p class="footer-info">Desenvolvido com <i class="fas fa-heart"></i> e respeito à Doutrina Espírita.</p>
             </div>
         </div>
     </footer>

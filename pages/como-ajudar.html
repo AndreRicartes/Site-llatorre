@@ -4,14 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="color-scheme" content="light">
-    <script>
-      try {
-        if (localStorage.getItem('theme') === 'dark') {
-          document.documentElement.setAttribute('data-theme', 'dark');
-          document.querySelector('meta[name="color-scheme"]').content = 'dark';
-        }
-      } catch (e) {}
-    </script>
     <title>Como Ajudar - Centro Assistencial Espírita Raphael Latorre</title>
     <meta name="description" content="Conheça as formas de ajudar o Centro Assistencial Espírita Raphael Latorre: doação via PIX, transferência, doação de itens e voluntariado.">
     <link rel="stylesheet" href="../css/normalize.css">
@@ -21,69 +13,31 @@
     <link rel="stylesheet" href="../css/llatorre-main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha384-3B6NwesSXE7YJlcLI9RpRqGf2p/EgVH8BgoKTaUrmKNDkHPStTQ3EyoYjCGXaOTS" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
-    <style>
-        /* Estilos específicos da página */
-    .hero-ajudar { background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); color: #fff; padding: 3rem 0; }
-    .hero-ajudar .btn-cta { background: #fff; color: var(--secondary-dark); font-weight: 700; padding: .8rem 1.2rem; border-radius: 30px; display: inline-flex; align-items: center; gap: .5rem; }
-        .doacao-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 1.5rem; }
-        .doacao-card { background: #fff; border-radius: var(--border-radius); box-shadow: var(--box-shadow); padding: 1.25rem; }
-        .doacao-card h3 { display:flex; align-items:center; gap:.5rem; margin-top: 0; }
-        .dados-bloco { background: #fff; border: 1px solid var(--medium-bg); border-radius: var(--border-radius); padding: 1rem; }
-        .dados-item { display:flex; justify-content: space-between; align-items:center; gap: 1rem; background:#f8f9fa; border-radius: 8px; padding:.6rem .8rem; margin:.5rem 0; }
-        .btn-copy { border: 1px solid var(--primary-color); color: var(--primary-color); background:#fff; border-radius: 20px; padding:.35rem .7rem; font-size:.9rem; }
-        .btn-copy:hover { background: var(--primary-color); color:#fff; }
-        .callout { background:#fff3cd; border:1px solid #ffeeba; color:#856404; padding:1rem; border-radius: 8px; }
-        .secao { padding: 2.5rem 0; }
-        .lista-doacoes { columns: 2; column-gap: 2rem; }
-        .lista-doacoes li { break-inside: avoid; margin:.3rem 0; }
-        .selos { display:flex; gap: .75rem; flex-wrap: wrap; }
-        .selo { background:#fff; border:1px solid var(--medium-bg); border-radius: 8px; padding:.5rem .75rem; font-size:.9rem; }
-        .pix-container { margin-top: 1.5rem; text-align: center; }
-        .pix-qr-figure { margin: 1rem 0; }
-        .pix-qr-code { max-width: 100%; height: auto; border: 2px solid #e5e7eb; border-radius: 8px; padding: 0.5rem; background: #fff; }
-        .pix-qr-caption { font-size: 0.9rem; color: var(--text-secondary); margin-top: 0.5rem; }
-        @media (max-width: 992px){ .doacao-grid { grid-template-columns: 1fr 1fr; } }
-        @media (max-width: 600px){ .doacao-grid { grid-template-columns: 1fr; } .lista-doacoes { columns: 1; } }
-    </style>
 </head>
-<body>
+<body class="home-brand">
     <!-- Cabeçalho Moderno -->
     <header class="header-modern">
         <div class="container">
             <div class="logo">
                 <a href="../index.html" aria-label="Início">
-                    <img src="../images/Logo_RafaelLatorre_1000x1000.png" alt="Centro Assistencial Espírita Raphael Latorre" class="site-logo">
+                    <img src="../images/logo-latorre.jpg" alt="Centro Assistencial Espírita Raphael Latorre" class="site-logo" width="52" height="52">
                     <span class="sr-only">Centro Assistencial Espírita Raphael Latorre</span>
                 </a>
             </div>
-            
-            <nav class="nav-modern">
+
+            <nav class="nav-modern" aria-label="Navegação principal">
                 <ul class="nav-links">
                     <li><a href="../index.html" class="nav-link">Início</a></li>
-                    <li><a href="sobre.html" class="nav-link">Sobre Nós</a></li>
+                    <li><a href="sobre.html" class="nav-link">A Casa</a></li>
                     <li><a href="atividades.html" class="nav-link">Atividades</a></li>
-                    <li><a href="doutrina.html" class="nav-link">Doutrina Espírita</a></li>
+                    <li><a href="doutrina.html" class="nav-link">Doutrina</a></li>
                     <li><a href="assistencia-social.html" class="nav-link">Assistência Social</a></li>
-                    <li><a href="como-ajudar.html" class="nav-link cta-link active">
-                        <i class="fas fa-hands-helping"></i> Como ajudar
-                    </a></li>
+                    <li><a href="como-ajudar.html" class="nav-link active cta-link">Como ajudar</a></li>
                     <li><a href="contato.html" class="nav-link">Contato</a></li>
                 </ul>
             </nav>
-            
+
             <div class="header-actions">
-                <div class="accessibility-controls">
-                    <button type="button" id="font-increase" class="accessibility-btn" title="Aumentar fonte">
-                        <i class="fas fa-plus"></i>
-                    </button>
-                    <button type="button" id="font-decrease" class="accessibility-btn" title="Diminuir fonte">
-                        <i class="fas fa-minus"></i>
-                    </button>
-                </div>
-                <button class="accessibility-btn" id="theme-toggle" title="Alternar tema" aria-label="Alternar tema">
-                    <i class="fas fa-moon"></i>
-                </button>
-                
                 <button class="menu-toggle" aria-label="Menu" aria-expanded="false">
                     <span class="hamburger"></span>
                     <span class="hamburger"></span>
@@ -93,124 +47,170 @@
         </div>
     </header>
 
-    <!-- Breadcrumbs -->
-    <div class="container">
-        <div class="breadcrumbs">
-            <a href="../index.html">Início</a> > <span>Como Ajudar</span>
-        </div>
-    </div>
-
-    <!-- Hero -->
-    <section class="hero-ajudar">
+        <!-- Seção Principal Como Ajudar -->
+    <section class="ajudar-page-section">
         <div class="container">
-            <h2 class="section-title">Doe Agora</h2>
-            <p class="section-desc">Sua contribuição fortalece nossos projetos de assistência e a divulgação da Doutrina Espírita.</p>
-            <a href="#doacao-pix" class="btn-cta"><i class="fas fa-bolt"></i> Doar via PIX</a>
-        </div>
-    </section>
+            <div class="contato-hero-head">
+                <h1 class="section-title">Como Ajudar</h1>
+                <p class="section-subtitle">Sua contribuição mantém nossas atividades gratuitas e fortalece os projetos de assistência social em Bebedouro.</p>
+            </div>
 
-    <!-- Formas de Doação -->
-    <section class="secao">
-        <div class="container">
-            <h3 class="section-title">Doação via PIX</h3>
-            <div style="max-width: 700px; margin: 0 auto;">
-                <!-- PIX -->
-                <div id="doacao-pix" class="doacao-card">
-                    <h3><i class="fas fa-qrcode"></i> Doação via PIX</h3>
-                    <p>Use a chave PIX abaixo para fazer sua doação de forma rápida e segura.</p>
-                    <div class="dados-bloco">
-                        <div class="dados-item">
-                            <span><strong>Chave PIX (CNPJ):</strong> <span id="pix-key">50.721.240/0001-53</span></span>
-                            <button class="btn-copy" data-copy-target="#pix-key"><i class="fas fa-copy"></i> Copiar</button>
+            <!-- Doação via PIX (Copy-first para celular + QR Code para desktop) -->
+            <div id="doacao-pix" class="pix-feature-card">
+                <div class="pix-feature-grid">
+                    <div class="pix-info-col">
+                        <h2><i class="fas fa-qrcode" aria-hidden="true"></i> Doação via PIX</h2>
+                        <p>No celular, copie a chave PIX abaixo com um toque e cole no aplicativo do seu banco.</p>
+
+                        <div class="pix-key-box">
+                            <div class="pix-key-row">
+                                <strong>Chave PIX (CNPJ)</strong>
+                                <span id="pix-key" class="pix-key-value">50.721.240/0001-53</span>
+                            </div>
+                            <div class="pix-key-row">
+                                <strong>Favorecido</strong>
+                                <span>Centro Assistencial Espírita Raphael Latorre</span>
+                            </div>
+                            <div class="pix-key-row">
+                                <strong>Descrição sugerida</strong>
+                                <span>Doação voluntária</span>
+                            </div>
                         </div>
-                        <div class="dados-item">
-                            <span><strong>Nome/Recebedor:</strong> Centro Assistencial Espírita Raphael Latorre</span>
-                        </div>
-                        <div class="dados-item">
-                            <span><strong>Descrição sugerida:</strong> Doação voluntária</span>
-                        </div>
+
+                        <button type="button" class="pix-copy-btn" data-copy-text="50.721.240/0001-53">
+                            <i class="far fa-copy" aria-hidden="true"></i>
+                            <span>Copiar chave PIX</span>
+                        </button>
+
+                        <p class="pix-tip"><i class="fas fa-info-circle" aria-hidden="true"></i> Você também pode agendar uma doação mensal no app do seu banco usando a mesma chave.</p>
                     </div>
-                    <div class="pix-container">
-                        <figure class="pix-qr-figure">
-                            <img src="../images/QRcode Pix RaphaelLatorre.png" alt="QR Code PIX para doação" width="300" height="300" class="pix-qr-code" loading="lazy" decoding="async">
-                            <figcaption class="pix-qr-caption">Aponte a câmera do banco para o QR Code</figcaption>
-                        </figure>
-                        <button class="btn" id="btn-copy-pix-payload" type="button"><i class="fas fa-copy"></i> Copiar chave PIX</button>
-                    </div>
-                    <p class="donation-tip">Dica: Você também pode cadastrar uma doação mensal no seu banco usando a mesma chave.</p>
+
+                    <figure class="pix-qr-col">
+                        <img src="../images/QRcode Pix RaphaelLatorre.png" alt="QR Code PIX para doação ao Centro Assistencial Espírita Raphael Latorre" width="220" height="220" loading="lazy" decoding="async">
+                        <figcaption>Ou aponte a câmera do banco para o QR Code</figcaption>
+                    </figure>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Doação de Itens -->
-    <section class="secao">
-        <div class="container">
-            <h3 class="section-title">Doação de Itens</h3>
-            <p>Recebemos doações de itens para os projetos sociais. Veja algumas sugestões:</p>
-            <ul class="lista-doacoes">
-                <li>Alimentos não-perecíveis</li>
-                <li>Roupas e calçados (em bom estado)</li>
-                <li>Itens de higiene e limpeza</li>
-                <li>Utensílios domésticos</li>
-                <li>Fraldas e enxoval para bebês</li>
-                <li>Material escolar</li>
-            </ul>
-            <p class="mt-1">Confira detalhes dos projetos em <a href="assistencia-social.html">Assistência Social</a>.</p>
-        </div>
-    </section>
+            <!-- Doação de Itens + Seja Voluntário -->
+            <div class="ajudar-two-col">
+                <article class="contato-card">
+                    <h3><i class="fas fa-box-open" aria-hidden="true"></i> Doação de Itens</h3>
+                    <p class="contato-card-lead">Recebemos doações para as cestas básicas, o brechó solidário e o apoio às famílias atendidas:</p>
 
-    <!-- Voluntariado -->
-    <section class="secao section-light-bg">
-        <div class="container">
-            <h3 class="section-title">Seja Voluntário</h3>
-            <p>Doe seu tempo e habilidades. Há muitas frentes onde sua ajuda faz a diferença.</p>
-            <a href="contato.html" class="btn"><i class="fas fa-hands-helping"></i> Quero ser voluntário</a>
-        </div>
-    </section>
+                    <ul class="ajudar-items-list">
+                        <li><i class="fas fa-check-circle" aria-hidden="true"></i> Alimentos não-perecíveis</li>
+                        <li><i class="fas fa-check-circle" aria-hidden="true"></i> Roupas e calçados</li>
+                        <li><i class="fas fa-check-circle" aria-hidden="true"></i> Higiene e limpeza</li>
+                        <li><i class="fas fa-check-circle" aria-hidden="true"></i> Utensílios domésticos</li>
+                        <li><i class="fas fa-check-circle" aria-hidden="true"></i> Fraldas e enxoval</li>
+                        <li><i class="fas fa-check-circle" aria-hidden="true"></i> Material escolar</li>
+                    </ul>
 
-    <!-- Transparência -->
-    <section class="secao">
-        <div class="container">
-            <h3 class="section-title">Transparência</h3>
-            <p>Prezamos pela transparência na aplicação dos recursos recebidos. Consulte nossa prestação de contas mensal na página de <a href="assistencia-social.html">Assistência Social</a> ou entre em <a href="contato.html">contato</a> para mais informações.</p>
+                    <p class="contato-card-lead" style="margin-bottom: 0.75rem;">
+                        <strong>Entrega na secretaria:</strong> Rua Duque de Caxias, 75 (Seg a Sex: 13h–16h e 19h–21h30).
+                    </p>
+                    <a href="assistencia-social.html" class="activity-guide-link">
+                        <span>Ver projetos de Assistência Social</span>
+                        <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </article>
+
+                <article class="contato-card" style="display: flex; flex-direction: column;">
+                    <h3><i class="fas fa-hands-helping" aria-hidden="true"></i> Seja Voluntário</h3>
+                    <p class="contato-card-lead">Doe seu tempo e suas habilidades. Há frentes de trabalho no acolhimento, na assistência social, na manutenção da Casa e nos estudos.</p>
+                    <p class="contato-card-lead">Converse com nossa equipe pelo WhatsApp para conhecer os horários e ver onde sua ajuda faz mais diferença.</p>
+
+                    <div style="margin-top: auto; padding-top: 0.5rem;">
+                        <a href="https://wa.me/5517992369192?text=Ol%C3%A1!%20Gostaria%20de%20ser%20volunt%C3%A1rio%20no%20CAE%20Raphael%20Latorre." target="_blank" rel="noopener noreferrer" class="triage-submit-btn" style="text-decoration: none;">
+                            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                            <span>Quero ser voluntário no WhatsApp</span>
+                        </a>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Transparência -->
+            <div class="transparencia-banner">
+                <h3>Transparência na aplicação dos recursos</h3>
+                <p>Todo valor arrecadado é integralmente destinado à manutenção da Casa e aos projetos sociais gratuitos. Confira os detalhes na página de <a href="assistencia-social.html">Assistência Social</a> ou fale conosco em <a href="contato.html">Contato</a>.</p>
+            </div>
         </div>
     </section>
 
     <!-- Rodapé -->
-    <footer>
+    <footer class="footer-modern">
         <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h3>Centro Assistencial Espírita Raphael Latorre</h3>
-                    <p>Promovendo o estudo, a prática e a difusão da Doutrina Espírita desde 1978.</p>
-                    <p><i class="fas fa-hand-holding-heart"></i> Todas as nossas atividades são gratuitas.</p>
-                </div>
-                <div class="footer-col">
-                    <h3>Endereço</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> Rua Duque de Caxias, 75</p>
-                    <p>Jardim São João - Bebedouro, SP</p>
-                    <p><i class="fas fa-phone"></i> (17) 99236-9192</p>
-                    <p><i class="fas fa-envelope"></i> caeraphaellatorre@hotmail.com</p>
-                </div>
-                <div class="footer-col">
-                    <h3>Apoie Nossa Missão</h3>
-                    <p><strong>Doação via PIX:</strong></p>
-                    <p><i class="fas fa-qrcode"></i> 50.721.240/0001-53</p>
-                    <div class="radio-link mt-3">
-                        <a href="#pix-section" class="radio-btn">
-                            <i class="fas fa-hand-holding-heart"></i> Ver QR Code
-                        </a>
+            <div class="footer-content">
+                <div class="footer-main">
+                    <div class="footer-section">
+                        <div class="footer-brand">
+                            <h3>Centro Assistencial Espírita<br>Raphael Latorre</h3>
+                            <p>Promovendo o estudo, a prática e a difusão da Doutrina Espírita desde 1978.</p>
+                            <div class="footer-highlight">
+                                <i class="fas fa-hand-holding-heart"></i>
+                                <span>Todas as nossas atividades são gratuitas</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="footer-section">
+                        <h4>Endereço &amp; Contato</h4>
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                    <span>Rua Duque de Caxias, 75</span>
+                                    <span>Jardim São João - Bebedouro, SP</span>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <span>(17) 99236-9192</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>caeraphaellatorre@hotmail.com</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="footer-section">
+                        <h4>Estudo &amp; Apoio</h4>
+                        <p class="footer-pix-text">Faça sua doação via PIX</p>
+                        <div class="footer-pix-key">
+                            <i class="fas fa-qrcode"></i>
+                            <span>50.721.240/0001-53</span>
+                        </div>
+                        <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 0.75rem;">
+                            <a href="como-ajudar.html" class="footer-donate-btn">
+                                <i class="fas fa-hand-holding-heart"></i>
+                                <span>Como Ajudar</span>
+                            </a>
+                            <a href="doutrina.html" class="footer-link-btn">
+                                <i class="fas fa-book-open"></i>
+                                <span>Doutrina Espírita</span>
+                            </a>
+                            <a href="https://www.youtube.com/@CAE-RaphaelLatorre" target="_blank" rel="noopener noreferrer" class="footer-link-btn">
+                                <i class="fab fa-youtube"></i>
+                                <span>YouTube</span>
+                            </a>
+                            <a href="https://www.instagram.com/caeraphaellatorre/" target="_blank" rel="noopener noreferrer" class="footer-link-btn">
+                                <i class="fab fa-instagram"></i>
+                                <span>Instagram</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="footer-bottom">
-                <div class="social-links" style="display: flex; justify-content: center; gap: 1rem; margin-bottom: 1.5rem;">
-                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+
+                <div class="footer-bottom">
+                    <div class="footer-copyright">
+                        <p>&copy; 2026 Centro Assistencial Espírita Raphael Latorre. Todos os direitos reservados.</p>
+                        <p class="footer-tagline">
+                            Desenvolvido com <i class="fas fa-heart"></i> e respeito à Doutrina Espírita
+                        </p>
+                    </div>
                 </div>
-                <p>&copy; 2026 Centro Assistencial Espírita Raphael Latorre. Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>

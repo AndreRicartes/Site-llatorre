@@ -54,7 +54,8 @@ class ModernWebsite {
             this.initParallaxEffects();
         }
         this.initCarousel();
-        this.initThemeToggle();
+        this.initYouTubeFacades();
+        this.initContactEnhancements();
         this.showPageWithAnimation();
     }
 
@@ -552,51 +553,22 @@ class ModernWebsite {
         this.initScreenReaderSupport();
     }
 
-    // === TEMA ESCURO/CLARO ===
-    initThemeToggle() {
-        const root = document.documentElement;
-        const metaColorScheme = document.querySelector('meta[name="color-scheme"]');
-        const applyTheme = (theme) => {
-            const isDark = theme === 'dark';
-            if (isDark) {
-                root.setAttribute('data-theme', 'dark');
-            } else {
-                root.removeAttribute('data-theme');
-            }
-            if (metaColorScheme) {
-                metaColorScheme.setAttribute('content', isDark ? 'dark' : 'light');
-            }
-        };
-
-        let saved = null;
-        try {
-            saved = localStorage.getItem('theme');
-        } catch (e) {}
-        applyTheme(saved === 'dark' ? 'dark' : 'light');
-
-        const btn = document.getElementById('theme-toggle');
-        if (!btn) return;
-
-        const setIcon = () => {
-            const isDark = root.getAttribute('data-theme') === 'dark';
-            btn.innerHTML = isDark ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
-        };
-        setIcon();
-
-        btn.addEventListener('click', () => {
-            const nextTheme = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-            applyTheme(nextTheme);
-            try {
-                localStorage.setItem('theme', nextTheme);
-            } catch (e) {}
-            setIcon();
-        });
-
-        window.addEventListener('storage', (e) => {
-            if (e.key === 'theme') {
-                applyTheme(e.newValue === 'dark' ? 'dark' : 'light');
-                setIcon();
-            }
+    // === YOUTUBE CLICK-TO-PLAY ===
+    initYouTubeFacades() {
+        document.querySelectorAll('.yt-facade[data-yt-id]').forEach((facade) => {
+            const btn = facade.querySelector('.yt-play-btn');
+            if (!btn) return;
+            btn.addEventListener('click', () => {
+                const videoId = facade.getAttribute('data-yt-id');
+                const title = facade.getAttribute('data-yt-title') || 'Palestra no YouTube';
+                if (!videoId) return;
+                const iframe = document.createElement('iframe');
+                iframe.src = `https://www.youtube-nocookie.com/embed/${encodeURIComponent(videoId)}?autoplay=1&rel=0`;
+                iframe.title = title;
+                iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+                iframe.allowFullscreen = true;
+                facade.replaceChildren(iframe);
+            });
         });
     }
 
@@ -776,6 +748,161 @@ class ModernWebsite {
                     document.head.appendChild(prefetch);
                 }
             });
+        });
+    }
+
+    // === PÁGINA DE CONTATO (COPIAR + TRIAGEM WHATSAPP + ARIA) ===
+    initContactEnhancements() {
+        document.querySelectorAll('[data-copy-text]').forEach((btn) => {
+            const originalHtml = btn.innerHTML;
+            btn.addEventListener('click', async () => {
+                const text = btn.getAttribute('data-copy-text') || '';
+                if (!text) return;
+                try {
+                    await navigator.clipboard.writeText(text);
+                    btn.innerHTML = '<i class="fas fa-check" aria-hidden="true"></i> <span>Copiado!</span>';
+                    setTimeout(() => {
+                        btn.innerHTML = originalHtml;
+                    }, 2500);
+                } catch {
+                    this.showNotification('Não foi possível copiar automaticamente.', 'info');
+                }
+            });
+        });
+
+        const form = document.getElementById('whatsapp-triage-form');
+        if (!form) return;
+
+        const linkError = (el, shown) => {
+            const errorId = el.dataset.error;
+            if (!errorId) return;
+            const ids = (el.getAttribute('aria-describedby') || '')
+                .split(/\s+/)
+                .filter((id) => id && id !== errorId);
+            if (shown) ids.push(errorId);
+            if (ids.length) el.setAttribute('aria-describedby', ids.join(' '));
+            else el.removeAttribute('aria-describedby');
+        };
+
+        const announcer = document.createElement('div');
+        announcer.setAttribute('aria-live', 'polite');
+        announcer.classList.add('visually-hidden');
+        document.body.append(announcer);
+        let announceTimer;
+        let announcedField;
+
+        const spokenText = (node) => {
+            const copy = node.cloneNode(true);
+            copy.querySelectorAll('[aria-hidden="true"]').forEach((n) => n.remove());
+            copy.querySelectorAll('[role="img"][aria-label]').forEach((n) =>
+                n.replaceWith(`${n.getAttribute('aria-label')}: `)
+            );
+            return copy.textContent.replace(/\s+/g, ' ').trim();
+        };
+
+        const announceError = (el) => {
+            const error = document.getElementById(el.dataset.error);
+            if (!error) return;
+            const label = el.labels?.[0] ? `${spokenText(el.labels[0])}: ` : '';
+            clearTimeout(announceTimer);
+            announcer.textContent = '';
+            announcedField = el;
+            announceTimer = setTimeout(() => {
+                announcer.textContent = label + spokenText(error);
+            }, 500);
+        };
+
+        const supportsUserInvalid = CSS.supports('selector(:user-invalid)');
+        const flagged = new WeakSet();
+        const announced = new WeakSet();
+        const dirtyState = new WeakMap();
+
+        const syncAria = (el, announce = false) => {
+            if (!el.matches?.('input, select, textarea')) return;
+            const invalid = supportsUserInvalid
+                ? el.matches(':user-invalid')
+                : el.classList.contains('user-invalid-fallback');
+            if (invalid) {
+                if (announce && !announced.has(el)) {
+                    announceError(el);
+                    announced.add(el);
+                }
+                el.setAttribute('aria-invalid', 'true');
+                linkError(el, true);
+                flagged.add(el);
+            } else if (flagged.has(el) || el.getAttribute('aria-invalid') !== 'true') {
+                el.setAttribute('aria-invalid', 'false');
+                linkError(el, false);
+                flagged.delete(el);
+                announced.delete(el);
+                if (announcedField === el) {
+                    clearTimeout(announceTimer);
+                    announcer.textContent = '';
+                }
+            }
+        };
+
+        form.querySelectorAll('input, select, textarea').forEach((el) => syncAria(el));
+
+        if (!supportsUserInvalid) {
+            const updateFallback = (el) => {
+                const isValid = el.validity.valid;
+                el.classList.toggle('user-invalid-fallback', !isValid);
+                el.classList.toggle('user-valid-fallback', isValid);
+                syncAria(el, !isValid);
+            };
+            form.addEventListener('blur', (e) => {
+                if (!e.target.checkValidity) return;
+                const st = dirtyState.get(e.target) || { hasInteracted: false, hasBlurred: false };
+                st.hasBlurred = true;
+                dirtyState.set(e.target, st);
+                if (st.hasInteracted) updateFallback(e.target);
+            }, true);
+            form.addEventListener('input', (e) => {
+                if (!e.target.checkValidity) return;
+                const st = dirtyState.get(e.target) || { hasInteracted: false, hasBlurred: false };
+                st.hasInteracted = true;
+                dirtyState.set(e.target, st);
+                if (st.hasBlurred) updateFallback(e.target);
+            });
+            form.addEventListener('change', (e) => {
+                if (!e.target.checkValidity) return;
+                dirtyState.set(e.target, { hasInteracted: true, hasBlurred: true });
+                updateFallback(e.target);
+            });
+        } else {
+            form.addEventListener('blur', (e) => syncAria(e.target, true), true);
+            form.addEventListener('input', (e) => {
+                if (e.target.hasAttribute('aria-invalid')) syncAria(e.target);
+            });
+            form.addEventListener('change', (e) => syncAria(e.target, true), true);
+        }
+
+        form.addEventListener('invalid', (e) => {
+            announced.add(e.target);
+            if (!supportsUserInvalid) {
+                e.target.classList.add('user-invalid-fallback');
+                e.target.classList.remove('user-valid-fallback');
+            }
+            syncAria(e.target);
+        }, true);
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            if (!form.reportValidity()) return;
+
+            const nome = (form.querySelector('#triage-nome')?.value || '').trim();
+            const assunto = (form.querySelector('#triage-assunto')?.value || '').trim();
+            const msg = (form.querySelector('#triage-mensagem')?.value || '').trim();
+
+            const texto = `Olá! Meu nome é ${nome}.\nAssunto: ${assunto}\n\n${msg}`;
+            const url = `https://wa.me/5517992369192?text=${encodeURIComponent(texto)}`;
+
+            const statusEl = document.getElementById('triage-status');
+            if (statusEl) {
+                statusEl.innerHTML = `Mensagem pronta: <a href="${url}" target="_blank" rel="noopener noreferrer">abrir conversa no WhatsApp</a>.`;
+            }
+            window.open(url, '_blank', 'noopener,noreferrer');
         });
     }
 

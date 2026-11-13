@@ -4,14 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="color-scheme" content="light">
-    <script>
-      try {
-        if (localStorage.getItem('theme') === 'dark') {
-          document.documentElement.setAttribute('data-theme', 'dark');
-          document.querySelector('meta[name="color-scheme"]').content = 'dark';
-        }
-      } catch (e) {}
-    </script>
     <title>Contato - Centro Assistencial Espírita Raphael Latorre</title>
     <meta name="description" content="Entre em contato com o Centro Assistencial Espírita Raphael Latorre. Endereço, telefone e formulário de contato disponíveis.">
     <link rel="stylesheet" href="../css/normalize.css">
@@ -22,164 +14,31 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha384-3B6NwesSXE7YJlcLI9RpRqGf2p/EgVH8BgoKTaUrmKNDkHPStTQ3EyoYjCGXaOTS" crossorigin="anonymous" referrerpolicy="no-referrer">
     <!-- Favicon -->
     <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
-    <style>
-        /* Estilos específicos para a página de contato */
-        .contato-section {
-            padding: 4rem 0;
-        }
-        
-        .contato-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-        }
-        
-        .contato-info {
-            background-color: white;
-            padding: 2rem;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-        }
-        
-        .contato-image {
-            width: 100%;
-            height: 250px;
-            overflow: hidden;
-            border-radius: var(--border-radius);
-            margin-bottom: 1.5rem;
-        }
-        
-        .contato-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        
-        .contato-info:hover .contato-image img {
-            transform: scale(1.05);
-        }
-        
-        .contato-info h3 {
-            color: var(--primary-color);
-            margin-bottom: 1.5rem;
-        }
-        
-        .contato-item {
-            display: flex;
-            margin-bottom: 1.5rem;
-            align-items: flex-start;
-        }
-        
-        .contato-icon {
-            font-size: 1.5rem;
-            color: var(--primary-color);
-            margin-right: 1rem;
-            min-width: 30px;
-            text-align: center;
-        }
-        
-        .contato-text h4 {
-            margin-bottom: 0.5rem;
-        }
-        
-        .contato-text p {
-            margin-bottom: 0.5rem;
-        }
-        
-        .mapa {
-            width: 100%;
-            height: 300px;
-            border-radius: var(--border-radius);
-            margin-top: 2rem;
-            border: none;
-        }
-        
-        .contato-form {
-            background-color: white;
-            padding: 2rem;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-        }
-        
-        .contato-form h3 {
-            color: var(--primary-color);
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-        }
-        
-        .form-control {
-            width: 100%;
-            padding: 0.75rem;
-            border: 1px solid #ddd;
-            border-radius: var(--border-radius);
-            font-family: inherit;
-            font-size: 1rem;
-        }
-        
-        textarea.form-control {
-            min-height: 150px;
-            resize: vertical;
-        }
-        
-        .form-group .btn {
-            margin-top: 1rem;
-        }
-        
-        @media (max-width: 768px) {
-            .contato-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
 </head>
-<body>
+<body class="home-brand">
     <!-- Cabeçalho Moderno -->
     <header class="header-modern">
         <div class="container">
             <div class="logo">
                 <a href="../index.html" aria-label="Início">
-                    <img src="../images/Logo_RafaelLatorre_1000x1000.png" alt="Centro Assistencial Espírita Raphael Latorre" class="site-logo">
+                    <img src="../images/logo-latorre.jpg" alt="Centro Assistencial Espírita Raphael Latorre" class="site-logo" width="52" height="52">
                     <span class="sr-only">Centro Assistencial Espírita Raphael Latorre</span>
                 </a>
             </div>
-            
-            <nav class="nav-modern">
+
+            <nav class="nav-modern" aria-label="Navegação principal">
                 <ul class="nav-links">
                     <li><a href="../index.html" class="nav-link">Início</a></li>
-                    <li><a href="sobre.html" class="nav-link">Sobre Nós</a></li>
+                    <li><a href="sobre.html" class="nav-link">A Casa</a></li>
                     <li><a href="atividades.html" class="nav-link">Atividades</a></li>
-                    <li><a href="doutrina.html" class="nav-link">Doutrina Espírita</a></li>
+                    <li><a href="doutrina.html" class="nav-link">Doutrina</a></li>
                     <li><a href="assistencia-social.html" class="nav-link">Assistência Social</a></li>
-                    <li><a href="como-ajudar.html" class="nav-link cta-link">
-                        <i class="fas fa-hands-helping"></i> Como ajudar
-                    </a></li>
+                    <li><a href="como-ajudar.html" class="nav-link cta-link">Como ajudar</a></li>
                     <li><a href="contato.html" class="nav-link active">Contato</a></li>
                 </ul>
             </nav>
-            
+
             <div class="header-actions">
-                <div class="accessibility-controls">
-                    <button type="button" id="font-increase" class="accessibility-btn" title="Aumentar fonte">
-                        <i class="fas fa-plus"></i>
-                    </button>
-                    <button type="button" id="font-decrease" class="accessibility-btn" title="Diminuir fonte">
-                        <i class="fas fa-minus"></i>
-                    </button>
-                </div>
-                <button class="accessibility-btn" id="theme-toggle" title="Alternar tema" aria-label="Alternar tema">
-                    <i class="fas fa-moon"></i>
-                </button>
-                
                 <button class="menu-toggle" aria-label="Menu" aria-expanded="false">
                     <span class="hamburger"></span>
                     <span class="hamburger"></span>
@@ -189,220 +48,303 @@
         </div>
     </header>
 
-    <!-- Breadcrumbs -->
-    <div class="container">
-        <div class="breadcrumbs">
-            <a href="../index.html">Início</a> > <span>Contato</span>
-        </div>
-    </div>
-
-    <!-- Seção de Contato -->
+        <!-- Seção de Contato Mobile-First -->
     <section class="contato-section">
         <div class="container">
-            <h2 class="section-title">Contato</h2>
-            <p class="section-desc">Entre em contato conosco via WhatsApp ou telefone para obter mais informações sobre nossas atividades.</p>
-            
-            <div class="contato-grid">
-                <div class="contato-info">
-                    <div class="contato-image">
-                        <img src="../images/placeholder-contato.webp" alt="Centro Assistencial Espírita Raphael Latorre" loading="lazy" decoding="async">
-                    </div>
-                    
-                    <h3>Informações de Contato</h3>
-                    
-                    <div class="contato-item">
-                        <div class="contato-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div class="contato-text">
-                            <h4>Endereço</h4>
-                            <p>Rua Duque de Caxias, 75</p>
-                            <p>Jardim São João - Bebedouro, SP</p>
-                            <p>CEP: 14701-000</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contato-item">
-                        <div class="contato-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <div class="contato-text">
-                            <h4>Telefone / WhatsApp</h4>
-                            <p>(17) 99236-9192</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contato-item">
-                        <div class="contato-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="contato-text">
-                            <h4>E-mail</h4>
-                            <p>caeraphaellatorre@hotmail.com</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contato-item">
-                        <div class="contato-icon">
-                            <i class="fas fa-clock"></i>
-                        </div>
-                        <div class="contato-text">
-                            <h4>Horários - Secretaria</h4>
-                            <p><strong>Segunda a Sexta:</strong> 13h às 16h e 19h às 21h30</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contato-item">
-                        <div class="contato-icon">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <div class="contato-text">
-                            <h4>Redes Sociais</h4>
-                            <div class="social-links">
-                                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                                <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <div class="contato-hero-head">
+                <h1 class="section-title">Fale Conosco</h1>
+                <p class="section-subtitle">Atendimento acolhedor em um toque: tire dúvidas, agende o Atendimento Fraterno ou trace sua rota até a Casa.</p>
+            </div>
+
+            <!-- Ações rápidas em 1 toque -->
+            <div class="quick-actions-grid" aria-label="Canais de atendimento rápido">
+                <a href="https://wa.me/5517992369192?text=Ol%C3%A1!%20Gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20o%20CAE%20Raphael%20Latorre." target="_blank" rel="noopener noreferrer" class="quick-action-card is-primary">
+                    <span class="quick-action-icon" aria-hidden="true"><i class="fab fa-whatsapp"></i></span>
+                    <span class="quick-action-body">
+                        <span class="quick-action-title">WhatsApp Direto</span>
+                        <span class="quick-action-sub">Conversar agora</span>
+                    </span>
+                </a>
+
+                <a href="tel:+5517992369192" class="quick-action-card">
+                    <span class="quick-action-icon" aria-hidden="true"><i class="fas fa-phone"></i></span>
+                    <span class="quick-action-body">
+                        <span class="quick-action-title">Ligar para a Casa</span>
+                        <span class="quick-action-sub">(17) 99236-9192</span>
+                    </span>
+                </a>
+
+                <a href="https://www.google.com/maps/search/?api=1&query=Rua+Duque+de+Caxias+75+Bebedouro+SP" target="_blank" rel="noopener noreferrer" class="quick-action-card">
+                    <span class="quick-action-icon" aria-hidden="true"><i class="fas fa-directions"></i></span>
+                    <span class="quick-action-body">
+                        <span class="quick-action-title">Como Chegar</span>
+                        <span class="quick-action-sub">Abrir rota no Maps</span>
+                    </span>
+                </a>
+
+                <a href="mailto:caeraphaellatorre@hotmail.com" class="quick-action-card">
+                    <span class="quick-action-icon" aria-hidden="true"><i class="fas fa-envelope"></i></span>
+                    <span class="quick-action-body">
+                        <span class="quick-action-title">Enviar E-mail</span>
+                        <span class="quick-action-sub">caeraphaellatorre@hotmail.com</span>
+                    </span>
+                </a>
+            </div>
+
+            <div class="contato-layout">
+                <!-- Coluna 1: Triagem WhatsApp + Informações da Casa -->
+                <div class="contato-stack">
+                    <div class="contato-card">
+                        <h3>Envie sua mensagem pelo WhatsApp</h3>
+                        <p class="contato-card-lead">Escolha o assunto e escreva sua mensagem. Ao enviar, o WhatsApp abre já preenchido para nossa equipe.</p>
+
+                        <form id="whatsapp-triage-form" class="whatsapp-triage-form" novalidate>
+                            <div class="triage-field">
+                                <label for="triage-nome">Seu nome</label>
+                                <input
+                                    type="text"
+                                    id="triage-nome"
+                                    name="nome"
+                                    class="triage-input"
+                                    required
+                                    minlength="2"
+                                    autocomplete="name"
+                                    placeholder="Como podemos te chamar?"
+                                    data-error="triage-nome-error"
+                                >
+                                <div id="triage-nome-error" class="error-msg">
+                                    <span role="img" aria-label="Erro">❌</span> Informe seu nome (pelo menos 2 letras).
+                                </div>
                             </div>
-                        </div>
+
+                            <div class="triage-field">
+                                <label for="triage-assunto">Assunto</label>
+                                <select
+                                    id="triage-assunto"
+                                    name="assunto"
+                                    class="triage-input"
+                                    required
+                                    data-error="triage-assunto-error"
+                                >
+                                    <option value="">Selecione uma opção</option>
+                                    <option value="Agendar Atendimento Fraterno">Agendar Atendimento Fraterno</option>
+                                    <option value="Dúvidas sobre palestras e horários">Dúvidas sobre palestras e horários</option>
+                                    <option value="Grupos de estudo">Grupos de estudo</option>
+                                    <option value="Doações e voluntariado">Doações e voluntariado</option>
+                                    <option value="Outro assunto">Outro assunto</option>
+                                </select>
+                                <div id="triage-assunto-error" class="error-msg">
+                                    <span role="img" aria-label="Erro">❌</span> Selecione o assunto do contato.
+                                </div>
+                            </div>
+
+                            <div class="triage-field">
+                                <label for="triage-mensagem">Mensagem</label>
+                                <span id="triage-mensagem-hint" class="triage-hint">Descreva brevemente como podemos ajudar.</span>
+                                <textarea
+                                    id="triage-mensagem"
+                                    name="mensagem"
+                                    class="triage-input"
+                                    required
+                                    minlength="5"
+                                    aria-describedby="triage-mensagem-hint"
+                                    placeholder="Escreva aqui sua dúvida ou solicitação..."
+                                    data-error="triage-mensagem-error"
+                                ></textarea>
+                                <div id="triage-mensagem-error" class="error-msg">
+                                    <span role="img" aria-label="Erro">❌</span> Escreva uma mensagem com pelo menos 5 caracteres.
+                                </div>
+                            </div>
+
+                            <button type="submit" class="triage-submit-btn">
+                                <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                                <span>Continuar no WhatsApp</span>
+                            </button>
+                            <p id="triage-status" class="triage-fallback-note" role="status"></p>
+                        </form>
                     </div>
-                    
-                    <iframe class="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3736.8826682901416!2d-48.47923882383798!3d-20.939296984897078!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94bbe54d9dcd880f%3A0xb7851c8aec8b3682!2sR.%20Duque%20de%20Caxias%2C%2075%20-%20Jardim%20S%C3%A3o%20Jo%C3%A3o%2C%20Bebedouro%20-%20SP%2C%2014701-000!5e0!3m2!1spt-BR!2sbr!4v1690294010341!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy" title="Localização do Centro Espírita"></iframe>
-                </div>
-                
-                <!-- Cronograma Semanal Detalhado -->
-                <div class="cronograma-semanal" style="margin-top: 3rem;">
-                    <h3 style="text-align: center; margin-bottom: 2rem; color: var(--primary-color);">Cronograma Semanal de Atividades</h3>
-                    
-                    <div style="display: grid; gap: 1.5rem;">
-                        <!-- Segunda -->
-                        <div style="background: white; padding: 1.5rem; border-radius: var(--radius-md); box-shadow: var(--shadow-md); border-left: 4px solid var(--primary-color);">
-                            <h4 style="color: var(--primary-color); margin-top: 0;"><i class="fas fa-calendar-day"></i> Segunda-feira</h4>
-                            <p style="margin: 0.5rem 0;"><i class="fas fa-clock"></i> <strong>19:00</strong></p>
-                            <ul style="margin: 0.5rem 0; padding-left: 1.5rem;">
-                                <li>Palestra com <strong>Marcel Lui</strong></li>
-                                <li>Passe Fluídico</li>
-                            </ul>
-                        </div>
-                        
-                        <!-- Terça -->
-                        <div style="background: white; padding: 1.5rem; border-radius: var(--radius-md); box-shadow: var(--shadow-md); border-left: 4px solid var(--primary-color);">
-                            <h4 style="color: var(--primary-color); margin-top: 0;"><i class="fas fa-calendar-day"></i> Terça-feira</h4>
-                            <p style="margin: 0.5rem 0;"><i class="fas fa-clock"></i> <strong>19:00</strong></p>
-                            <ul style="margin: 0.5rem 0; padding-left: 1.5rem;">
-                                <li>Palestra com <strong>Luiz Roberto</strong> alternando com <strong>André Hernandes</strong></li>
-                                <li>Orientação Espiritual</li>
-                                <li>Atendimento Fraterno (quinzenal) com <strong>Érica Helena Rosa Lui</strong></li>
-                            </ul>
-                            <p style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--text-secondary);"><i class="fas fa-info-circle"></i> Para o Atendimento Fraterno é necessário agendamento: <a href="https://wa.me/5517992369192" target="_blank" rel="noopener noreferrer">(17) 99236-9192</a></p>
-                        </div>
-                        
-                        <!-- Quarta -->
-                        <div style="background: white; padding: 1.5rem; border-radius: var(--radius-md); box-shadow: var(--shadow-md); border-left: 4px solid var(--primary-color);">
-                            <h4 style="color: var(--primary-color); margin-top: 0;"><i class="fas fa-calendar-day"></i> Quarta-feira</h4>
-                            <p style="margin: 0.5rem 0;"><i class="fas fa-clock"></i> <strong>19:00</strong></p>
-                            <ul style="margin: 0.5rem 0; padding-left: 1.5rem;">
-                                <li>Palestra com <strong>Luiz Robertos</strong></li>
-                                <li>Tratamento Espiritual (alternado semanalmente com Reunião Mediúnica)</li>
-                            </ul>
-                            <p style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--text-secondary);"><i class="fas fa-info-circle"></i> Os trabalhos de Tratamento Espiritual e Reunião Mediúnica são alternados semanalmente. A Reunião Mediúnica é fechada ao público.</p>
-                        </div>
-                        
-                        <!-- Quinta -->
-                        <div style="background: white; padding: 1.5rem; border-radius: var(--radius-md); box-shadow: var(--shadow-md); border-left: 4px solid var(--primary-color);">
-                            <h4 style="color: var(--primary-color); margin-top: 0;"><i class="fas fa-calendar-day"></i> Quinta-feira</h4>
-                            <p style="margin: 0.5rem 0;"><i class="fas fa-clock"></i> <strong>19:00</strong></p>
-                            <ul style="margin: 0.5rem 0; padding-left: 1.5rem;">
-                                <li>Palestra (a confirmar)</li>
-                                <li>Tratamento Espiritual</li>
-                                <li>Passe Fluídico</li>
-                                <li>Estudo da Doutrina Espírita (salão ao lado)</li>
-                            </ul>
-                        </div>
-                        
-                        <!-- Sexta -->
-                        <div style="background: white; padding: 1.5rem; border-radius: var(--radius-md); box-shadow: var(--shadow-md); border-left: 4px solid var(--primary-color);">
-                            <h4 style="color: var(--primary-color); margin-top: 0;"><i class="fas fa-calendar-day"></i> Sexta-feira</h4>
-                            <p style="margin: 0.5rem 0;"><i class="fas fa-clock"></i> <strong>19:00</strong></p>
-                            <ul style="margin: 0.5rem 0; padding-left: 1.5rem;">
-                                <li>Estudo da Doutrina Espírita com <strong>Luiz Roberto</strong></li>
-                            </ul>
-                        </div>
-                        <!-- Sábado -->
-                        <div style="background: white; padding: 1.5rem; border-radius: var(--radius-md); box-shadow: var(--shadow-md); border-left: 4px solid var(--primary-color);">
-                            <h4 style="color: var(--primary-color); margin-top: 0;"><i class="fas fa-calendar-day"></i> Sábado</h4>
-                            <p style="margin: 0.5rem 0;"><i class="fas fa-clock"></i> <strong>16:00</strong></p>
-                            <ul style="margin: 0.5rem 0; padding-left: 1.5rem;">
-                                <li>Curso de Iniciação ao Espiritismo <strong>Lica Camolezi</strong></li>
-                            </ul>
+
+                    <div class="contato-card">
+                        <div class="contato-photo">
+                            <img src="../images/fachada-latorre.png" alt="Fachada do Centro Assistencial Espírita Raphael Latorre" loading="lazy" decoding="async">
                         </div>
 
+                        <h3>Secretaria &amp; Endereço</h3>
+                        <ul class="contato-details-list">
+                            <li class="contato-detail-row">
+                                <span class="contato-detail-icon" aria-hidden="true"><i class="fas fa-map-marker-alt"></i></span>
+                                <div class="contato-detail-text">
+                                    <strong>Endereço</strong>
+                                    <p>Rua Duque de Caxias, 75 — Jardim São João<br>Bebedouro, SP · CEP 14701-000</p>
+                                    <button type="button" class="copy-address-btn" data-copy-text="Rua Duque de Caxias, 75 - Jardim São João, Bebedouro - SP, 14701-000">
+                                        <i class="far fa-copy" aria-hidden="true"></i>
+                                        <span>Copiar endereço</span>
+                                    </button>
+                                </div>
+                            </li>
+
+                            <li class="contato-detail-row">
+                                <span class="contato-detail-icon" aria-hidden="true"><i class="fas fa-clock"></i></span>
+                                <div class="contato-detail-text">
+                                    <strong>Horário da Secretaria</strong>
+                                    <p>Segunda a Sexta: 13h às 16h e 19h às 21h30</p>
+                                </div>
+                            </li>
+
+                            <li class="contato-detail-row">
+                                <span class="contato-detail-icon" aria-hidden="true"><i class="fas fa-phone"></i></span>
+                                <div class="contato-detail-text">
+                                    <strong>Telefone / WhatsApp</strong>
+                                    <p><a href="tel:+5517992369192">(17) 99236-9192</a></p>
+                                </div>
+                            </li>
+
+                            <li class="contato-detail-row">
+                                <span class="contato-detail-icon" aria-hidden="true"><i class="fas fa-envelope"></i></span>
+                                <div class="contato-detail-text">
+                                    <strong>E-mail</strong>
+                                    <p><a href="mailto:caeraphaellatorre@hotmail.com">caeraphaellatorre@hotmail.com</a></p>
+                                </div>
+                            </li>
+
+                            <li class="contato-detail-row">
+                                <span class="contato-detail-icon" aria-hidden="true"><i class="fas fa-share-alt"></i></span>
+                                <div class="contato-detail-text">
+                                    <strong>Redes Sociais</strong>
+                                    <div class="social-pills">
+                                        <a href="https://www.youtube.com/@CAE-RaphaelLatorre" target="_blank" rel="noopener noreferrer" class="social-pill">
+                                            <i class="fab fa-youtube" aria-hidden="true"></i>
+                                            <span>YouTube</span>
+                                        </a>
+                                        <a href="https://www.instagram.com/caeraphaellatorre/" target="_blank" rel="noopener noreferrer" class="social-pill">
+                                            <i class="fab fa-instagram" aria-hidden="true"></i>
+                                            <span>Instagram</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Coluna 2: Mapa -->
+                <div class="contato-stack">
+                    <div class="contato-card">
+                        <h3>Localização</h3>
+                        <p class="contato-card-lead">Fácil acesso no Jardim São João, em Bebedouro/SP.</p>
+                        <iframe class="mapa-modern" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3736.8826682901416!2d-48.47923882383798!3d-20.939296984897078!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94bbe54d9dcd880f%3A0xb7851c8aec8b3682!2sR.%20Duque%20de%20Caxias%2C%2075%20-%20Jardim%20S%C3%A3o%20Jo%C3%A3o%2C%20Bebedouro%20-%20SP%2C%2014701-000!5e0!3m2!1spt-BR!2sbr!4v1690294010341!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy" title="Mapa de localização do Centro Assistencial Espírita Raphael Latorre"></iframe>
                     </div>
                 </div>
             </div>
-            
-            <div class="faq-section mt-4">
-                <h3 class="text-center">Perguntas Frequentes</h3>
-                
-                <div class="faq-container">
-                    <div class="faq-item">
-                        <h4>É necessário agendar para participar das atividades?</h4>
-                        <p>Não, todas as nossas palestras públicas e passes são de livre acesso. Para os grupos de estudo e algumas atividades específicas, recomendamos verificar a disponibilidade de vagas.</p>
+
+            <!-- FAQ em acordeão nativo -->
+            <section class="faq-accordion" aria-labelledby="faq-heading">
+                <h3 id="faq-heading">Perguntas Frequentes</h3>
+
+                <details>
+                    <summary>É necessário agendar para participar das atividades?</summary>
+                    <div class="faq-answer">
+                        <p>Não, todas as nossas palestras públicas e passes são de livre acesso. Apenas o Atendimento Fraterno (às terças-feiras) exige agendamento prévio pelo WhatsApp (17) 99236-9192.</p>
                     </div>
-                    
-                    <div class="faq-item">
-                        <h4>Preciso ser espírita para participar das atividades?</h4>
-                        <p>Não, nossa casa está aberta a todas as pessoas, independentemente de suas crenças ou religiões. O importante é o respeito mútuo e o desejo de aprendizado.</p>
+                </details>
+
+                <details>
+                    <summary>Preciso ser espírita para participar das atividades?</summary>
+                    <div class="faq-answer">
+                        <p>Não, nossa Casa está aberta a todas as pessoas, independentemente de suas crenças ou religiões. O importante é o respeito mútuo e o desejo de acolhimento e aprendizado.</p>
                     </div>
-                    
-                    <div class="faq-item">
-                        <h4>Como posso fazer doações?</h4>
-                        <p>Aceitamos doações de alimentos, roupas, materiais de higiene e limpeza, que podem ser entregues diretamente em nossa sede nos horários de funcionamento. Para doações financeiras, entre em contato conosco para mais informações.</p>
+                </details>
+
+                <details>
+                    <summary>Como posso fazer doações?</summary>
+                    <div class="faq-answer">
+                        <p>Aceitamos doações de alimentos, roupas, materiais de higiene e limpeza diretamente em nossa sede nos horários de funcionamento. Para doações financeiras via PIX ou outras formas de apoio, consulte a página <a href="como-ajudar.html">Como Ajudar</a>.</p>
                     </div>
-                    
-                    <div class="faq-item">
-                        <h4>Como posso me tornar voluntário?</h4>
-                        <p>Entre em contato conosco via WhatsApp pelo número (17) 99236-9192 ou visite-nos pessoalmente para conversar sobre as possibilidades de voluntariado. Temos diversas áreas onde você pode contribuir, de acordo com suas habilidades e disponibilidade.</p>
+                </details>
+
+                <details>
+                    <summary>Como posso me tornar voluntário?</summary>
+                    <div class="faq-answer">
+                        <p>Envie uma mensagem pelo formulário acima ou diretamente no WhatsApp (17) 99236-9192, ou converse conosco presencialmente para conhecer as frentes de trabalho disponíveis.</p>
                     </div>
-                </div>
-            </div>
+                </details>
+            </section>
         </div>
     </section>
 
     <!-- Rodapé -->
-    <footer>
+    <footer class="footer-modern">
         <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h3>Centro Assistencial Espírita Raphael Latorre</h3>
-                    <p>Promovendo o estudo, a prática e a difusão da Doutrina Espírita desde 1978.</p>
-                    <p><i class="fas fa-hand-holding-heart"></i> Todas as nossas atividades são gratuitas.</p>
-                </div>
-                <div class="footer-col">
-                    <h3>Endereço</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> Rua Duque de Caxias, 75</p>
-                    <p>Jardim São João - Bebedouro, SP</p>
-                    <p><i class="fas fa-phone"></i> (17) 99236-9192</p>
-                    <p><i class="fas fa-envelope"></i> caeraphaellatorre@hotmail.com</p>
-                </div>
-                <div class="footer-col">
-                    <h3>Apoie Nossa Missão</h3>
-                    <p><strong>Doação via PIX:</strong></p>
-                    <p><i class="fas fa-qrcode"></i> 50.721.240/0001-53</p>
-                    <div class="radio-link mt-3">
-                        <a href="como-ajudar.html" class="radio-btn">
-                            <i class="fas fa-hand-holding-heart"></i> Como Ajudar
-                        </a>
+            <div class="footer-content">
+                <div class="footer-main">
+                    <div class="footer-section">
+                        <div class="footer-brand">
+                            <h3>Centro Assistencial Espírita<br>Raphael Latorre</h3>
+                            <p>Promovendo o estudo, a prática e a difusão da Doutrina Espírita desde 1978.</p>
+                            <div class="footer-highlight">
+                                <i class="fas fa-hand-holding-heart"></i>
+                                <span>Todas as nossas atividades são gratuitas</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="footer-section">
+                        <h4>Endereço &amp; Contato</h4>
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                    <span>Rua Duque de Caxias, 75</span>
+                                    <span>Jardim São João - Bebedouro, SP</span>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <span>(17) 99236-9192</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>caeraphaellatorre@hotmail.com</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="footer-section">
+                        <h4>Estudo &amp; Apoio</h4>
+                        <p class="footer-pix-text">Faça sua doação via PIX</p>
+                        <div class="footer-pix-key">
+                            <i class="fas fa-qrcode"></i>
+                            <span>50.721.240/0001-53</span>
+                        </div>
+                        <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 0.75rem;">
+                            <a href="como-ajudar.html" class="footer-donate-btn">
+                                <i class="fas fa-hand-holding-heart"></i>
+                                <span>Como Ajudar</span>
+                            </a>
+                            <a href="doutrina.html" class="footer-link-btn">
+                                <i class="fas fa-book-open"></i>
+                                <span>Doutrina Espírita</span>
+                            </a>
+                            <a href="https://www.youtube.com/@CAE-RaphaelLatorre" target="_blank" rel="noopener noreferrer" class="footer-link-btn">
+                                <i class="fab fa-youtube"></i>
+                                <span>YouTube</span>
+                            </a>
+                            <a href="https://www.instagram.com/caeraphaellatorre/" target="_blank" rel="noopener noreferrer" class="footer-link-btn">
+                                <i class="fab fa-instagram"></i>
+                                <span>Instagram</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="footer-bottom">
-                <div class="social-links" style="display: flex; justify-content: center; gap: 1rem; margin-bottom: 1.5rem;">
-                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+
+                <div class="footer-bottom">
+                    <div class="footer-copyright">
+                        <p>&copy; 2026 Centro Assistencial Espírita Raphael Latorre. Todos os direitos reservados.</p>
+                        <p class="footer-tagline">
+                            Desenvolvido com <i class="fas fa-heart"></i> e respeito à Doutrina Espírita
+                        </p>
+                    </div>
                 </div>
-                <p>&copy; 2026 Centro Assistencial Espírita Raphael Latorre. Todos os direitos reservados.</p>
-                <p class="footer-info">Desenvolvido com <i class="fas fa-heart"></i> e respeito à Doutrina Espírita.</p>
             </div>
         </div>
     </footer>
